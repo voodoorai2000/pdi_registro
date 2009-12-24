@@ -1,0 +1,60 @@
+<% title t('users.titles.edit') %>
+
+<%= error_messages_for :user %>
+
+<% form_for @user, :url => account_path do |f| %>
+<fieldset>
+  <legend><%= t('users.account_information') %></legend>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :login %><br />
+    <%= f.text_field :login %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+</fieldset>
+
+<fieldset>
+  <legend><%= t('users.register_openid') %></legend>
+  <p>
+    <%= f.label :openid_identifier, openid_link %><br />
+    <%= f.text_field :openid_identifier %>
+  </p>
+</fieldset>
+
+<fieldset>
+  <legend><%= t('users.change_password') %></legend>
+  <p>
+    <%= f.label :password, t('users.new_password') %><br />
+    <%= f.password_field :password %>
+  </p>
+  <p>
+    <%= f.label :password_confirmation, t('users.new_password_confirmation') %><br />
+    <%= f.password_field :password_confirmation %>
+  </p>
+</fieldset>
+
+<fieldset>
+  <legend><%= t('users.preference') %></legend>
+  <% f.fields_for :preference, (@user.preference || @user.build_preference) do |preference_form| %>
+  <p>
+    <%= preference_form.label :language %><br />
+    <%= preference_form.select :language, @languages_available, :include_blank => true %>
+  </p>
+  <p>
+    <%= preference_form.label :time_zone %><br />
+    <%# f.select :time_zone, ActiveSupport::TimeZone.all.map {|tz| [tz.to_s, tz.tzinfo.name] }, :include_blank => true %>
+    <%= preference_form.time_zone_select :time_zone, nil, :include_blank => true %>
+  </p>
+  <% end %>
+</fieldset>
+
+<p>
+  <%= f.submit t('users.actions.update') %>
+</p>
+<% end %>

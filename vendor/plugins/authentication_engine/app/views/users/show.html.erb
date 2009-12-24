@@ -1,0 +1,60 @@
+<% title t('users.titles.show') %>
+
+<p>
+  <b><%= at(User, :name) %>:</b>
+  <%=h @user.name %>
+</p>
+<p>
+  <b><%= at(User, :login) %>:</b>
+  <%=h @user.login %>
+</p>
+<p>
+  <b><%= at(User, :email) %>:</b>
+  <%=h @user.email %>
+</p>
+<p>
+  <b><%= openid_link %>:</b>
+  <%=h @user.openid_identifier %>
+</p>
+<p>
+  <b><%= at(User, :roles) %>:</b>
+  <%=h @user.roles.map(&:name).join(', ') %>
+</p>
+<p>
+  <b><%= at(User, :login_count) %>:</b>
+  <%=h @user.login_count %>
+</p>
+<p>
+  <b><%= at(User, :failed_login_count) %>:</b>
+  <%=h @user.failed_login_count %>
+</p>
+<p>
+  <b><%= at(User, :last_request_at) %>:</b>
+  <%=h @user.last_request_at %>
+</p>
+<p>
+  <b><%= at(User, :last_login_at) %>:</b>
+  <%=h @user.last_login_at %>
+</p>
+<p>
+  <b><%= at(User, :last_login_ip) %>:</b>
+  <%=h @user.last_login_ip %>
+</p>
+<p>
+  <b><%= at(User, :current_login_at) %>:</b>
+  <%=h @user.current_login_at %>
+</p>
+<p>
+  <b><%= at(User, :current_login_ip) %>:</b>
+  <%=h @user.current_login_ip %>
+</p>
+<p>
+  <b><%= at(Preference, :language) %>:</b>
+  <%=h @user.preference.language %>
+</p>
+<p>
+  <b><%= at(Preference, :time_zone) %>:</b>
+  <%=h @user.preference.time_zone %>
+</p>
+
+<%= link_to t('common.actions.edit'), edit_account_path %>

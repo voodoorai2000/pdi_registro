@@ -1,0 +1,24 @@
+<% title t('users.titles.new') %>
+
+<% form_for @user, :url => account_path do |f| %>
+  <%= f.error_messages %>
+  <fieldset>
+    <p>
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.label :email %><br />
+      <%= f.text_field :email %>
+    </p>
+  </fieldset>
+  <fieldset>
+    <p>
+      <%= f.label :openid_identifier, openid_link %><br />
+      <%= f.text_field :openid_identifier %>
+    </p>
+  </fieldset>
+  <p>
+    <%= f.submit t('users.actions.signup') %>
+  </p>
+<% end %>

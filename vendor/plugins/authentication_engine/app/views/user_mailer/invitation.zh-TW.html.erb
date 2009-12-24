@@ -1,0 +1,9 @@
+Hello <%= @invitation.recipient_name %>!
+
+<%- if @invitation.sender -%>
+<%= @invitation.sender.name %> 邀請你來註冊。
+<%- else -%>
+你被邀請去註冊。
+<%- end -%>
+
+<%= link_to @signup_url, @signup_url %>

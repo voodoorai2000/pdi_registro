@@ -1,0 +1,42 @@
+<% title t('activations.titles.new') %>
+
+<% form_for @user, :url => activate_path(@user), :html => { :method => :post } do |f| %>
+  <%= f.error_messages %>
+  <%- if @invitation -%>
+  <%= f.hidden_field :invitation_id %>
+  <%= hidden_field_tag :invitation_token, @invitation.token %>
+  <fieldset>
+    <p>
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.label :email %><br />
+      <%= f.text_field :email %>
+    </p>
+  </fieldset>
+  <%- end -%>
+  <fieldset>
+    <p>
+      <%= f.label :login %><br />
+      <%= f.text_field :login %>
+    </p>
+    <p>
+      <%= f.label :password, t('activations.password') %><br />
+      <%= f.password_field :password %>
+    </p>
+    <p>
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation %>
+    </p>
+  </fieldset>
+  <fieldset>
+    <p>
+      <%= f.label :openid_identifier, openid_link %><br />
+      <%= f.text_field :openid_identifier %>
+    </p>
+  </fieldset>
+  <p>
+    <%= f.submit t('activations.actions.activate') %>
+  </p>
+<% end %>

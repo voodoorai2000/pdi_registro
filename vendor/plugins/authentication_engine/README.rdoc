@@ -1,0 +1,210 @@
+= AuthenticationEngine
+
+This engine will give you an instant authentication system for a new site, including: 
+
+* support for multiple modes of user registration
+* registration via openID authentication
+* invitations
+* activation via email
+* password resets via email. 
+* international support
+
+You will be able to customize look and feel, but it works right out of the box. Even with a completely empty app. ;-)
+
+Thanks to Tse-Ching Ho it is now localized into Chinese and Taiwanese. Feel free to add your own languages.
+
+This Rails 2.3 engine is using the excellent Authlogic gem (http://github.com/binarylogic/authlogic/tree/master) from Ben Johnson at BinaryLogic, and is based on the sample application for that gem.
+
+*This engine is under active development so use with care.  Add any issues as github issues*
+
+
+== Change Log
+
+2009-05-05  Merged Tse-Ching Ho's branch.
+
+== Requirements
+
+1. You need Rails 2.3! This engine is not based on the rails-engines plugin. 
+2. You need the Authlogic gem, but it will prompt for the gem if it's missing
+3. The authlogic_oid gem.
+4. The OpenID Authentication plugin.
+5. The i18_label plugin.
+6. The declarative_authorization gem
+
+== Installation
+
+
+  $ script/plugin install git://github.com/angantyr/authentication_engine.git
+
+  $ script/plugin install git://github.com/rails/open_id_authentication.git
+  
+  $ script/plugin install git://github.com/iain/i18n_label.git
+  
+  $ rake authentication_engine:sync
+  
+  $ rake db:migrate
+
+The authentication_engine:sync rake moves following files into your app:
+
+  app/controllers/application_controller.rb
+  app/helpers/application_helper.rb
+  app/helpers/layout_helper.rb
+  app/views/layout/application.html.erb
+  config/authentication_engine.yml
+  config/authorization_rules.rb
+  config/database.yml
+  config/environments/cucumber.rb
+  config/environments/test.rb
+  config/initializers/config_loader.rb
+  config/initializers/delarative_authorization.rb
+  config/initializers/locales.rb
+  config/locales/en.yml
+  config/locales/zh-CN.yml
+  config/locales/zh-TW.yml
+  config/locales/authentication_engine/en.yml
+  config/locales/authentication_engine/zh-CN.yml
+  config/locales/authentication_engine/zh-TW.yml
+  config/locales/authlogic/en.yml
+  config/locales/authlogic/zh-CN.yml
+  config/locales/authlogic/zh-TW.yml
+  config/locales/rails/zh-CN.yml
+  config/locales/rails/zh-TW.yml
+  db/migrate/20090216144927_create_users.rb
+  db/migrate/20090216172211_create_open_id_tables.rb
+  db/migrate/20090216175329_create_invitations.rb
+  db/migrate/20090714114804_add_state_to_user.rb
+  db/migrate/20090806032027_create_roles.rb
+  db/migrate/20090828070047_create_preferences.rb
+  db/migrate/20090829101822_create_root_user.rb
+  public/images/User_state.png
+  public/images/rails.png
+  public/images/admin/
+  public/images/admin/accept.png
+  public/images/admin/error.png
+  public/images/admin/exclamation.png
+  public/images/admin/fpo.png
+  public/images/authentication_engine/
+  public/images/authentication_engine/cross.png
+  public/images/authentication_engine/email_go.png
+  public/images/authentication_engine/key.png
+  public/images/authentication_engine/lock_add.png
+  public/images/authentication_engine/lock_delete.png
+  public/images/authentication_engine/openid.png
+  public/images/authentication_engine/openid_icon.jpg
+  public/images/authentication_engine/user.png
+  public/images/authentication_engine/user_add.png
+  public/images/authentication_engine/user_delete.png
+  public/images/authentication_engine/user_edit.png
+  public/images/authentication_engine/user_suit.png
+  public/stylesheets/authentication.css
+  public/stylesheets/admin/
+  public/stylesheets/admin/admin.css
+  public/stylesheets/admin/invitations.css
+  public/stylesheets/admin/pagination.css
+  public/stylesheets/admin/users.css
+
+Note: The task keeps a version of your old one files if there is a conflict. It's not destructive, but you may want to check your code for changes.
+
+== Setup
+
+If you are starting with a completely empty rails site, 
+
+1. remove index.html in public folder
+
+  rm public/index.html
+
+2. and add a temporary site root like this:
+
+  map.root :controller => "home", :action => "index"
+
+3. add authlogic as first required gem in environment.rb
+
+  config.gem 'authlogic', :lib => 'authlogic', :version => '>=2.1.1', :source => "http://gems.rubyforge.org"
+
+4. login with username and password 'root', and remember to change it right away!
+
+== Configuration
+
+This version of the engine gives you detailed control over the user registration, signup, and activation process. 
+You can change the behavior to suit your needs by editing the authentication_engine.yml file.
+
+The registration settings control how user accounts are created and activated.
+
+  limited:: only admins can send invites to user so they can register
+  private:: registered users can send invites to other users
+  requested:: a user can request an account, but only admin can approve it
+  public:: anyone can register and activate their own accounts 
+
+The signup and activation values default to false, but if set to true, will over-ride the default authlogic behavior and prompt for username and password after account signup and activation. Suitable for the more paranoid among you who 
+
+and then for every controller you want to protect, simply add:
+
+  class WidgetsController < ApplicationController
+    before_filter :require_user
+  	...
+  end
+
+or use a combination of user requirements on a per action level:
+
+	before_filter :require_no_user, :only => [:new, :create]
+	before_filter :require_user, :only => :destroy
+
+
+In your application layout include the javascript defaults if you are not already:
+
+  <%= javascript_include_tag :defaults %>
+
+(This is only used for for switching between standard and openid login forms.)
+
+In your layouts and views you can also call the login status bar:
+
+  <%= render :partial => 'shared/user_status' %>
+
+
+== Testing (This is still work in progress!)
+
+Just remember to add this line to your routes.rb:
+
+  map.root :controller => "home", :action => "index"
+
+First, you need to install the basic gems:
+
+  $ gem install rspec-rails
+  $ gem install cucumber
+  $ gem install webrat
+  $ gem install bmabey-email_spec -s http://gems.github.com
+  $ script/generate rspec
+  $ script/generate cucumber
+  $ script/generate email_spec
+
+Then you can test the features of authentication_engine via rake command:
+
+  $ rake authentication_engine:features
+
+Or test it manually:
+
+  $ rake db:test:prepare
+  $ cucumber vendor/plugins/authentication_engine/features
+
+== To-Do List
+
+Build out admin interfaces, which will expose full data on the included models. 
+This step will also require some kind of authorization scheme.  I'm currently planning 
+on using the authorization plugin. Any thoughts on that are welcome.
+Perhaps that gets rolled into a separate authorization_engine ?
+
+== Wish List
+
+* OpenID-based User creation: I would love for the user creation to use the OpenID functionality to the fullest.
+
+
+== Credits
+
+On this one, much credit goes to Ben Johnson at BinaryLogic for providing a fresh start on authentication systems for Rails:
+http://github.com/binarylogic/authlogic/tree/master
+
+And to Tse-Ching Ho, for adding internationalization, email activation, and much, much more...
+
+Enjoy!
+
+Copyright (c) 2009 Mans Angantyr, released under the MIT license
