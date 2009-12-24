@@ -18,11 +18,11 @@ shared: &shared
     name: "Administrator"
     email: "admin@example.com"
   notifier:
-    host: "localhost:3000"
+    host: "registro.partidodeinternet.es"
     name: "User Notifier"
     email: "noreply@example.com"
   default_content_type: text/html # "text/plain" "text/html" "text/enriched"
-  delivery_method: :smtp # :sendmail :stmp
+  delivery_method: :sendmail #:stmp
   smtp_settings:
     address: localhost
     port: 25
