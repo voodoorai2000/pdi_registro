@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090828070047) do
+ActiveRecord::Schema.define(:version => 20091226122214) do
 
   create_table "invitations", :force => true do |t|
     t.integer  "sender_id"
@@ -34,6 +34,16 @@ ActiveRecord::Schema.define(:version => 20090828070047) do
     t.integer "timestamp",  :null => false
     t.string  "server_url"
     t.string  "salt",       :null => false
+  end
+
+  create_table "orchards", :force => true do |t|
+    t.string   "name"
+    t.integer  "area"
+    t.string   "longitude"
+    t.string   "latitude"
+    t.boolean  "used"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "preferences", :force => true do |t|

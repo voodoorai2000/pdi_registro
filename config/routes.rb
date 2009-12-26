@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :orchards
+
   # paths that should be added manually to main routes.rb of application
   map.root :controller => 'home', :action => 'index'
   map.namespace :admin do |admin|
