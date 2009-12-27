@@ -204,6 +204,8 @@ en:
     invitations_limit: "({{count}} left)"
     admin_pannel: "Admin Pannel"
     preference: "Preference"
+    datos_importantes: "Important Info"
+    region: "Region"
   
   admin:
     users:

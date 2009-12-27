@@ -40,8 +40,8 @@
 </fieldset>
 
 <fieldset>
- <legend><%= t('users.region') %></legend>
-  	<%= f.label :region_id, "Region" %>
+ <legend><%= t('users.datos_importantes') %></legend>
+  	<%= f.label :region_id, t('users.region') %><br />
   	<%= f.select :region_id, Region.all.sort_by(&:name).collect {|region| [region.name, region.id]} %>
 </fieldset>
 
