@@ -15,7 +15,7 @@ MundoPepino.configure do |config|
   config.model_mappings = {
   # MAPEO DE MODELO AUTO-GENERADO (Orchard)
   /^huertos?$/i => Orchard, # (TODO: validar RegExp para forma plural y coma final)
-
+  /^region$/ => Region
     # TRADUCCIÓN DE MODELOS AQUÍ, por ejemplo:
     # /^huert[oa]s?/i            => Orchard,
     # /^bancal(es)?$/i           => Terrace,
@@ -62,7 +62,9 @@ MundoPepino.configure do |config|
     #    MundoPepino.world.send "#{model.name.underscore}_path", model.find_by_name(captures[1])
     #  end
     #}
+    /^la p[áa]gina de editar mi perfil$/ => "/account/edit"
   }
+
 end
 
 Before do
@@ -76,6 +78,6 @@ end
 #  include Machinist # probado!
 #end
 # # Si utilizas factory_girl # probado!
-# require 'factory_girl'
+require 'factory_girl'
 # #Definición de las factorias equivalente a example_data.rb en fixture_replacement
-# require File.expand_path(File.dirname(__FILE__) + '/app/db/factories')
+require File.expand_path(File.dirname(__FILE__) + '../../../db/factories')

@@ -14,4 +14,7 @@ class User < ActiveRecord::Base
   # authorization plugin may need this too, which breaks the model
   # attr_accesibles need to merged; this resets it
   # attr_accessible :role_ids
+  
+  belongs_to :region
+  attr_accessible :region_id
 end

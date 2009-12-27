@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091226122214) do
+ActiveRecord::Schema.define(:version => 20091227184644) do
 
   create_table "invitations", :force => true do |t|
     t.integer  "sender_id"
@@ -54,6 +54,12 @@ ActiveRecord::Schema.define(:version => 20091226122214) do
     t.datetime "updated_at"
   end
 
+  create_table "regions", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "roles", :force => true do |t|
     t.string   "name",        :null => false
     t.string   "title"
@@ -90,6 +96,7 @@ ActiveRecord::Schema.define(:version => 20091226122214) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "state"
+    t.integer  "region_id"
   end
 
   add_index "users", ["last_request_at"], :name => "index_users_on_last_request_at"

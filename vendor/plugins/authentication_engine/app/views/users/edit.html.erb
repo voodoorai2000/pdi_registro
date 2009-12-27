@@ -40,6 +40,13 @@
 </fieldset>
 
 <fieldset>
+ <legend><%= t('users.region') %></legend>
+  	<%= f.label :region_id, "Region" %>
+  	<%= f.select :region_id, Region.all.sort_by(&:name).collect {|region| [region.name, region.id]} %>
+</fieldset>
+
+
+<fieldset>
   <legend><%= t('users.preference') %></legend>
   <% f.fields_for :preference, (@user.preference || @user.build_preference) do |preference_form| %>
   <p>

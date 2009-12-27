@@ -1,0 +1,60 @@
+class BootstrapRegions < ActiveRecord::Migration
+  def self.up
+  
+    ["Valencia",
+    "Toledo",
+    "Sevilla",
+    "Santa Cruz de Tenerife",
+    "Málaga",
+    "Las Palmas",
+    "Jaén",
+    "Huelva	",
+    "Granada",
+    "Cuenca",
+    "Córdoba",
+    "Ciudad Real",
+    "Cádiz	",
+    "Cáceres",
+    "Badajoz",
+    "Almería",
+    "Alicante",
+    "Albacete",
+    "Zaragoza",
+    "Zamora",
+    "Vizcaya",
+    "Valladolid",
+    "Teruel",
+    "Tarragona",
+    "Soria",
+    "Segovia",
+    "Cantabria",
+    "Salamanca",
+    "Pontevedra",
+    "Palencia",
+    "Ourense",
+    "Lugo",
+    "León",
+    "A Coruña",
+    "Huesca",
+    "Puzcoa	",
+    "Guadalajara",
+    "Castelló",
+    "Burgos",
+    "Barcelona",
+    "Ávila",
+    "Álava",
+    "Girona",
+    "Lleida",
+    "La Rioja",
+    "Madrid",
+    "Murcia",
+    "Navarra",
+    "Asturias",
+    "Islas Baleares"].each { |name| Region.create!(:name => name) }
+  end
+  
+  def self.down
+    Region.delete_all
+  end
+  
+end
