@@ -4,3 +4,6 @@ config/database.yml
 db/test.sqlite3
 log/*
 rerun.txt
+db/development.sqlite3
+log/cucumber.log
+log/development.log
