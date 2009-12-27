@@ -49,6 +49,10 @@
   <%=h @user.current_login_ip %>
 </p>
 <p>
+  <b><%= at(User, :region) %>:</b>
+  <span id="user_region_name"><%=h @user.region.try(:name) %></span>
+</p>
+<p>
   <b><%= at(Preference, :language) %>:</b>
   <%=h @user.preference.language %>
 </p>

@@ -62,7 +62,8 @@ MundoPepino.configure do |config|
     #    MundoPepino.world.send "#{model.name.underscore}_path", model.find_by_name(captures[1])
     #  end
     #}
-    /^la p[áa]gina de editar mi perfil$/ => "/account/edit"
+    /^la p[áa]gina de editar mi perfil$/ => "/account/edit",
+    /^la p[áa]gina de mi perfil$/ => "/account/"
   }
 
 end
