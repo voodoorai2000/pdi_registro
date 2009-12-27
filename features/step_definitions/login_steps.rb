@@ -7,3 +7,7 @@ Dado /^que estoy logado como "(.*)"$/ do |nombre|
     fill_in "Password", :with => 'secret'
     click_button "Login"
 end
+
+Dado /^que estoy logado$/ do
+    Dado "que estoy logado como \"cualquier_nombre\""
+end
