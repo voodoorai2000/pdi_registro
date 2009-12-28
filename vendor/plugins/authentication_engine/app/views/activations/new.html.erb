@@ -36,6 +36,12 @@
       <%= f.text_field :openid_identifier %>
     </p>
   </fieldset>
+  <fieldset>
+    <p>
+      <%= f.label :region_id, t('users.region') %><br />
+      <%= f.select :region_id, Region.all.sort_by(&:name).collect {|region| [region.name, region.id]} %>
+    </p>
+  </fieldset>
   <p>
     <%= f.submit t('activations.actions.activate') %>
   </p>

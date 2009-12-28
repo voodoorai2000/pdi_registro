@@ -38,6 +38,7 @@ class ActivationsController < ApplicationController
         else
           @user.deliver_activation_confirmation!
         end
+        @user.update_attributes!(:region_id => params[:user][:region_id])
         if ACTIVATION[:prompt]
           flash[:success] = t('activations.flashs.success.prompt')
           redirect_to login_url

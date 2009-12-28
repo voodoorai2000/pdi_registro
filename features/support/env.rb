@@ -53,3 +53,11 @@ Cucumber::Rails::World.use_transactional_fixtures = true
 require 'database_cleaner'
 DatabaseCleaner.strategy = :truncation
 
+require 'factory_girl'
+
+path_to_authentication_engine_steps = "'/../../vendor/plugins/authentication_engine/features/step_definitions/"
+step_files = %w(administration_steps authentication_steps custom_email_steps email_steps invitation_steps password_reset_steps registration_steps requested_invitation_steps)
+step_files.each do |file|
+  require File.expand_path(File.dirname(__FILE__) + path_to_authentication_engine_steps + file)
+end
+require 'email_spec/cucumber'

@@ -71,6 +71,7 @@ MundoPepino.configure do |config|
 
 end
 
+
 Before do
   MundoPepino.clean_models
 end
