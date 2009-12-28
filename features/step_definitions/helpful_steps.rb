@@ -1,3 +1,9 @@
+Dado /^las regiones "([^\"]*)"$/ do |nombres|
+  nombres.split(" y ").each do |nombre|
+    Factory(:region, :name => nombre)
+  end
+end
+
 Entonces /^debug$/ do
   debugger
 end
@@ -22,4 +28,10 @@ Entonces /^veré que mi region es "([^\"]*)"$/ do |nombre|
   response.should have_tag("#user_region_name", nombre)
 end
 
-
+Then /^vere las ([^\"]+) "([^\"]*)" en ese orden$/ do |modelo, nombres|
+  model_name = modelo.to_model.name.underscore
+  split_and_strip(nombres).each_with_index do |nombre, index|
+    resource = modelo.to_model.find_by_name(nombre)
+    response.body.should have_tag("##{model_name}_#{resource.id}:nth-child(#{index+1})")
+  end
+end

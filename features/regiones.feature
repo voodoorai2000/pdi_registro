@@ -9,7 +9,6 @@ Característica: Editar Region
   Antecedentes: 
     Dado una region "Comunidad Valenciana"
 
-  @current
   Escenario: Seleccionar Region     
           Y que estoy logado
   

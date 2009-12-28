@@ -17,4 +17,10 @@ class User < ActiveRecord::Base
   
   belongs_to :region
   attr_accessible :region_id
+  
+  named_scope :with_region, :conditions => :region_id
+  
+  def self.ranking
+    with_region.group_by(&:region).sort_by{|region, users| users.size}.reverse
+  end
 end
