@@ -9,7 +9,7 @@ module AuthenticationEngine
         #@languages_available ||= I18n.load_path.collect do |locale_file|
         #  File.basename(File.basename(locale_file, '.rb'), '.yml')
         #end.uniq.sort
-        @languages_available ||= [["English", "en"], ["繁體中文", "zh-TW"], ["简体中文", "zh-CN"]]
+        @languages_available ||= [["Español", "es"], ["Ingles", "en"]]
       end
 
       def set_language(prefered = nil)

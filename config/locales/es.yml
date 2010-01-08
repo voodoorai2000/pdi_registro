@@ -1,0 +1,270 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+es:
+  home:
+    titles:
+      index: "Bienvenido"
+  
+  authlogic:
+    error_messages:
+      login_blank: "no puede estar vacio."
+      login_not_found: "no es válido."
+      login_invalid: "por favor utilizar solo letras, números, espacios y .-_@."
+      consecutive_failed_logins_limit_exceeded: "Limit the intentos consecutivos excedido, cuenta deshabilitada."
+      email_invalid: "debería ser una dirección de email."
+      password_blank: "no puede estar vacio."
+      password_invalid: "no es válido."
+      not_active: "Su cuenta no está activada."
+      not_confirmed: "Su cuenta no esta confirmada."
+      not_approved: "Su cuenta no esta aprobada"
+      no_authentication_details: "No rellenó los datos de autentificación."
+    models:
+      user_session: "Session de Usuario"
+    attributes:
+      user_session:
+        login: "Usuario"
+        email: "Email"
+        password: "Contraseña"
+        remember_me: "Recordarme"
+  
+  activerecord:
+    errors:
+      models:
+        invitation:
+          attributes:
+            recipient_email:
+              registered: "ya está registrada"
+              invalid: "debería ser una dirección de email."
+            applicant_email:
+              registered: "ya está registrada"
+              invalid: "debería ser una dirección de email."
+          reach_invitation_limit: "Ha llegado al limite de invitaciones para enviar."
+  
+    models:
+      role: "Rol"
+      user: "Usuario"
+      invitation: "Invitación"
+      preference: "Preferencia"
+  
+    attributes:
+      role:
+        name: "Nombre"
+        title: "Título"
+        description: "Descripción"
+      user:
+        name: "Nombre"
+        login: "Usuario"
+        email: "Email"
+        state: "Estado"
+        password: "Contraseña"
+        password_confirmation: "Confirmación contraseña"
+        openid_identifier: "Open ID"
+        login_count: "Número de Identificaciones"
+        failed_login_count: "Número de identificaciones incorrectos"
+        last_request_at: "Última petición"
+        last_login_at: "Última identificación"
+        current_login_at: "Identificación actual"
+        last_login_ip: "IP de la última identificación"
+        current_login_ip: "IP de la identificación actual"
+        roles: "Roles"
+        last_name: "Apellidos"
+        age: "Edad"
+        gender: "Sexo"
+        region: "Región"
+        
+      invitation:
+        sender_id: "De"
+        recipient_name: "El nombre de la persona"
+        recipient_email: "El email de la persona"
+        applicant_name: "Su nombre completo"
+        applicant_email: "Su email"
+        sent_at: "Enviado"
+      preference:
+        language: "Idioma"
+        time_zone: "Zona horaria"
+  
+  
+  common:
+    flashs:
+      success:
+        create: "{{model}} creado correctamente."
+        update: "{{model}} actualizado correctamente."
+      notices:
+  
+      errors:
+        destroy: "{{model}} ha sido borrado."
+    titles:
+      untitled: "Sin título"
+    actions:
+      index: "Index"
+      show: "Mostrar"
+      new: "Nuevo"
+      edit: "Editar"
+      create: "Crear"
+      update: "Actualizar"
+      destroy: "Destruir"
+      delete: "Borrar"
+      remove: "Quitar"
+      search: "Buscar"
+      submit: "Enviar"
+      cancel: "Cancelar"
+      confirm: "Confirmar"
+      back: "Atras"
+      previous: "Anterior"
+      next: "Siguiente"
+      up: "Arriba"
+      down: "Abajo"
+      top: "Principio"
+      bottom: "Final"
+    confirms:
+      destroy: "¿Está seguro?"
+    please_wait: "Espere por favor..."
+    created_at: "Creado a las"
+    updated_at: "Actualizada a las"
+    previous_page: "&laquo; Página anterior"
+    next_page: "Siguiente página &raquo;"
+    from: "De"
+    to: "Para"
+  
+  activations:
+    flashs:
+      success:
+        create: "Su cuenta ha sido activada."
+        prompt: "Su cuenta ha sido activada. Por favor proporcione su credenciales (usuario/contraseña, u Open ID) al sistema."
+    titles:
+      new: "Active su cuenta"
+    actions:
+      activate: "Activar"
+    password: "Escriba su contraseña"
+    openid_identifier: "O use OpenID en vez de su usuario / contraseña"
+  
+  home:
+    titles:
+      index: "Bienvenido"
+  
+  invitations:
+    flashs:
+      success:
+        create: "Gracias, invitacion enviada."
+        request: "Gracias, le notificaremos cuando estemos preparados."
+    titles:
+      new: "Nueva Invitación"
+      apply: "Solicitar Invitación"
+    actions:
+      new: "¡Invita!"
+      apply: "¡Solicitar!"
+  
+  password_resets:
+    flashs:
+      success:
+        create: "Las Instrucciones para resetear su contraseña se han enviado a su email. Por favor compruebe su cuenta de correo."
+        update: "Contraseña actualizada correctamente"
+      errors:
+        create: "No se ha encontrado ningún usuario con esa dirección de email"
+        update: "Lo sentimos, pero no hemos encontrado su cuenta. Si está teniendo problemas, intente copiar y pegar la URL de su email en el navegador o vuelva a empezar el proceso de resetear la contraseña."
+    titles:
+      edit: "Cambiar Mi Contraseña"
+      new: "Olvide Mi Contraseña"
+    actions:
+      reset: "Resetear mi contraseña"
+      update: "Actualiza mi contraseña y logeame"
+    reset_note: "Rellene el siguiente formulario y las instrucciones para resetear su contraseña serán enviadas a su dirección de email:"
+    your_email: "Su Direccion De Email:"
+    new_password: "Nueva contraseña"
+  
+  user_mailer:
+    titles:
+      activation_instructions: "Instrucciones De Activación"
+      activation_confirmation: "Activacion Completa"
+      password_reset_instructions: "Instrucciones Para Resetear Su Contraseña"
+      user_invitation: "Invitación De Usuario"
+      user_invitation_request: "Petición De Invitación"
+  
+  user_sessions:
+    flashs:
+      success:
+        create: "¡Identificación correcta!"
+        destroy: "¡Sesión cerrada!"
+    titles:
+      new: "Identifíquese"
+    actions:
+      login: "Identifíquese"
+    login_toggle: "Identificarse mediante {{token}}"
+    login_token: "Contraseña / OpenID"
+    openid_identifier: "Open ID"
+    forget_password: "Olvidé mi contraseña"
+    remember_me: "Recordarme"
+  
+  users:
+    flashs:
+      success:
+        create: "¡Su cuenta ha sido creada, por favor revise su email para seguir las instrucciones de activación!"
+        update: "¡Cuenta actualizada!"
+      notices:
+        login_required: "Debe estar identificado para acceder a esta página"
+        logout_required: "Debe cerrar la sesión para acceder a esta página"
+      errors:
+        not_allowed: "Lo sentimos, no tiene acceso para ver esta página."
+        admin_required: "Lo sentimos, solo los administradores pueden hacer eso."
+    titles:
+      edit: "Editar Cuenta"
+      new: "Registrar Una Cuenta"
+      show: "Cuenta de Usuario"
+    actions:
+      signup: "Registrarse"
+      login: "Identificarse"
+      logout: "Cerrar Sesión"
+      update: "Actualizar Cuenta"
+      invite: "Enviar Invitación"
+      request_invitation: "Solicitar Invitación"
+    confirms:
+      logout: "¿Seguro que quiere cerrar la sesión?"
+    basic_information: "Información Básica"
+    authentication_toggle: "Autentificado por {{token}}"
+    authentication_token: "Contraseña / OpenID"
+    account: "Mi Cuenta"
+    password: "Cambiar contraseña"
+    online:
+      one: "{{count}} usuario actualmente identificado"
+      other: "{{count}} usuarios actualmente identificados"
+    account_information: "Actualizar Información"
+    register_openid: "Registrar OpenID"
+    change_password: "Cambiar Contraseña"
+    new_password: "Nueva contraseña"
+    new_password_confirmation: "Confirmación nueva contraseña"
+    signup_by_openid: "Registrese con OpenID"
+    signup_by_password: "Registrese con un usuario y contraseña"
+    invitations_limit: "({{count}} restantes)"
+    admin_pannel: "Panel De Administración"
+    preference: "Preferencias"
+    datos_importantes: "Informacion Importante"
+    region: "Región"
+    gender: "Sexo"
+    age: "Edad"
+    male: "Masculino"
+    female: "Femenino"
+    last_name: "Apellidos"
+  admin:
+    users:
+      flashs:
+        success:
+          create: "¡Cuenta registrada! Instrucciones para activar la cuenta han sido enviadas."
+      titles:
+
+        new: "Registrar una cuenta"
+        show: "Cuenta de usuario"
+      actions:
+        new: "Nueva Cuenta"
+        create: "Crear Cuenta"
+    invitations:
+      flashs:
+        success:
+          deliver: "Invitacion enviada."
+      titles:
+        index: "Lista de Invitaciones"
+      actions:
+        send: "Enviar email a los invitados"
+      self: "usted"
+    title_prefix: "Admin"
+
