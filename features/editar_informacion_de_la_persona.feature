@@ -1,7 +1,7 @@
 #language: es
 Característica: Editar Perfil
 
-	Para poder hacer mejores campañas de marketing
+	Para poder hacer mejores campañas
 	Como el departamente de marketing
 	Quiero que los usuarios rellenen varios campos
   
