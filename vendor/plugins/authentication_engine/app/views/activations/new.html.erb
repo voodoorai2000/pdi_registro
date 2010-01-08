@@ -38,10 +38,23 @@
   </fieldset>
   <fieldset>
     <p>
+      <%= f.label :last_name, t('users.last_name') %><br />
+      <%= f.text_field :last_name %>
+    </p> 
+    <p>
+      <%= f.label :age, t('users.age') %><br />
+      <%= f.text_field :age %>
+    </p>
+    <p>
+      <%= f.label :gender, t('users.gender') %><br />
+      <%= f.select :gender, [ t('users.male'), t('users.female') ] %>
+    </p>
+    <p>
       <%= f.label :region_id, t('users.region') %><br />
       <%= f.select :region_id, Region.all.sort_by(&:name).collect {|region| [region.name, region.id]} %>
     </p>
   </fieldset>
+
   <p>
     <%= f.submit t('activations.actions.activate') %>
   </p>

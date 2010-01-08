@@ -206,7 +206,11 @@ en:
     preference: "Preference"
     datos_importantes: "Important Info"
     region: "Region"
-  
+    gender: "Sexo"
+    age: "Age"
+    male: "Male"
+    female: "Female"
+    last_name: "Last Name"
   admin:
     users:
       flashs:

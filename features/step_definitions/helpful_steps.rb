@@ -24,8 +24,8 @@ Entonces /^ver[eé] "([^\"]*)"$/ do |texto|
   response.should contain(texto)
 end
 
-Entonces /^veré que mi region es "([^\"]*)"$/ do |nombre|
-  response.should have_tag("#user_region_name", nombre)
+Entonces /^veré que mis? (.+) (?:es|son) "([^\"]*)"$/ do |campo, valor|
+  response.should have_tag("#user_#{campo.to_field}", valor)
 end
 
 Then /^vere las ([^\"]+) "([^\"]*)" en ese orden$/ do |modelo, nombres|

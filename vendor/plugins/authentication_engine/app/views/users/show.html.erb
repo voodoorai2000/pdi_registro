@@ -49,8 +49,20 @@
   <%=h @user.current_login_ip %>
 </p>
 <p>
+  <b><%= at(User, :last_name) %>:</b>
+  <span id="user_last_name"><%=h @user.last_name %></span>
+</p>
+<p>
+  <b><%= at(User, :age) %>:</b>
+  <span id="user_age"><%=h @user.age %></span>
+</p>
+<p>
+  <b><%= at(User, :gender) %>:</b>
+  <span id="user_gender"><%=h @user.gender %></span>
+</p>
+<p>
   <b><%= at(User, :region) %>:</b>
-  <span id="user_region_name"><%=h @user.region.try(:name) %></span>
+  <span id="user_region"><%=h @user.region.try(:name) %></span>
 </p>
 <p>
   <b><%= at(Preference, :language) %>:</b>

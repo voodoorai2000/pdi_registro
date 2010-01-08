@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   # attr_accessible :role_ids
   
   belongs_to :region
-  attr_accessible :region_id
+  attr_accessible :region_id, :last_name, :age, :gender 
   
   named_scope :with_region, :conditions => :region_id
   

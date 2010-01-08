@@ -8,7 +8,6 @@ Característica: Ranking
   Antecedentes:
       Dado las regiones "Islas Baleares y Comunidad Valenciana"
 
-  @current
   Escenario: Ranking
      Dado que la region "Islas Baleares" tiene 10 usuarios
         Y que la region "Comunidad Valenciana" tiene 5 usuarios

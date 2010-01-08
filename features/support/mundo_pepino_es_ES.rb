@@ -40,6 +40,10 @@ MundoPepino.configure do |config|
 
   # MAPEO DE CAMPO AUTO-GENERADO (name)
   /^nombres?$/i => :name, # (TODO: validar RegExp para forma plural y coma final)
+  /^apellidos?$/i => :last_name, # (TODO: validar RegExp para forma plural y coma final)
+  /^edad$/i => :age, # (TODO: validar RegExp para forma plural y coma final)
+  /^sexo$/i => :gender, # (TODO: validar RegExp para forma plural y coma final)
+  /^region$/i => :region, # (TODO: validar RegExp para forma plural y coma final)
 
     # TRADUCCIÓN DE CAMPOS AQUÍ:
     # /^[Ááa]reas?$/i    => 'area',
