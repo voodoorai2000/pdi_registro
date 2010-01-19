@@ -1,0 +1,15 @@
+<h1>Nueva area</h1>
+
+<% form_for(@area, :url => admin_areas_path) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.submit 'Crear' %>
+  </p>
+<% end %>
+
+<%= link_to 'Atras', admin_areas_path %>

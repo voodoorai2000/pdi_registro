@@ -173,10 +173,19 @@ Cuando /^borro (?:el|la|el\/la) (.+) en (?:la )?(\w+|\d+)(?:ª|º)? posición$/ 
 end
 
 #############################################################################
-Entonces /^(#{_veo_o_no_}) el texto (.+?)(?: #{_dentro_de_} ['"]?(.+?)["']?)?$/i do |should, text, selector|
-  then_i_see_or_not_the_text :should => should,
-    :text => text,
-    :selector => selector
+#_veo_o_no_ = "veré"
+#Entonces /^(#{_veo_o_no_}) el texto (.+?)(?: #{_dentro_de_} ['"]?(.+?)["']?)?$/i do |should, text, selector|
+#  then_i_see_or_not_the_text :should => should,
+#    :text => text,
+#    :selector => selector
+#end
+
+Entonces /^veré el texto ['"]?(.+?)["']$/i do |texto|
+  response.should contain(texto)
+end
+
+Entonces /^no veré el texto ['"]?(.+?)["']$/i do |texto|
+  response.should_not contain(texto)
 end
 
 Entonces /^(#{_leo_o_no_}) el texto (.+)?$/i do |should, text|
@@ -327,6 +336,10 @@ end
 
 
 #MORE STEPS
+
+Cuando /^hago click en el link ['"](.+)["']$/ do |name|
+  click_link name
+end
 
 articulo_definido = '(?:los|las|el|la)?'
 #estará asociado a los siguientes idiomas:

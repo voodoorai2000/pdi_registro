@@ -1,0 +1,16 @@
+<h1>Editing area</h1>
+
+<% form_for(@area, :url => admin_area_path) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.submit 'Guardar' %>
+  </p>
+<% end %>
+
+<%= link_to 'Mostar', admin_area_path(@area) %> |
+<%= link_to 'Atras', admin_areas_path %>

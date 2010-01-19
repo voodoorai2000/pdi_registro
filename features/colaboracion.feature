@@ -1,5 +1,4 @@
 #language: es
-@current
 Característica: Colaboracion
 
 	Para poder pedir ayuda en las distintas areas del partido

@@ -1,3 +1,11 @@
+Given /^"(.*)" una? usuari[oa] administradora?$/ do |name|
+  #Given "I am a confirmed user \"#{name}\" with password \"secret\""
+  u = User.new
+  u.signup!({:name => name, :email => "#{name}@example.com"}, false) {}
+  u.activate!({:login => name, :password => "secret", :password_confirmation => "secret"}, false) {}
+  u.roles << Role.find_or_create_by_name('admin')
+end
+
 Dado /^que estoy logado como "(.*)"$/ do |nombre|
     user = Factory.build(:user, :name => nombre)
     user.signup!({:name => user.name, :email => user.email}, false) {}
