@@ -1,0 +1,13 @@
+<h2>¿Dónde quieres colaborar?</h2>
+
+<ul id="areas">
+  <% for area in Area.all %>
+    <li>
+      <label for="<%= area.name %>">
+  	    <%= check_box_tag "#{object.class.name.downcase}[area_ids][]", area.id, false, 
+  												{:id => area.name, :checked => object.has_area?(area)}  -%> 
+  	    <%= area.name -%>
+  	  </label>
+    </li>
+  <% end %>
+</ul>

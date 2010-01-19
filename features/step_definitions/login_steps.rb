@@ -3,9 +3,9 @@ Dado /^que estoy logado como "(.*)"$/ do |nombre|
     user.signup!({:name => user.name, :email => user.email}, false) {}
     user.activate!({:login => user.name, :password => 'secret', :password_confirmation => 'secret'}, false) {}
     visit login_path
-    fill_in "Login", :with => user.login
-    fill_in "Password", :with => 'secret'
-    click_button "Login"
+    fill_in "Usuario", :with => user.login
+    fill_in "Contraseña", :with => 'secret'
+    click_button "Identifíquese"
 end
 
 Dado /^que estoy logado$/ do

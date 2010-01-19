@@ -5,6 +5,7 @@ ActionController::Routing::Routes.draw do |map|
   map.root :controller => 'home', :action => 'index'
   map.namespace :admin do |admin|
     admin.root :controller => "home", :action => "dashboard"
+    admin.resources :areas
   end
 
   map.ranking "/ranking", :controller => "ranking"

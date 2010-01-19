@@ -9,3 +9,7 @@ end
 Factory.define :region do |f|
   f.sequence(:name) { |n| "name#{n}" }
 end
+
+Factory.define :area do |f|
+  f.sequence(:name) { |n| "name#{n}" }
+end

@@ -16,11 +16,20 @@ class User < ActiveRecord::Base
   # attr_accessible :role_ids
   
   belongs_to :region
-  attr_accessible :region_id, :last_name, :age, :gender 
+  has_many :colaborations
+  has_many :areas, :through => :colaborations
+  
+  accepts_nested_attributes_for :areas
+  
+  attr_accessible :region_id, :last_name, :age, :gender, :area_ids
   
   named_scope :with_region, :conditions => :region_id
   
   def self.ranking
     with_region.group_by(&:region).sort_by{|region, users| users.size}.reverse
+  end
+  
+  def has_area?(area)
+    areas.include?(area)
   end
 end

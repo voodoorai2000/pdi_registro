@@ -324,3 +324,17 @@ end
 Entonces /^#{_debo_estar_en_} (.+)$/i do |pagina|
   URI.parse(current_url).path.should == pagina.to_unquoted.to_url
 end
+
+
+#MORE STEPS
+
+articulo_definido = '(?:los|las|el|la)?'
+#estará asociado a los siguientes idiomas:
+Then /^estaré asociado a #{articulo_definido} siguientes (.+):$/ do |child, tabla|
+  tabla.hashes.each do |hash|
+    hash.each do |attribute, value|
+      pile_up resource = User.last
+      last_mentioned_should_have_child(child, value)
+    end
+  end
+end

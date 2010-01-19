@@ -14,15 +14,15 @@ MundoPepino.configure do |config|
 
   config.model_mappings = {
   # MAPEO DE MODELO AUTO-GENERADO (Orchard)
-  /^huertos?$/i   => Orchard, # (TODO: validar RegExp para forma plural y coma final)
-  /^region(es)?$/ => Region,
-  /^usuarios?$/   => User
+  /^huertos?$/i              => Orchard, # (TODO: validar RegExp para forma plural y coma final)
+  /^region(es)?$/            => Region,
+  /^usuarios?$/              => User,
+  /^areas de colaboracion?$/ => Area,
 
-
-    # TRADUCCIÓN DE MODELOS AQUÍ, por ejemplo:
-    # /^huert[oa]s?/i            => Orchard,
-    # /^bancal(es)?$/i           => Terrace,
-    # /^cultivos?$/i             => Crop...
+  # TRADUCCIÓN DE MODELOS AQUÍ, por ejemplo:
+  # /^huert[oa]s?/i            => Orchard,
+  # /^bancal(es)?$/i           => Terrace,
+  # /^cultivos?$/i             => Crop...
   }
 
   config.field_mappings = {

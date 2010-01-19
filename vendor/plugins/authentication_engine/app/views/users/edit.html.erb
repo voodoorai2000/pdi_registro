@@ -59,6 +59,10 @@
   </p>
 </fieldset>
 
+<fieldset>
+  <%= render :partial => "areas", 
+  				   :locals => { :f => f, :object => @user } %>
+</fieldset>
 
 <fieldset>
   <legend><%= t('users.preference') %></legend>
@@ -74,6 +78,8 @@
   </p>
   <% end %>
 </fieldset>
+
+
 
 <p>
   <%= f.submit t('users.actions.update') %>
