@@ -32,4 +32,5 @@ class User < ActiveRecord::Base
   def has_area?(area)
     areas.include?(area)
   end
+ 
 end

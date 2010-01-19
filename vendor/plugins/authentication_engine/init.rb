@@ -31,3 +31,7 @@ require File.dirname(__FILE__) + "/lib/authentication_engine/authorization/base"
 config.to_prepare do
   ApplicationController.helper LayoutHelper
 end
+
+load_paths.each do |path|
+ActiveSupport::Dependencies.load_once_paths.delete(path)
+end if config.environment == "development"
