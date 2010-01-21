@@ -1,11 +1,11 @@
 <%= error_messages_for :invitation %>
 <% form_for [:admin, @invitation] do |f| %>
 <p>
-  <%= f.label :recipient_name, "Recipient's full name:" %><br />
+  <%= f.label :recipient_name, "El nombre de la persona:" %><br />
   <%= f.text_field :recipient_name %>
 </p>
 <p>
-  <%= f.label :recipient_email, "Recipient's email address:" %><br />
+  <%= f.label :recipient_email, "El email de la persona:" %><br />
   <%= f.text_field :recipient_email %>
 </p>
   <p><%= f.submit "Invite !" %></p>

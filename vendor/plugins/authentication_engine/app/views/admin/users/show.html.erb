@@ -1,16 +1,16 @@
-<% title t('admin.users.titles.show') %>
+<% title "Cuenta de usuario" %>
 <%# render :partial => 'admin/shared/restful_links', :object => @user %>
 
 <p>
-  <b><%= at(User, :name) %>:</b>
+  <b>Nombre:</b>
   <%=h @user.name %>
 </p>
 <p>
-  <b><%= at(User, :email) %>:</b>
+  <b>Email:</b>
   <%=h @user.email %>
 </p>
 <p>
-  <b><%= at(User, :login) %>:</b>
+  <b>Usuario:</b>
   <%=h @user.login %>
 </p>
 <p>
@@ -18,30 +18,6 @@
   <%=h @user.openid_identifier %>
 </p>
 <p>
-  <b><%= at(User, :login_count) %>:</b>
+  <b>Logins:</b>
   <%=h @user.login_count %>
-</p>
-<p>
-  <b><%= at(User, :failed_login_count) %>:</b>
-  <%=h @user.failed_login_count %>
-</p>
-<p>
-  <b><%= at(User, :last_request_at) %>:</b>
-  <%=h @user.last_request_at %>
-</p>
-<p>
-  <b><%= at(User, :last_login_at) %>:</b>
-  <%=h @user.last_login_at %>
-</p>
-<p>
-  <b><%= at(User, :last_login_ip) %>:</b>
-  <%=h @user.last_login_ip %>
-</p>
-<p>
-  <b><%= at(User, :current_login_at) %>:</b>
-  <%=h @user.current_login_at %>
-</p>
-<p>
-  <b><%= at(User, :current_login_ip) %>:</b>
-  <%=h @user.current_login_ip %>
 </p>

@@ -438,7 +438,7 @@ module AuthenticationEngine
         attr_accessible :name, :email, :login, :password, :password_confirmation
 
         merge_validates_length_of_login_field_options :on => :update
-        merge_validates_format_of_login_field_options :on => :update, :message => I18n.t('authlogic.error_messages.login_invalid')
+        merge_validates_format_of_login_field_options :on => :update, :message => "por favor utilizar solo letras, números, espacios y .-_@."
         merge_validates_uniqueness_of_login_field_options :on => :update
 
         merge_validates_length_of_password_field_options :on => :update

@@ -62,8 +62,8 @@ module AuthenticationEngine
       # it should not put in config/initializers/will_paginate.rb
       def set_will_paginate_string
         return unless defined? WillPaginate
-        WillPaginate::ViewHelpers.pagination_options[:previous_label] = t('common.previous_page')
-        WillPaginate::ViewHelpers.pagination_options[:next_label] = t('common.next_page')
+        WillPaginate::ViewHelpers.pagination_options[:previous_label] = "&laquo; Página anterior"
+        WillPaginate::ViewHelpers.pagination_options[:next_label] = "Siguiente página &raquo;"
       end
     end
 

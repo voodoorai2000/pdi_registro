@@ -1,11 +1,11 @@
-<% title t('admin.users.titles.index') %>
+<% title "Usuarios" %>
 <%# render :partial => 'admin/shared/restful_links', :object => @user %>
 
 <table class="users">
   <tr>
-    <th><%= at(User, :name) %></th>
-    <th><%= at(User, :email) %></th>
-    <th><%= at(User, :last_login_at) %></th>
+    <th>Nombre</th>
+    <th>Email</th>
+    <th>Ultimo Login</th>
   </tr>
 <%- for user in @users -%>
   <tr>
@@ -18,6 +18,6 @@
 
 <%- if REGISTRATION[:limited] -%>
 <p>
-  <%= link_to t('admin.users.actions.new'), new_admin_user_path %>
+  <%= link_to "Nueva Cuenta", new_admin_user_path %>
 </p>
 <%- end -%>

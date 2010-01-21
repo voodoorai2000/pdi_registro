@@ -30,7 +30,7 @@ class Admin::UsersController < Admin::AdminController
           :sent_at => Time.now
         )
         @user.deliver_activation_instructions!
-        flash[:success] = t('admin.users.flashs.success.create')
+        flash[:success] = "¡Cuenta registrada! Instrucciones para activar la cuenta han sido enviadas."
         redirect_to admin_root_url
       else
         render :action => :new

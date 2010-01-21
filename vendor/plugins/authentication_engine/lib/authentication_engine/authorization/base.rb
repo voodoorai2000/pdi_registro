@@ -23,7 +23,7 @@ module AuthenticationEngine
 
         def permission_denied
           respond_to do |format|
-            flash[:error] = t('users.flashs.errors.not_allowed')
+            flash[:error] = "Lo sentimos, no tiene acceso para ver esta página."
             format.html { redirect_to(:back) rescue redirect_to(root_path) }
             format.xml  { head :unauthorized }
             format.js   { head :unauthorized }

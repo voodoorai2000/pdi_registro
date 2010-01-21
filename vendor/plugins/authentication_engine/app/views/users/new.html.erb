@@ -1,14 +1,14 @@
-<% title t('users.titles.new') %>
+<% title "Registrar Una Cuenta" %>
 
 <% form_for @user, :url => account_path do |f| %>
   <%= f.error_messages %>
   <fieldset>
     <p>
-      <%= f.label :name %><br />
+      <%= f.label :name, "Nombre" %><br />
       <%= f.text_field :name %>
     </p>
     <p>
-      <%= f.label :email %><br />
+      <%= f.label :email, "Email" %><br />
       <%= f.text_field :email %>
     </p>
   </fieldset>
@@ -19,6 +19,6 @@
     </p>
   </fieldset>
   <p>
-    <%= f.submit t('users.actions.signup') %>
+    <%= f.submit "Registrarse" %>
   </p>
 <% end %>

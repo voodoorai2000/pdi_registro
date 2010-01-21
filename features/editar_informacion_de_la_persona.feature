@@ -8,19 +8,19 @@ Característica: Editar Perfil
   Escenario: Editar mi informacion al activar la cuenta
        Dado que me he registrado con éxito
           Y que he recibido el email de activacion
-          Y que sigo el link "activate your account" en el email
+          Y que sigo el link "activa tu cuenta" en el email
    Entonces vere el formulario de activacion
    
-    Cuando relleno "Last Name" con 'Perez Duarte'
-         Y relleno "Age" con '28'
-         Y selecciono 'Male' como Sexo
+    Cuando relleno "Apellidos" con 'Perez Duarte'
+         Y relleno "Edad" con '28'
+         Y selecciono 'Masculino' como Sexo
          Y relleno el resto de campos del formulario de activacion
-         Y hago click en "Activate"    
+         Y hago click en "Activar"    
          
     Cuando voy a la pagina de mi perfil
   Entonces veré que mis apellidos son "Perez Duarte"
          Y veré que mi edad es "28"
-         Y veré que mi sexo es "Male"
+         Y veré que mi sexo es "Masculino"
     
     
     
@@ -28,12 +28,13 @@ Característica: Editar Perfil
           Y que estoy logado
   
   	 Cuando visito la pagina de editar mi perfil
-  	      Y relleno "Last Name" con 'Perez Duarte'
-          Y relleno "Age" con '28'
-          Y selecciono 'Male' como Sexo
-  	      Y hago click en "Update Account Information"  	  
+  	      Y relleno "Apellidos" con 'Perez Duarte'
+          Y relleno "Edad" con '28'
+          Y selecciono 'Masculino' como Sexo
+  	      Y hago click en "Actualizar Cuenta"  	  
       
      Cuando voy a la pagina de mi perfil
    Entonces veré que mis apellidos son "Perez Duarte"
           Y veré que mi edad es "28"
-          Y veré que mi sexo es "Male"
+          Y veré que mi sexo es "Masculino"
+          

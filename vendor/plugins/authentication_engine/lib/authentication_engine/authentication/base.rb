@@ -30,7 +30,7 @@ module AuthenticationEngine
         def require_user
           return if current_user
           store_location
-          flash[:notice] = t('users.flashs.notices.login_required')
+          flash[:notice] = "Debe estar identificado para acceder a esta página"
           redirect_to login_url
           return false
         end
@@ -38,7 +38,7 @@ module AuthenticationEngine
         def require_no_user
           return unless current_user
           store_location
-          flash[:notice] = t('users.flashs.notices.logout_required')
+          flash[:notice] = "Debe cerrar la sesión para acceder a esta página"
           redirect_to account_url
           return false
         end

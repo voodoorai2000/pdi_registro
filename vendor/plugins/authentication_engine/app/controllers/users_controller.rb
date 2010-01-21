@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     @user.signup!(params[:user], SIGNUP[:prompt]) do |result|
       if result
         @user.deliver_activation_instructions!
-        flash[:success] = t('users.flashs.success.create')
+        flash[:success] = "¡Su cuenta ha sido creada, por favor revise su email para seguir las instrucciones de activación!"
         redirect_to root_url
       else
         render :action => :new
@@ -41,7 +41,7 @@ class UsersController < ApplicationController
     @user.save do |result|
       if result
         set_language(@user.preference.language) if language_changed
-        flash[:success] = t('users.flashs.success.update')
+        flash[:success] = "¡Cuenta actualizada!"
         redirect_to account_url
       else
         render :action => :edit

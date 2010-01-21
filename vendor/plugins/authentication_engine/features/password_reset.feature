@@ -6,31 +6,31 @@ Feature: Password Reset
   Scenario: Display a reset password form
     Given I am an anonymous user
     When I go to the login page
-    Then I should see "Forgot password"
-    When I follow "Forgot password"
+    Then I should see "Olvidé mi contraseña"
+    When I follow "Olvidé mi contraseña"
     Then I should see a reset password form
 
   Scenario: Send a reset instructions email if given a valid email
     Given I am a confirmed user with email "bob@example.com"
     When I go to the reset password page
-    And I fill in "Your Email Address" with "bob@example.com"
-    And I press "Reset my password"
+    And I fill in "Su Direccion De Email" with "bob@example.com"
+    And I press "Resetear mi contraseña"
     Then "bob@example.com" should receive an email
     When I open the email
-    And I should see "reset your password" in the email body
+    And I should see "resetear mi contraseña" in the email body
   
   Scenario: Do not send a reset instructions email if given an invalid email
     Given I am a confirmed user with email "bob@example.com"
     When I go to the reset password page
-    And I fill in "Your Email Address" with "unknown@example.com"
-    And I press "Reset my password"
+    And I fill in "Su Direccion De Email" with "unknown@example.com"
+    And I press "Resetear mi contraseña"
     Then "bob@example.com" should receive no emails
     And "unknown@example.com" should receive no emails
-    And I should see "No user was found with that email address"
+    And I should see "No se ha encontrado ningún usuario con esa dirección de email"
   
   Scenario: Display change password form with valid token
     Given I am a user who opened my reset password email
-    When I follow "reset your password" in the email
+    When I follow "resetear mi contraseña" in the email
     Then I should see a password modification form
   
   Scenario: Not display change password form with invalid token
@@ -40,23 +40,23 @@ Feature: Password Reset
   
   Scenario: Update password and log in user with valid input
     Given I am a user who opened my reset password email
-    When I follow "reset your password" in the email
+    When I follow "resetear mi contraseña" in the email
     Then I should see a password modification form
-    When I fill in "New password" with "new secret"
-    And I fill in "Password confirmation" with "new secret"
-    And I press "Update my password and log me in"
-    And I should see "Password successfully updated"
+    When I fill in "Nueva contraseña" with "new secret"
+    And I fill in "Confirmacíon nueva contraseña" with "new secret"
+    And I press "Actualiza mi contraseña y logeame"
+    And I should see "Contraseña actualizada correctamente"
     Then I should see my account page
-    When I follow "Logout"
+    When I follow "Cerrar Sesión"
     Then I should be logged out
   
   Scenario Outline: Don't update password and log in user with invalid input
     Given I am a user who opened my reset password email
-    When I follow "reset your password" in the email
+    When I follow "resetear mi contraseña" in the email
     Then I should see a password modification form
-    When I fill in "Password" with "<password>"
-    And I fill in "Password confirmation" with "<confirmation>"
-    And I press "Update my password and log me in"
+    When I fill in "Nueva contraseña" with "<password>"
+    And I fill in "Confirmacíon nueva contraseña" with "<confirmation>"
+    And I press "Actualiza mi contraseña y logeame"
     Then I should see a password modification form
     And I should not see my account page
     And I should have <count> errors
@@ -64,8 +64,8 @@ Feature: Password Reset
     And I should not see "Password successfully updated"
   
     Examples:
-      | password   | confirmation | count | error_message                                                |
-      |            |              | 2     | Password is too short (minimum is 4 characters)              |
-      |            | new secret   | 2     | Password is too short (minimum is 4 characters)              |
-      | new secret |              | 2     | Password confirmation is too short (minimum is 4 characters) |
-      | new secret | secret       | 2     | Password doesn't match confirmation                          |
+      | password   | confirmation | count | error_message                                                      |
+      |            |              | 2     | Contraseña es demasiado corta (4 caracteres mínimo).               |
+      |            | new secret   | 2     | Contraseña es demasiado corta (4 caracteres mínimo).               |
+      | new secret |              | 2     | Confirmación contraseña es demasiado corta (4 caracteres mínimo).  |
+      | new secret | secret       | 1     | Contraseña no coincide con la confirmación.                        |

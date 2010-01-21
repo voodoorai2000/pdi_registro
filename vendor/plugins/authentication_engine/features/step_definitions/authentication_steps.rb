@@ -22,9 +22,9 @@ end
 Given /^I am logged in as "([^\"]*)" with password "([^\"]*)"$/ do |login, password|
   unless login.blank?
     visit login_path
-    fill_in "Login", :with => login
-    fill_in "Password", :with => password
-    click_button "Login"
+    fill_in "Usuario", :with => login
+    fill_in "Contraseña", :with => password
+    click_button "Identifíquese"
     # save_and_open_page 
   end
 end
@@ -34,33 +34,33 @@ Given /^I am logged in as "([^\"]*)" with email "([^\"]*)"$/ do |name, email|
   u.signup!({:name => name, :email => email}, false) {}
   u.activate!({:login => name, :password => 'secret', :password_confirmation => 'secret'}, false) {}
   visit login_path
-  fill_in "Login", :with => name
-  fill_in "Password", :with => 'secret'
-  click_button "Login"
+  fill_in "Usuario", :with => name
+  fill_in "Contraseña", :with => 'secret'
+  click_button "Identifíquese"
   save_and_open_page 
 end
 
 Given /^I should see a login form$/ do
-  response.should contain("Login")
-  response.should contain("Password")
-  response.should contain("Remember me")
+  response.should contain("Usuario")
+  response.should contain("Contraseña")
+  response.should contain("Recordarme")
   response.should contain("Open ID")
 end
 
 When /^I open the homepage in a new window with cookies$/ do
   in_a_separate_session do |sess|
     visit root_path
-    response.should contain("Logout")
+    response.should contain("Cerrar Sesión")
   end
-  response.should contain("Logout")
+  response.should contain("Cerrar Sesión")
 end
 
 When /^I open the homepage in a new window without cookies$/ do
   in_a_new_session do |sess|
     visit root_path
-    response.should_not contain("Logout")
+    response.should_not contain("Cerrar Sesión")
   end
-  response.should contain("Logout")
+  response.should contain("Cerrar Sesión")
 end
 
 # http://wiki.github.com/aslakhellesoy/cucumber/multiline-step-arguments

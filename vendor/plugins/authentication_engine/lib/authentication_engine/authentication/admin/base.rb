@@ -13,7 +13,7 @@ module AuthenticationEngine
           def require_admin
             return if admin?
             store_location
-            flash[:error] = t('users.flashs.errors.admin_required')
+            flash[:error] = "Lo sentimos, solo los administradores pueden hacer eso."
             redirect_to root_url
             return false
           end

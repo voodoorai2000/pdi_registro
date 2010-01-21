@@ -44,7 +44,7 @@ class Admin::InvitationsController < Admin::AdminController
   def deliver
     if @invitation.approve_applicant
       @invitation.deliver_acception(accept_url(@invitation.token))
-      flash[:success] = t('admin.invitations.flashs.success.deliver')
+      flash[:success] = "Invitacion enviada."
       redirect_to admin_invitations_url
     else
       redirect_to admin_invitations_url

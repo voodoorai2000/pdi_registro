@@ -1,14 +1,14 @@
-<% title t('invitations.titles.new') %>
+<% title "Nueva Invitación" %>
 
 <%= error_messages_for :invitation %>
 
 <% form_for @invitation do |f| %>
   <p>
-    <%= f.label :recipient_name %><br />
+    <%= f.label :recipient_name, "El nombre de la persona" %><br />
     <%= f.text_field :recipient_name %>
   </p>
   <p>
-    <%= f.label :recipient_email %><br />
+    <%= f.label :recipient_email, "El email de la persona" %><br />
     <%= f.text_field :recipient_email %>
   </p>
 <!-->
@@ -18,6 +18,6 @@
   <p>
 <-->
   <p>
-    <%= f.submit t('invitations.actions.new') %>
+    <%= f.submit "¡Invita!" %>
   </p>
 <% end %>

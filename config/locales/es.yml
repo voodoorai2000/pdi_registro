@@ -13,8 +13,8 @@ es:
       login_invalid: "por favor utilizar solo letras, números, espacios y .-_@."
       consecutive_failed_logins_limit_exceeded: "Limit the intentos consecutivos excedido, cuenta deshabilitada."
       email_invalid: "debería ser una dirección de email."
-      password_blank: "no puede estar vacio."
-      password_invalid: "no es válido."
+      password_blank: "no puede estar vacia."
+      password_invalid: "no es válida."
       not_active: "Su cuenta no está activada."
       not_confirmed: "Su cuenta no esta confirmada."
       not_approved: "Su cuenta no esta aprobada"
@@ -30,6 +30,15 @@ es:
   
   activerecord:
     errors:
+      template:
+        header:
+          one: "Se encontr\xC3\xB3 1 error"
+          other: "Se encontraron {{count}} errores"
+        body: ""
+      messages: 
+        too_short: "es demasiado corto ({{count}} caracteres mínimo)."
+        blank: "no puede estar vacio."
+        confirmation: "no coincide con la confirmación."
       models:
         invitation:
           attributes:
@@ -38,9 +47,14 @@ es:
               invalid: "debería ser una dirección de email."
             applicant_email:
               registered: "ya está registrada"
-              invalid: "debería ser una dirección de email."
+              invalid: "debería ser una dirección de email."            
           reach_invitation_limit: "Ha llegado al limite de invitaciones para enviar."
-  
+        user:
+          attributes:
+            password:
+              too_short: "es demasiado corta ({{count}} caracteres mínimo)."
+            password_confirmation:
+              too_short: "es demasiado corta ({{count}} caracteres mínimo)."
     models:
       role: "Rol"
       user: "Usuario"

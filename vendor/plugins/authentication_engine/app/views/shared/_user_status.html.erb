@@ -10,26 +10,26 @@
 <%- if current_user -%>
   <p>
     <%- if current_user.admin? -%>
-    <%= link_to t('users.admin_pannel'), admin_root_path %> |
+    <%= link_to "Panel De Administración", admin_root_path %> |
     <%- end -%>
-    <%= link_to t('users.account'), account_path %> |
-    <%= link_to t('users.actions.logout'), logout_path, :method => :delete, :confirm => t('users.confirms.logout') %>
+    <%= link_to "Mi Cuenta", account_path %> |
+    <%= link_to "Cerrar Sesión", logout_path, :method => :delete, :confirm => "¿Seguro que quiere cerrar la sesión?" %>
   </p>
   <%- if REGISTRATION[:private] and current_user.invitation_limit > 0 -%>
   <p>
-    <%= link_to t('users.actions.invite'), new_invitation_path %>
-    <%= t('users.invitations_limit', :count => current_user.invitation_limit) %>
+    <%= link_to "Enviar Invitación", new_invitation_path %>
+    <%= "(#{current_user.invitation_limit} restantes)" %>
   </p>
   <%- end -%>
 <%- else -%>
   <p>
     <%- if REGISTRATION[:requested] -%>
-    <%= link_to t('users.actions.request_invitation'), apply_invitations_path %> |
+    <%= link_to "Solicitar Invitación", apply_invitations_path %> |
     <%- end -%>
     <%- if REGISTRATION[:public] -%>
-    <%= link_to t('users.actions.signup'), signup_path %> |
+    <%= link_to "Registrarse", signup_path %> |
     <%- end -%>
-    <%= link_to t('users.actions.login'), login_path %>
+    <%= link_to "Identificarse", login_path %>
   </p>
 <%- end -%>
 </div>

@@ -18,10 +18,10 @@ class PasswordResetsController < ApplicationController
     @user = User.find_by_email(params[:email])
     if @user
       @user.deliver_password_reset_instructions!
-      flash[:success] = t('password_resets.flashs.success.create')
+      flash[:success] = "Las Instrucciones para resetear su contraseña se han enviado a su email. Por favor compruebe su cuenta de correo."
       redirect_to root_url
     else
-      flash[:error] = t('password_resets.flashs.errors.create')
+      flash[:error] = "No se ha encontrado ningún usuario con esa dirección de email"
       render :action => :new
     end
   end
@@ -29,7 +29,7 @@ class PasswordResetsController < ApplicationController
   # PUT /password_resets/1
   def update
     if @user.reset_password_with_params!(params[:user])
-      flash[:success] = t('password_resets.flashs.success.update')
+      flash[:success] = "Contraseña actualizada correctamente"
       redirect_to account_url
     else
       render :action => :edit
@@ -42,7 +42,7 @@ class PasswordResetsController < ApplicationController
     @user = User.find_using_perishable_token(params[:id])
     raise ActiveRecord::RecordNotFound unless @user
   rescue ActiveRecord::RecordNotFound
-    flash[:error] = t('password_resets.flashs.errors.update')
+    flash[:error] = "Lo sentimos, pero no hemos encontrado su cuenta. Si está teniendo problemas, intente copiar y pegar la URL de su email en el navegador o vuelva a empezar el proceso de resetear la contraseña."
     redirect_to root_url
   end
 end

@@ -1,27 +1,27 @@
-<% title t('user_sessions.titles.new') %>
+<% title "Identifíquese" %>
 
 <fieldset>
-  <legend><%= t('user_sessions.login_toggle', :token => login_toggle) %></legend>
+  <legend><%= "Identificarse mediante #{login_toggle}" %></legend>
 
 <%= error_messages_for :user_session, :object_name => UserSession.human_name %>
 
 <% form_for @user_session, :url => user_session_path do |f| %>
 <div id="password_box"<% unless @user_session.openid_identifier.blank? %> style="display: none;"<% end %>>
   <p>
-    <%= f.label :login %><br />
+    <%= f.label :login, "Usuario" %><br />
     <%= f.text_field :login %>
   </p>
   <p>
-    <%= f.label :password %><br />
+    <%= f.label :password, "Contraseña" %><br />
     <%= f.password_field :password %>
   </p>
   <p>
-    <%= f.label :remember_me %>
+    <%= f.label :remember_me, "Recordarme" %>
     <%= f.check_box :remember_me %>
   </p>
   <p>
-    <%= f.submit t('user_sessions.actions.login') %> | 
-    <%= link_to t('user_sessions.forget_password'), new_password_reset_path %>
+    <%= f.submit "Identifíquese" %> | 
+    <%= link_to "Olvidé mi contraseña", new_password_reset_path %>
   </p>
 </div>
 
@@ -31,11 +31,11 @@
     <%= f.text_field :openid_identifier %>
   </p>
   <p>
-    <%= f.label :remember_me %>
+    <%= f.label :remember_me, "Recordarme" %>
     <%= f.check_box :remember_me %>
   </p>
   <p>
-    <%= f.submit t('user_sessions.actions.login') %>
+    <%= f.submit "Identifíquese" %>
   </p>
 </div>
 <% end %>

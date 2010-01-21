@@ -13,11 +13,11 @@ Feature: Authentication
   Scenario: Allow login of a user with valid credentials
     Given I am a confirmed user "bob" with password "secret"
     When I go to the login page
-    And I fill in "login" with "bob"
-    And I fill in "password" with "secret"
-    And I press "Login"
+    And I fill in "usuario" with "bob"
+    And I fill in "contraseña" with "secret"
+    And I press "Identifíquese"
     Then I should be logged in
-    When I follow "Logout"
+    When I follow "Cerrar Sesión"
     Then I should be logged out
 
   Scenario: Show account page when logged-in user tries to login
@@ -29,14 +29,14 @@ Feature: Authentication
   Scenario: Allow a confirmed user to login and be remembered
     Given I am a confirmed user "bob" with password "secret"
     When I go to the login page
-    And I fill in "login" with "bob"
-    And I fill in "password" with "secret"
-    And I check "Remember me"
-    And I press "Login"
+    And I fill in "usuario" with "bob"
+    And I fill in "contraseña" with "secret"
+    And I check "Recordarme"
+    And I press "Identifíquese"
     Then I should be logged in
     When I open the homepage in a new window with cookies
     Then I should be logged in
-    When I follow "Logout"
+    When I follow "Cerrar Sesión"
     Then I should be logged out
   
 
@@ -45,29 +45,29 @@ Feature: Authentication
       | login | password |
       | bob   | secret   |
     When I go to the login page
-    And I fill in "login" with "<login>"
-    And I fill in "password" with "<password>"
-    And I press "Login"
+    And I fill in "usuario" with "<login>"
+    And I fill in "contraseña" with "<password>"
+    And I press "Identifíquese"
     Then I should not be logged in
     And I should have <count> errors
     And I should see "<error_message>"
   
     Examples:
-      | login   | password   | count | error_message                                      |
-      |         |            | 1     | You did not provide any details for authentication |
-      |         | secret     | 1     | Login can not be blank                             |
-      |         | bad secret | 1     | Login can not be blank                             |
-      | unknown |            | 1     | Password can not be blank                          |
-      | unknown | secret     | 1     | Login is not valid                                 |
-      | unknown | bad secret | 1     | Login is not valid                                 |
-      | bob     |            | 1     | Password can not be blank                          |
-      | bob     | bad secret | 1     | Password is not valid                              |
+      | login   | password   | count | error_message                             |
+      |         |            | 1     | No rellenó los datos de autentificación.  |
+      |         | secret     | 1     | Usuario no puede estar vacio.             |
+      |         | bad secret | 1     | Usuario no puede estar vacio.             |
+      | unknown |            | 1     | Contraseña no puede estar vacia.          |
+      | unknown | secret     | 1     | Usuario no es válido.                     |
+      | unknown | bad secret | 1     | Usuario no es válido.                     |
+      | bob     |            | 1     | Contraseña no puede estar vacia.          |
+      | bob     | bad secret | 1     | Contraseña no es válida.                  |
 
   # TODO: move to state based confirmation managegment and test that
   # Scenario: Not allow login of an unconfirmed user
   #   Given "sharon" a notified but unconfirmed user
   #   When I go to the login page
-  #   And I fill in "login" with "sharon"
+  #   And I fill in "usuario" with "sharon"
   #   And I fill in "password" with "secret"
   #   And I press "Login"
   #   Then I should not be logged in

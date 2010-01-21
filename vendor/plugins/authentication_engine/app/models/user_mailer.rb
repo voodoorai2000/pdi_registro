@@ -2,7 +2,7 @@ class UserMailer < ActionMailer::Base
   default_url_options[:host] = NOTIFIER[:host]
 
   def activation_instructions(user)
-    subject       I18n.t('user_mailer.titles.activation_instructions')
+    subject       "Instrucciones De Activación"
     from          "#{NOTIFIER[:name]} <#{NOTIFIER[:email]}>"
     recipients    "#{user.name} <#{user.email}>"
     sent_on       Time.now
@@ -10,7 +10,7 @@ class UserMailer < ActionMailer::Base
   end
 
   def activation_confirmation(user)
-    subject       I18n.t('user_mailer.titles.activation_confirmation')
+    subject       "Activación Completa"
     from          "#{NOTIFIER[:name]} <#{NOTIFIER[:email]}>"
     recipients    "#{user.name} <#{user.email}>"
     sent_on       Time.now
@@ -18,7 +18,7 @@ class UserMailer < ActionMailer::Base
   end
 
   def password_reset_instructions(user)
-    subject       I18n.t('user_mailer.titles.password_reset_instructions')
+    subject       "Instrucciones Para Resetear Su Contraseña"
     from          "#{NOTIFIER[:name]} <#{NOTIFIER[:email]}>"
     recipients    "#{user.name} <#{user.email}>"
     sent_on       Time.now
@@ -26,7 +26,7 @@ class UserMailer < ActionMailer::Base
   end
 
   def invitation(invitation, signup_url)
-    subject       I18n.t('user_mailer.titles.user_invitation')
+    subject       "Invitación De Usuario"
     from          "#{NOTIFIER[:name]} <#{NOTIFIER[:email]}>"
     recipients    "#{invitation.recipient_name} <#{invitation.recipient_email}>"
     sent_on       Time.now
@@ -36,7 +36,7 @@ class UserMailer < ActionMailer::Base
   end
 
   def invitation_request(invitation)
-    subject       I18n.t('user_mailer.titles.user_invitation_request')
+    subject       "Petición De Invitación"
     from          "#{invitation.applicant_name} <#{invitation.applicant_email}>"
     recipients    "#{ADMIN[:name]} <#{ADMIN[:email]}>"
     sent_on       Time.now
@@ -44,8 +44,7 @@ class UserMailer < ActionMailer::Base
   end
 
   def invitation_activation_notice(user)
-    subject       'Invitation Activated'
-    # subject       I18n.t('user_mailer.titles.user_invitation_request')
+    subject       'Invitación Activada'
     from          "#{NOTIFIER[:name]} <#{NOTIFIER[:email]}>"
     recipients    "#{user.invitation.sender.name} <#{user.invitation.sender.email}>"
     sent_on       Time.now

@@ -1,18 +1,18 @@
 <%# render :partial => 'admin/shared/restful_links', :object => @user %>
-<% title t('admin.users.titles.new') %>
+<% title "Registrar una cuenta" %>
 
 <%= error_messages_for :user %>
 
 <% form_for [:admin, @user] do |f| %>
   <p>
-    <%= f.label :name %><br />
+    <%= f.label :name, "Nombre" %><br />
     <%= f.text_field :name %>
   </p>
   <p>
-    <%= f.label :email %><br />
+    <%= f.label :email, "Email" %><br />
     <%= f.text_field :email %>
   </p>
   <p>
-    <%= f.submit t('admin.users.actions.new') %>
+    <%= f.submit "Nueva Cuenta" %>
   </p>
 <% end %>

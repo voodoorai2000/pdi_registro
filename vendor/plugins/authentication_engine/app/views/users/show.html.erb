@@ -1,15 +1,15 @@
-<% title t('users.titles.show') %>
+<% title "Cuenta de Usuario" %>
 
 <p>
-  <b><%= at(User, :name) %>:</b>
+  <b>Nombre:</b>
   <%=h @user.name %>
 </p>
 <p>
-  <b><%= at(User, :login) %>:</b>
+  <b>Usuario:</b>
   <%=h @user.login %>
 </p>
 <p>
-  <b><%= at(User, :email) %>:</b>
+  <b>Email:</b>
   <%=h @user.email %>
 </p>
 <p>
@@ -17,60 +17,36 @@
   <%=h @user.openid_identifier %>
 </p>
 <p>
-  <b><%= at(User, :roles) %>:</b>
+  <b>Roles:</b>
   <%=h @user.roles.map(&:name).join(', ') %>
 </p>
 <p>
-  <b><%= at(User, :login_count) %>:</b>
+  <b>Logins:</b>
   <%=h @user.login_count %>
 </p>
 <p>
-  <b><%= at(User, :failed_login_count) %>:</b>
-  <%=h @user.failed_login_count %>
-</p>
-<p>
-  <b><%= at(User, :last_request_at) %>:</b>
-  <%=h @user.last_request_at %>
-</p>
-<p>
-  <b><%= at(User, :last_login_at) %>:</b>
-  <%=h @user.last_login_at %>
-</p>
-<p>
-  <b><%= at(User, :last_login_ip) %>:</b>
-  <%=h @user.last_login_ip %>
-</p>
-<p>
-  <b><%= at(User, :current_login_at) %>:</b>
-  <%=h @user.current_login_at %>
-</p>
-<p>
-  <b><%= at(User, :current_login_ip) %>:</b>
-  <%=h @user.current_login_ip %>
-</p>
-<p>
-  <b><%= at(User, :last_name) %>:</b>
+  <b>Apellidos:</b>
   <span id="user_last_name"><%=h @user.last_name %></span>
 </p>
 <p>
-  <b><%= at(User, :age) %>:</b>
+  <b>Edad:</b>
   <span id="user_age"><%=h @user.age %></span>
 </p>
 <p>
-  <b><%= at(User, :gender) %>:</b>
+  <b>Sexo:</b>
   <span id="user_gender"><%=h @user.gender %></span>
 </p>
 <p>
-  <b><%= at(User, :region) %>:</b>
+  <b>Region:</b>
   <span id="user_region"><%=h @user.region.try(:name) %></span>
 </p>
 <p>
-  <b><%= at(Preference, :language) %>:</b>
+  <b>Idioma:</b>
   <%=h @user.preference.language %>
 </p>
 <p>
-  <b><%= at(Preference, :time_zone) %>:</b>
+  <b>Zona horaria:</b>
   <%=h @user.preference.time_zone %>
 </p>
 
-<%= link_to t('common.actions.edit'), edit_account_path %>
+<%= link_to "Editar", edit_account_path %>

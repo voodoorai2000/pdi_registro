@@ -42,10 +42,10 @@ class ActivationsController < ApplicationController
         @user.update_attributes!(params[:user])
         
         if ACTIVATION[:prompt]
-          flash[:success] = t('activations.flashs.success.prompt')
+          flash[:success] = "Su cuenta ha sido activada. Por favor proporcione su credenciales (usuario/contraseña, u Open ID) al sistema."
           redirect_to login_url
         else
-          flash[:success] = t('activations.flashs.success.create')
+          flash[:success] = "Su cuenta ha sido activada."
           redirect_to edit_account_url
         end
       else

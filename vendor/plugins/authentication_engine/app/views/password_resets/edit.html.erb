@@ -1,16 +1,16 @@
-<% title t('password_resets.titles.edit') %>
+<% title "Cambiar Mi Contraseña" %>
 
 <% form_for @user, :url => password_reset_path, :method => :put do |f| %>
   <%= f.error_messages %>
   <p>
-    <%= f.label :password, t('password_resets.new_password') %><br />
+    <%= f.label :password, "Nueva contraseña" %><br />
     <%= f.password_field :password %>
   </p>
   <p>
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation, "Confirmacíon nueva contraseña" %><br />
     <%= f.password_field :password_confirmation %>
   </p>
   <p>
-    <%= f.submit t('password_resets.actions.update') %>
+    <%= f.submit "Actualiza mi contraseña y logeame" %>
   </p>
 <% end %>

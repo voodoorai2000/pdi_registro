@@ -1,23 +1,23 @@
-<% title t('admin.invitations.titles.index') %>
+<% title "Lista de Invitaciones" %>
 <%# render :partial => 'admin/shared/restful_links', :object => @invitation %>
 
 <table class="invitations">
   <tr>
     <th><%= at(Invitation, :sender_id) %></th>
     <th><%= at(Invitation, :recipient_email) %></th>
-    <th><%= t('common.created_at') %></th>
+    <th><%= "Creado a las" %></th>
     <th><%= at(Invitation, :sent_at) %></th>
   </tr>
 <%- for invitation in @invitations -%>
   <tr>
     <td class="user_icon">
-      <%= invitation.sender ? link_to(invitation.sender.name, admin_user_path(invitation.sender)) : t('admin.invitations.self') %>
+      <%= invitation.sender ? link_to(invitation.sender.name, admin_user_path(invitation.sender)) : "usted" %>
     </td>
     <td><%=h invitation.recipient_email %></td>
     <td><%=h invitation.created_at %></td>
     <td>
     <%- if invitation.sent_at.nil? -%>
-      <%= link_to(image_tag('authentication_engine/email_go.png', :class => 'inline_icon', :alt => '', :title => t('admin.invitations.actions.send')), deliver_admin_invitation_path(invitation), :method => :put) %>
+      <%= link_to(image_tag('authentication_engine/email_go.png', :class => 'inline_icon', :alt => '', :title => "Enviar email a los invitados"), deliver_admin_invitation_path(invitation), :method => :put) %>
     <%- else -%>
       <%=h invitation.sent_at %>
     <%- end -%>
