@@ -70,7 +70,8 @@ MundoPepino.configure do |config|
     #  end
     #}
     /^la p[áa]gina de editar mi perfil$/ => "/account/edit",
-    /^la p[áa]gina de mi perfil$/ => "/account/"
+    /^la p[áa]gina de mi perfil$/ => "/account/",
+    /^la p[áa]gina principal$/ => "/"
   }
 
 end

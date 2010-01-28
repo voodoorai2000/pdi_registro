@@ -7,7 +7,10 @@ ActionController::Routing::Routes.draw do |map|
     admin.root :controller => "home", :action => "dashboard"
     admin.resources :areas
   end
-
+  map.with_options :controller => 'info' do |info|
+    info.about 'terms_of_service', :action => 'terms_of_service'
+  end
+  
   map.ranking "/ranking", :controller => "ranking"
     
   # The priority is based upon order of creation: first created -> highest priority.

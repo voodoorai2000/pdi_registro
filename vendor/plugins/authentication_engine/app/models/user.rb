@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   belongs_to :region
   has_many :colaborations
   has_many :areas, :through => :colaborations
-  
+
   accepts_nested_attributes_for :areas
   
   attr_accessible :region_id, :last_name, :age, :gender, :area_ids

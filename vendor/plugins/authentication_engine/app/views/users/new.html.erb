@@ -20,7 +20,9 @@
   </fieldset>
   
   <p>Al pulsar el botón, usted:</p>
-  <p>Acepta y autoriza los términos de las Condiciones de uso.</p>
+  <p>Acepta y autoriza los términos de las <%= link_to "Condiciones de uso", 
+      :controller => "info", 
+      :action     => "terms_of_service" %>.</p>
   </p>
   <p>
     <%= f.submit "Registrarse" %>
