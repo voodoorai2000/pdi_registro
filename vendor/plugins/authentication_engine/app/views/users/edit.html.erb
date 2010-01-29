@@ -64,22 +64,6 @@
   				   :locals => { :f => f, :object => @user } %>
 </fieldset>
 
-<fieldset>
-  <legend><%= "Preferencias" %></legend>
-  <% f.fields_for :preference, (@user.preference || @user.build_preference) do |preference_form| %>
-  <p>
-    <%= preference_form.label :language, "Idioma" %><br />
-    <%= preference_form.select :language, @languages_available, :include_blank => true %>
-  </p>
-  <p>
-    <%= preference_form.label :time_zone, "Zona Horaria" %><br />
-    <%# f.select :time_zone, ActiveSupport::TimeZone.all.map {|tz| [tz.to_s, tz.tzinfo.name] }, :include_blank => true %>
-    <%= preference_form.time_zone_select :time_zone, nil, :include_blank => true %>
-  </p>
-  <% end %>
-</fieldset>
-
-
 
 <p>
   <%= f.submit "Actualizar Cuenta" %>

@@ -17,14 +17,6 @@
   <%=h @user.openid_identifier %>
 </p>
 <p>
-  <b>Roles:</b>
-  <%=h @user.roles.map(&:name).join(', ') %>
-</p>
-<p>
-  <b>Logins:</b>
-  <%=h @user.login_count %>
-</p>
-<p>
   <b>Apellidos:</b>
   <span id="user_last_name"><%=h @user.last_name %></span>
 </p>
@@ -39,14 +31,6 @@
 <p>
   <b>Region:</b>
   <span id="user_region"><%=h @user.region.try(:name) %></span>
-</p>
-<p>
-  <b>Idioma:</b>
-  <%=h @user.preference.language %>
-</p>
-<p>
-  <b>Zona horaria:</b>
-  <%=h @user.preference.time_zone %>
 </p>
 
 <%= link_to "Editar", edit_account_path %>
