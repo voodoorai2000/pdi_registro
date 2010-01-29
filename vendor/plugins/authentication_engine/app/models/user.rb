@@ -32,5 +32,9 @@ class User < ActiveRecord::Base
   def has_area?(area)
     areas.include?(area)
   end
+  
+  def areas_of_colaboration
+    areas.map(&:name).join(", ")
+  end
  
 end

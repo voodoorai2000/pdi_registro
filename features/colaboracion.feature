@@ -5,7 +5,7 @@ Característica: Colaboracion
 	Como el Partido de Internet
 	Quiero que los usuarios seleccionen en que areas quieren colaborar
   
-  Escenario: Seleccionar Areas de Colaboración
+  Escenario: Areas de Colaboración
         Dado 2 areas de colaboracion "Software y Marketing"
         Dado que estoy logado
       Cuando visito la pagina de editar mi perfil
@@ -17,3 +17,7 @@ Característica: Colaboracion
             	 | nombre    |
             	 | Software  |
             	 | Marketing |	  
+            	 
+      Cuando voy a la pagina de mi perfil
+    Entonces veré que mis areas de colaboración son "Software, Marketing"
+ 

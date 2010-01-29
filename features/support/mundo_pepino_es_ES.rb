@@ -44,7 +44,7 @@ MundoPepino.configure do |config|
   /^edad$/i => :age, # (TODO: validar RegExp para forma plural y coma final)
   /^sexo$/i => :gender, # (TODO: validar RegExp para forma plural y coma final)
   /^region$/i => :region, # (TODO: validar RegExp para forma plural y coma final)
-
+  /^areas de colaboración$/ => :areas_of_colaboration
     # TRADUCCIÓN DE CAMPOS AQUÍ:
     # /^[Ááa]reas?$/i    => 'area',
     # /^color(es)?$/i   => 'color',
@@ -71,7 +71,7 @@ MundoPepino.configure do |config|
     #}
     /^la p[áa]gina de editar mi perfil$/ => "/account/edit",
     /^la p[áa]gina de mi perfil$/ => "/account/",
-    /^la p[áa]gina principal$/ => "/"
+    /^la p[áa]gina principal$/ => "/",
   }
 
 end

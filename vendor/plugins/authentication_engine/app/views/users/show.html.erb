@@ -33,4 +33,9 @@
   <span id="user_region"><%=h @user.region.try(:name) %></span>
 </p>
 
+<p>
+  <b>Areas de Colaboración:</b>
+  <span id="user_areas_of_colaboration"><%=h @user.areas_of_colaboration %></span>
+</p>
+
 <%= link_to "Editar", edit_account_path %>
