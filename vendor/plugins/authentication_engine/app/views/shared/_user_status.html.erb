@@ -17,8 +17,8 @@
   </p>
   <%- if REGISTRATION[:private] and current_user.invitation_limit > 0 -%>
   <p>
-    <%= link_to "Enviar Invitación", new_invitation_path %>
-    <%= "(#{current_user.invitation_limit} restantes)" %>
+    <%# link_to "Enviar Invitación", new_invitation_path %>
+    <%# "(#{current_user.invitation_limit} restantes)" %>
   </p>
   <%- end -%>
 <%- else -%>
