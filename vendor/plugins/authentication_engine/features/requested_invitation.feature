@@ -6,12 +6,13 @@ Feature: Requested Invitation
   Background:
     Given "sharon" an admin user
 
-  Scenario: Display invitation form to anonymous user
-    Given "joanne" is an anonymous user
-    When I go to the homepage
-    Then I should see "Solicitar Invitación"
-    When I follow "Solicitar Invitación"
-    Then I should see the invitation request form
+#Commenting not necessary yet
+#  Scenario: Display invitation form to anonymous user
+#    Given "joanne" is an anonymous user
+#    When I go to the homepage
+#    Then I should see "Solicitar Invitación"
+#    When I follow "Solicitar Invitación"
+#    Then I should see the invitation request form
   
   Scenario: Allow an anonymous user to be invited
     Given "joanne" is an anonymous user
