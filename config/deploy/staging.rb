@@ -1,8 +1,8 @@
 
 set :rails_env, 'staging'
  
-role :app, "#{STAGING_SERVER_IP}"  
-role :web, "#{STAGING_SERVER_IP}"  
-role :db,  "#{STAGING_SERVER_IP}", :primary => true
+role :app, "209.20.72.136"  
+role :web, "209.20.72.136"  
+role :db,  "209.20.72.136", :primary => true
 
-set :deploy_to, "/var/www/apps/#{PROJECT_NAME}"
+set :deploy_to, "/var/www/apps/pdi_registro"

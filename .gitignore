@@ -9,3 +9,4 @@ log/cucumber.log
 log/development.log
 db/test.sqlite3-journal
 config/authentication_engine.yml
+config/deploy/staging.rb

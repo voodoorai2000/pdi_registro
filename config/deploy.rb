@@ -1,4 +1,5 @@
 require File.expand_path(File.dirname(__FILE__) + '/environment')
+ssh_options[:keys] = %w(~/.ssh/id_rsa)
 set :stages, %w(staging production)
 set :default_stage, 'staging'
 require 'capistrano/ext/multistage'
@@ -13,8 +14,9 @@ set :branch, "master"
 set :deploy_via, :checkout
 
 set :user, "deploy"
-set :port, "32200"  
+set :port, "22"  
 set :runner, "deploy"
+set :use_sudo, false
 
 desc "create symbolic links for files outside of version control"
 task :create_symbolic_links, :roles => :app do
