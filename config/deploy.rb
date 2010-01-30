@@ -1,5 +1,7 @@
 require File.expand_path(File.dirname(__FILE__) + '/environment')
 ssh_options[:keys] = %w(~/.ssh/id_rsa)
+default_environment["PATH"] = "/opt/ruby-enterprise-1.8.7-2010.01/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games"
+
 set :stages, %w(staging production)
 set :default_stage, 'staging'
 require 'capistrano/ext/multistage'
