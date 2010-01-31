@@ -1,10 +1,10 @@
 
 set :rails_env, 'production'
-role :app, "209.20.74.161"  
-role :web, "209.20.74.161"  
-role :db,  "209.20.74.161", :primary => true
+role :app, "209.20.94.182"  
+role :web, "209.20.94.182"  
+role :db,  "209.20.94.182", :primary => true
 
-set :deploy_to, "/var/www/apps/registro_pdi"
+set :deploy_to, "/var/www/apps/pdi_registro"
 
 desc "create symbolic link to backup_fu.yml"
 task :create_symbolic_links_for_backups, :roles => :app do
