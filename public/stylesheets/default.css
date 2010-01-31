@@ -1,0 +1,104 @@
+body {
+  height: 100%;
+  font-size:1em;
+  font-family: Time, Serif;
+  background: url('/images/bg_tile.jpg') repeat-x;
+  color: #666666;
+}
+
+h1.logo {
+  height: 69px;
+  background: url('/images/logo_app.png') no-repeat;
+}
+
+h2 {
+  font-size: 1.8em;
+  border-bottom: 5px solid black;
+  font-weight: bold;
+  padding-bottom: 4px;
+  color: black;
+}
+
+a {
+  color: #e38226;
+}
+
+.none {
+  display:none;
+}
+
+.divider-short, .divider-long { 
+  height: 58px;
+  margin-bottom: 30px;
+}
+
+.divider-short {
+   width: 100%;
+   background: url('/images/divider_310x58.png') no-repeat center;
+}
+
+.divider-long {
+   width: 100%;
+   background: url('/images/divider_470x58.png') no-repeat center;
+}
+
+#top, h2, .info-block, info-block-bottom {
+  margin-bottom: 20px;
+}
+
+.info-block-bottom {
+  padding-top: 82px;
+}
+
+.info-content {
+  height: 130px;
+}
+
+#yield-container {
+  margin-left: 20px;
+}
+
+#center-container {
+  margin-left: 40px;
+}
+
+#registro label {
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
+#registro input[type="text"] {
+  border: 3px solid #a2a2a2;
+  color:black;
+  font-size: 1.4em;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+#registro input[type="submit"] {
+  padding: 10px;
+  background-color: #e38226;
+  border: none;
+  color: white;
+  font-size: 1.4em;
+  cursor: pointer;
+}
+
+#registro p.submit {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+
+#foot {
+  margin-top: 40px;
+  background: url('/images/footer.png') no-repeat;
+  padding-top: 20px;
+  font-size: 0.9em;
+}
+
+#foot li.title,
+#foot li.title a {
+  font-weight: bold;
+  color: #666666;
+}

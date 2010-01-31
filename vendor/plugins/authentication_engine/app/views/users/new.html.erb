@@ -1,30 +1,53 @@
-<% title "Registrar Una Cuenta" %>
+<div id="registro" class="grid_21">
+  <% title "Regístrate en el Partido de Internet" %>
 
-<% form_for @user, :url => account_path do |f| %>
-  <%= f.error_messages %>
-  <fieldset>
-    <p>
-      <%= f.label :name, "Nombre" %><br />
-      <%= f.text_field :name %>
-    </p>
-    <p>
-      <%= f.label :email, "Email" %><br />
-      <%= f.text_field :email %>
-    </p>
-  </fieldset>
-  <fieldset>
-    <p>
-      <%= f.label :openid_identifier, openid_link %><br />
-      <%= f.text_field :openid_identifier %>
-    </p>
-  </fieldset>
-  
-  <p>Al pulsar el botón, usted:</p>
-  <p>Acepta y autoriza los términos de las <%= link_to "Condiciones de uso", 
-      :controller => "info", 
-      :action     => "terms_of_service" %>.</p>
-  </p>
-  <p>
-    <%= f.submit "Registrarse" %>
-  </p>
-<% end %>
+  <% form_for @user, :url => account_path do |f| %>
+    <fieldset class="grid_13 alpha">
+      <div class="info-content">
+        <div class="info-block">
+          <p>¿Quiéres recibir noticias e información sobre el partido?</p>
+          <p>¿Quiéres colaborar? ¿Tienes alguna propuesta interesante que hacernos?</p>
+        </div>
+
+        <div class="info-block">
+          <p>Sólamente tienes que <strong>rellenar tus datos para ser un usuario
+             simpatizante del partido de Internet</strong></p>
+        </div>
+       </div>
+      <div class="divider-long"></div>
+
+      <%= f.error_messages %>
+      <p>
+        <%= f.label :name, "Nombre" %>
+        <%= f.text_field :name, :size => 30 %>
+      </p>
+      <p>
+        <%= f.label :email, "Email" %>
+        <%= f.text_field :email, :size => 30 %>
+      </p>
+      <p>Al pulsar el botón, usted:</p>
+      <p>Acepta y autoriza los términos de las <%= link_to "Condiciones de uso",
+          :controller => "info",
+          :action     => "terms_of_service" %>.
+      </p>
+      <p class="submit">
+        <%= f.submit "ENVIAR" %>
+      </p>
+    </fieldset>
+
+    <fieldset  class="grid_8 omega">
+      <div class="info-content">
+        <div class="info-block-bottom">
+          <p>Registrate automáticamente con estos sistemas</p>
+        </div>        
+      </div>
+      <div class="divider-short"></div>
+      <p>
+        <%= f.label :openid_identifier, openid_link %><br />
+        <%= f.text_field :openid_identifier, :size => 15 %>
+      </p>
+    </fieldset>
+
+    <div class="clear"></div>
+  <% end %>
+</div>
