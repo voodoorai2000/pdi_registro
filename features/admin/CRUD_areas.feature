@@ -1,5 +1,4 @@
 #language: es
-@current
 Característica: Crear, Editar, Mostrar, Borrar Areas
 
 	Para que la gente se apunte a areas de colaboracoin necesarias

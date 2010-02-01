@@ -4,6 +4,7 @@ Factory.define :user do |f|
   f.password "secret"
   f.password_confirmation { |u| u.password }
   f.sequence(:email) { |n| "foo#{n}@example.com" }
+  f.active { true }
 end
 
 Factory.define :region do |f|

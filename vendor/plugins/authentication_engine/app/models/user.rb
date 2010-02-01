@@ -24,9 +24,15 @@ class User < ActiveRecord::Base
   attr_accessible :region_id, :last_name, :age, :gender, :area_ids
   
   named_scope :with_region, :conditions => :region_id
+  named_scope :limit, lambda { |num| { :limit => num } }
+  named_scope :active, :conditions => {:active => true}
   
   def self.ranking
     with_region.group_by(&:region).sort_by{|region, users| users.size}.reverse
+  end
+  
+  def self.top_ranking(num)
+    self.ranking[0..num-1]
   end
   
   def has_area?(area)
@@ -36,5 +42,5 @@ class User < ActiveRecord::Base
   def areas_of_colaboration
     areas.map(&:name).join(", ")
   end
- 
+  
 end

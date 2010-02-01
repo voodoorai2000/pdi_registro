@@ -1,0 +1,13 @@
+<h2>Ranking</h2>
+<ul>
+  <% @user_regions.each do |region, users| %>
+    <% content_tag_for :li, region do %>
+      <span id="region_<%= region.id %>_name">
+        <%= region.name %>
+      </span>
+      <span id="region_<%= region.id %>_users">
+        <%= users.size %>
+      </span>
+  	<% end %>
+  <% end %>
+</ul>

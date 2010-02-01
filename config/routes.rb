@@ -12,6 +12,7 @@ ActionController::Routing::Routes.draw do |map|
   end
   
   map.ranking "/ranking", :controller => "ranking"
+  map.dashboard "/dashboard", :controller => "dashboard"
     
   # The priority is based upon order of creation: first created -> highest priority.
 

@@ -1,5 +1,5 @@
 Dado /^las regiones "([^\"]*)"$/ do |nombres|
-  nombres.split(" y ").each do |nombre|
+  split_and_strip(nombres).each do |nombre|
     Factory(:region, :name => nombre)
   end
 end
@@ -35,3 +35,14 @@ Then /^vere las ([^\"]+) "([^\"]*)" en ese orden$/ do |modelo, nombres|
     response.body.should have_tag("##{model_name}_#{resource.id}:nth-child(#{index+1})")
   end
 end
+
+Entonces /^vere que "([^\"]*)" tiene (\d+) usuarios registrados$/ do |region, registros|
+  region = Region.find_by_name(region)
+  response.should have_tag("#region_#{region.id}_users", registros)
+end
+
+Entonces /^no vere la region "([^\"]*)"$/ do |name|
+  region = Region.find_by_name(name)
+  response.should_not have_tag("#region_#{region.id}")
+end
+

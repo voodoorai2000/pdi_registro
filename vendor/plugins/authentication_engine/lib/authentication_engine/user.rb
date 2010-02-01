@@ -148,6 +148,7 @@ module AuthenticationEngine
           self.openid_identifier = user[:openid_identifier] if respond_to?(:openid_identifier)
           self.name = user[:name] unless self.invitation_id.blank?
           self.email = user[:email] unless self.invitation_id.blank? 
+          self.active = true
         end
         logged = prompt && validate_password_with_openid?
         save_with_block(logged, &block)

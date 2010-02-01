@@ -13,7 +13,7 @@ Dado /^que estoy logado como "(.*)"$/ do |nombre|
     visit login_path
     fill_in "Usuario", :with => user.login
     fill_in "Contraseña", :with => 'secret'
-    click_button "Identifíquese"
+    click_button "Entrar"
 end
 
 Dado /^que estoy logado$/ do
