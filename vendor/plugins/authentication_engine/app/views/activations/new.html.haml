@@ -11,7 +11,7 @@
         y poder organizarnos de forma más efectiva
     .divider-long
 
-  .grid_20
+  .grid_21
     -form_for @user, :url => activate_path(@user), :html => { :method => :post } do |f|
       =f.error_messages
       -if @invitation
@@ -59,4 +59,4 @@
           =f.label :region_id, "Región"
           =f.select :region_id, Region.all.sort_by(&:name).collect {|region| [region.name, region.id]}
 
-      %p.submit=f.submit "Enviar"
+      %p.submit.grid_13=f.submit "Enviar"

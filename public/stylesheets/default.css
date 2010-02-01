@@ -29,7 +29,7 @@ a {
 
 .divider-short, .divider-long { 
   height: 58px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .divider-short {
@@ -81,18 +81,45 @@ a {
 }
 
 .register p.submit {
-  width: 100%;
   text-align: center;
   padding: 10px;
 }
 
 .register select {
   margin-bottom: 20px;
+  width: 300px;
+  font-size: 1.4em;
 }
 
 .register .obligatorio {
   font-style: italic;
   color: #d60f71;
+}
+
+/**** Errores formulario ***/
+
+.errorExplanation h2 {
+  font-size: 1.4em;
+  border-bottom:none;
+  color: red;
+}
+
+.errorExplanation ul {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.errorExplanation ul li {
+  margin-bottom: 10px;
+  color: red;
+}
+
+.fieldWithErrors {
+  display:inline;
+}
+
+.register .fieldWithErrors input {
+  border-color: red;
 }
 
 
