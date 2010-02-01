@@ -5,7 +5,7 @@ Característica: Ranking (Dashboard)
 	Como un usuario
 	Quiero ver un ranking de las top 5 ciudades simpatizantes con el PDI
   
-  @current
+
   Escenario: Ranking to 5
         Dado las regiones "Madrid, Barcelona, Las Palmas, Andalucia, Islas Baleares, A Coruña"
            Y que la region "A Coruña" tiene 2 usuarios
@@ -15,7 +15,7 @@ Característica: Ranking (Dashboard)
            Y que la region "Barcelona" tiene 6 usuarios
            Y que la region "Andalucia" tiene 4 usuarios
            Y que estoy logado
-Entonces debug          
+
       Cuando voy a "/dashboard"
       
     Entonces vere "Top 5 del Ranking"
