@@ -42,7 +42,8 @@ a {
    background: url('/images/divider_470x58.png') no-repeat center;
 }
 
-#top, h2, .info-block, info-block-bottom {
+#top, h2, .info-block, info-block-bottom,
+legend {
   margin-bottom: 20px;
 }
 
@@ -68,8 +69,11 @@ input[type="password"] {
   color:black;
   font-size: 1.4em;
   padding: 5px;
-  margin-bottom: 20px;
   width: 430px;
+}
+
+fieldset p {
+  margin-bottom: 20px;
 }
 
 input.openid { width: 290px; }
@@ -99,6 +103,10 @@ select {
   color: #d60f71;
 }
 
+.inline {
+  display: inline;
+}
+
 /**** Errores formulario ***/
 
 .errorExplanation h2 {
@@ -125,6 +133,22 @@ select {
   border-color: red;
 }
 
+/**** Mensajes sistema ****/
+#flash_success,
+#flash_notice {
+  font-size: 1.8em;  
+  margin-left: 50px;
+  margin-bottom: 20px;
+}
+
+#flash_notice,
+#flash_error {
+  color: red;
+}
+
+#flash_success {
+  color: green;
+}
 
 /******* FOOT *****/
 #foot {
