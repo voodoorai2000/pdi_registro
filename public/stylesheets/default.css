@@ -55,23 +55,26 @@ a {
 }
 
 
-/**** Formularios de Registro ****/
-.register label {
+/**** Formularios ****/
+label {
   font-weight: bold;
   font-size: 1.4em;
   display:block;
 }
 
-.register input[type="text"],
-.register input[type="password"] {
+input[type="text"],
+input[type="password"] {
   border: 3px solid #a2a2a2;
   color:black;
   font-size: 1.4em;
   padding: 5px;
   margin-bottom: 20px;
+  width: 430px;
 }
 
-.register input[type="submit"] {
+input.openid { width: 290px; }
+
+input[type="submit"] {
   padding: 10px;
   background-color: #e38226;
   border: none;
@@ -80,18 +83,18 @@ a {
   cursor: pointer;
 }
 
-.register p.submit {
+p.submit {
   text-align: center;
   padding: 10px;
 }
 
-.register select {
+select {
   margin-bottom: 20px;
   width: 300px;
   font-size: 1.4em;
 }
 
-.register .obligatorio {
+.obligatorio {
   font-style: italic;
   color: #d60f71;
 }

@@ -26,10 +26,10 @@
     %fieldset.grid_13.alpha
       %p
         =f.label :name, "Nombre"
-        =f.text_field :name, :size => 30
+        =f.text_field :name
       %p
         =f.label :email, "Email" 
-        =f.text_field :email, :size => 30 
+        =f.text_field :email
       %p Al pulsar el botón, usted:
       %p
         Acepta y autoriza los términos de las
@@ -41,5 +41,5 @@
     %fieldset.grid_8.omega
       %p
         =f.label :openid_identifier, openid_link
-        =f.text_field :openid_identifier, :size => 15
+        =f.text_field :openid_identifier, :class => 'openid'
     .clear

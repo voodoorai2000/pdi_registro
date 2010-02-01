@@ -6,15 +6,15 @@
 <fieldset>
   <legend>Actualizar Información</legend>
   <p>
-    <%= f.label :name, "Nombre" %><br />
+    <%= f.label :name, "Nombre" %>
     <%= f.text_field :name %>
   </p>
   <p>
-    <%= f.label :login, "Usuario" %><br />
+    <%= f.label :login, "Usuario" %>
     <%= f.text_field :login %>
   </p>
   <p>
-    <%= f.label :email, "Email" %><br />
+    <%= f.label :email, "Email" %>
     <%= f.text_field :email %>
   </p>
 </fieldset>
@@ -22,7 +22,7 @@
 <fieldset>
   <legend>Registrar OpenID</legend>
   <p>
-    <%= f.label :openid_identifier, openid_link %><br />
+    <%= f.label :openid_identifier, openid_link %>
     <%= f.text_field :openid_identifier %>
   </p>
 </fieldset>
@@ -30,11 +30,11 @@
 <fieldset>
   <legend>Cambiar Contraseña</legend>
   <p>
-    <%= f.label :password, "Nueva contraseña" %><br />
+    <%= f.label :password, "Nueva contraseña" %>
     <%= f.password_field :password %>
   </p>
   <p>
-    <%= f.label :password_confirmation, "Confirmación nueva contraseña" %><br />
+    <%= f.label :password_confirmation, "Confirmación nueva contraseña" %>
     <%= f.password_field :password_confirmation %>
   </p>
 </fieldset>
@@ -42,19 +42,19 @@
 <fieldset>
  <legend><%= "Informacion Importante" %></legend>
   <p>
-    <%= f.label :last_name, "Apellidos" %><br />
+    <%= f.label :last_name, "Apellidos" %>
     <%= f.text_field :last_name %>
   </p> 
   <p>
-    <%= f.label :age, "Edad" %><br />
+    <%= f.label :age, "Edad" %>
     <%= f.text_field :age %>
   </p>
   <p>
-    <%= f.label :gender, "Sexo" %><br />
+    <%= f.label :gender, "Sexo" %>
     <%= f.select :gender, [ "Masculino", "Femenino" ] %>
   </p>
   <p>
-  	<%= f.label :region_id, "Región" %><br />
+  	<%= f.label :region_id, "Región" %>
   	<%= f.select :region_id, Region.all.sort_by(&:name).collect {|region| [region.name, region.id]} %>
   </p>
 </fieldset>
