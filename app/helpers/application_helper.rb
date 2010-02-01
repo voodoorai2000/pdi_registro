@@ -12,4 +12,8 @@ module ApplicationHelper
   def openid_link
     link_to at(User, :openid_identifier), "http://openid.net/"
   end
+
+  def obligatorio
+    content_tag(:span,' *Obligatorio', :class => 'obligatorio')
+  end
 end

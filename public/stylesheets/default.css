@@ -46,14 +46,6 @@ a {
   margin-bottom: 20px;
 }
 
-.info-block-bottom {
-  padding-top: 82px;
-}
-
-.info-content {
-  height: 130px;
-}
-
 #yield-container {
   margin-left: 20px;
 }
@@ -62,12 +54,16 @@ a {
   margin-left: 40px;
 }
 
-#registro label {
+
+/**** Formularios de Registro ****/
+.register label {
   font-weight: bold;
   font-size: 1.4em;
+  display:block;
 }
 
-#registro input[type="text"] {
+.register input[type="text"],
+.register input[type="password"] {
   border: 3px solid #a2a2a2;
   color:black;
   font-size: 1.4em;
@@ -75,7 +71,7 @@ a {
   margin-bottom: 20px;
 }
 
-#registro input[type="submit"] {
+.register input[type="submit"] {
   padding: 10px;
   background-color: #e38226;
   border: none;
@@ -84,12 +80,23 @@ a {
   cursor: pointer;
 }
 
-#registro p.submit {
+.register p.submit {
   width: 100%;
   text-align: center;
   padding: 10px;
 }
 
+.register select {
+  margin-bottom: 20px;
+}
+
+.register .obligatorio {
+  font-style: italic;
+  color: #d60f71;
+}
+
+
+/******* FOOT *****/
 #foot {
   margin-top: 40px;
   background: url('/images/footer.png') no-repeat;

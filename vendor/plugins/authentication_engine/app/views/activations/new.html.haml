@@ -1,0 +1,62 @@
+- title "Por favor, termina tú registro"
+.register
+  .grid_13
+    .info-block
+      %p
+        %strong Es importante que rellenes todos los datos
+    .info-block
+      %p
+        La información recogida es útil para datos estadísticos, de esta forma
+        podremos tener información relevante de cómo estamos distribuidos geográficamente
+        y poder organizarnos de forma más efectiva
+    .divider-long
+
+  .grid_20
+    -form_for @user, :url => activate_path(@user), :html => { :method => :post } do |f|
+      =f.error_messages
+      -if @invitation
+        =f.hidden_field :invitation_id
+        =hidden_field_tag :invitation_token, @invitation.token
+        %fieldset
+          %p
+            =f.label :name, "Nombre"
+            =f.text_field :name
+            =obligatorio
+          %p
+            =f.label :email, "Email"
+            =f.text_field :email
+            =obligatorio
+      %fieldset
+        %p
+          =f.label :login, "Usuario"
+          =f.text_field :login
+          =obligatorio
+        %p
+          =f.label :password, "Escriba su contraseña"
+          =f.password_field :password
+          =obligatorio
+        %p
+          =f.label :password_confirmation, "Confirmación contraseña"
+          =f.password_field :password_confirmation
+          =obligatorio
+
+      %fieldset
+        %p
+          =f.label :openid_identifier, openid_link
+          =f.text_field :openid_identifier
+
+      %fieldset
+        %p
+          =f.label :last_name, "Apellidos"
+          =f.text_field :last_name
+        %p
+          =f.label :age, "Edad"
+          =f.text_field :age
+        %p
+          =f.label :gender, "Sexo"
+          =f.select :gender, [ "Masculino", "Femenino" ]
+        %p
+          =f.label :region_id, "Región"
+          =f.select :region_id, Region.all.sort_by(&:name).collect {|region| [region.name, region.id]}
+
+      %p.submit=f.submit "Enviar"
