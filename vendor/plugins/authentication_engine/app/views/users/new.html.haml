@@ -1,0 +1,43 @@
+.grid_21.register
+  -title "Regístrate en el Partido de Internet"
+
+  -form_for @user, :url => account_path do |f|
+    .info-block.grid_21.alpha
+      .grid_13.alpha
+        %p ¿Quiéres recibir noticias e información sobre el partido?
+        %p ¿Quiéres colaborar? ¿Tienes alguna propuesta interesante que hacernos?
+
+    .info-block.grid_21.alpha
+      .grid_13.alpha
+        %p
+          Sólamente tienes que <strong>rellenar tus datos para ser un usuario
+          simpatizante del partido de Internet</strong>
+
+      .grid_7
+        %p Registrate automáticamente con estos sistemas
+
+      .grid_21.alpha
+        .divider-long.grid_13.alpha
+        .divider-short.grid_8.alpha
+    
+    %fieldset.grid_13.alpha
+      =f.error_messages
+      %p
+        =f.label :name, "Nombre"
+        =f.text_field :name, :size => 30
+      %p
+        =f.label :email, "Email" 
+        =f.text_field :email, :size => 30 
+      %p Al pulsar el botón, usted:
+      %p
+        Acepta y autoriza los términos de las
+        =link_to "Condiciones de uso", :controller => "info", :action => "terms_of_service"
+      
+      %p.submit
+        = f.submit "ENVIAR"
+   
+    %fieldset.grid_8.omega
+      %p
+        =f.label :openid_identifier, openid_link
+        =f.text_field :openid_identifier, :size => 15
+    .clear
