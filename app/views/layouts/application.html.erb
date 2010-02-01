@@ -12,10 +12,12 @@
 <body>
   <div id="container" class="container_24">
     <%= render :partial => 'layouts/top' %>
-        
-    <%- flash.each do |name, msg| -%>
-      <%= content_tag :p, msg, :id => "flash_#{name}", :class => name %>
-    <%- end -%>
+
+    <div class="grid_22">
+      <%- flash.each do |name, msg| -%>
+        <%= content_tag :p, msg, :id => "flash_#{name}", :class => name %>
+      <%- end -%>
+    </div>   
 
     <div id="center-container" class="grid_22" >
       <%- if show_title? -%>
