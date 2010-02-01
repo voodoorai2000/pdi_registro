@@ -7,7 +7,7 @@ Given /^I have registered successfully$/ do
   When "I go to the registration form"
   And "I fill in \"nombre\" with \"bob\""
   And "I fill in \"email\" with \"bob@example.com\""
-  And "I press \"Registrarse\""
+  And "I press \"Entrar\""
   Then "I should have a successful registration"
 end
 

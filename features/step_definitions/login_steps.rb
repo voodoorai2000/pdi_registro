@@ -26,7 +26,7 @@ Dado /^que me he registrado con éxito$/ do
   When "I go to the registration form"
   And "I fill in \"Nombre\" with \"bob\""
   And "I fill in \"Email\" with \"bob@example.com\""
-  And "I press \"Registrarse\""
+  And "I press \"Enviar\""
   Then 'I should see "¡Su cuenta ha sido creada"'
 end
 

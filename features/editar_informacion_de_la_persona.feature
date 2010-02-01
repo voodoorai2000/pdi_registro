@@ -15,7 +15,7 @@ Característica: Editar Perfil
          Y relleno "Edad" con '28'
          Y selecciono 'Masculino' como Sexo
          Y relleno el resto de campos del formulario de activacion
-         Y hago click en "Activar"    
+         Y hago click en "Enviar"    
          
     Cuando voy a la pagina de mi perfil
   Entonces veré que mis apellidos son "Perez Duarte"

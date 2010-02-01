@@ -17,7 +17,7 @@ Característica: Editar Region
         
     Cuando selecciono 'Comunidad Valenciana' como Región
          Y relleno el resto de campos del formulario de activacion
-         Y hago click en "Activar"
+         Y hago click en "Enviar"
   Entonces estaré asociado a la región "Comunidad Valenciana"  
      
     Cuando voy a la pagina de mi perfil

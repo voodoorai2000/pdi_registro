@@ -16,7 +16,7 @@ Feature: Registration
     When I go to the registration form
     And I fill in "nombre" with "bob"
     And I fill in "email" with "bob@example.com"
-    And I press "Registrarse"
+    And I press "Entrar"
     Then I should have a successful registration
 
   Scenario Outline: Not allow an anonymous user to create account with incomplete input
@@ -24,7 +24,7 @@ Feature: Registration
     When I go to the registration form
     And I fill in "nombre" with "<name>"
     And I fill in "email" with "<email>"
-    And I press "Registrarse"
+    And I press "Entrar"
     Then I should have an unsuccessful registration
     And I should have <count> errors
     And I should see "<error_message>"

@@ -19,11 +19,11 @@ Característica: Crear, Editar, Mostrar, Borrar Areas
    Entonces veré el texto "Software"
    
    	 Cuando hago click en el link "Editar"
-   	      Y relleno nombre con "Marketing"
+   	      Y relleno nombre con "Diseño"
    	   	  Y hago click en "Guardar"
    
-   Entonces veré el texto "Marketing"
+   Entonces veré el texto "Diseño"
    
    	 Cuando hago click en el link "Atras"
           Y hago click en el link "Borrar"
-   Entonces no veré el texto "Marketing"
+   Entonces no veré el texto "Diseño"

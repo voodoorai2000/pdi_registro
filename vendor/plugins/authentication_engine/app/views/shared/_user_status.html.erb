@@ -1,11 +1,3 @@
-<div id="locale_pannel">
-  <% form_tag request.path, :method => :get do %>
-    <p>
-      <%= select_tag :language, options_for_select(@languages_available, I18n.locale), { :index => nil, :onchange => 'this.form.submit()' } %>
-    </p>
-  <% end %>
-</div>
-
 <div id="user_status">
 <%- if current_user -%>
   <p>

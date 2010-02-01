@@ -14,6 +14,6 @@ Característica: Ranking
  
     Cuando voy a "/ranking"
   Entonces vere las regiones "Islas Baleares, Comunidad Valenciana" en ese orden
-         Y vere "Islas Baleares (10)"
-         Y vere "Comunidad Valenciana (5)"
+         Y vere que "Islas Baleares" tiene 10 usuarios registrados
+         Y vere que "Comunidad Valenciana" tiene 5 usuarios registrados
          
