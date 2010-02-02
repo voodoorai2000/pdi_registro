@@ -15,7 +15,7 @@ Feature: Authentication
     When I go to the login page
     And I fill in "usuario" with "bob"
     And I fill in "contraseña" with "secret"
-    And I press "Identifíquese"
+    And I press "Entrar"
     Then I should be logged in
     When I follow "Cerrar Sesión"
     Then I should be logged out
@@ -32,7 +32,7 @@ Feature: Authentication
     And I fill in "usuario" with "bob"
     And I fill in "contraseña" with "secret"
     And I check "Recordarme"
-    And I press "Identifíquese"
+    And I press "Entrar"
     Then I should be logged in
     When I open the homepage in a new window with cookies
     Then I should be logged in
@@ -47,7 +47,7 @@ Feature: Authentication
     When I go to the login page
     And I fill in "usuario" with "<login>"
     And I fill in "contraseña" with "<password>"
-    And I press "Identifíquese"
+    And I press "Entrar"
     Then I should not be logged in
     And I should have <count> errors
     And I should see "<error_message>"

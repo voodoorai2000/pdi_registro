@@ -74,7 +74,7 @@ Feature: Requested Invitation
     And I fill in "Usuario" with "joanne"
     And I fill in "Escriba su contraseña" with "secret"
     And I fill in "Confirmación contraseña" with "secret"
-    And I press "Activar"
+    And I press "Enviar"
     Then I should have a successful activation
     And I should be logged in
     When I follow "Cerrar Sesión"
@@ -89,7 +89,7 @@ Feature: Requested Invitation
     And I fill in "Usuario" with "<login>"
     And I fill in "Escriba su contraseña" with "<password>"
     And I fill in "Confirmación contraseña" with "<confirmation>"
-    And I press "Activar"
+    And I press "Enviar"
     Then I should have an unsuccessful activation
     And I should have <count> errors
     And I should see "<error_message>"
@@ -117,7 +117,7 @@ Feature: Requested Invitation
     And I fill in "Usuario" with "joanne"
     And I fill in "Escriba su contraseña" with "secret"
     And I fill in "Confirmación contraseña" with "secret"
-    And I press "Activar"
+    And I press "Enviar"
     Then I should be logged in
     And I should have 2 emails at all
     When I open the most recent email

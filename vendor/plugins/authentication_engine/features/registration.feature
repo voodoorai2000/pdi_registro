@@ -16,7 +16,7 @@ Feature: Registration
     When I go to the registration form
     And I fill in "nombre" with "bob"
     And I fill in "email" with "bob@example.com"
-    And I press "Entrar"
+    And I press "Enviar"
     Then I should have a successful registration
 
   Scenario Outline: Not allow an anonymous user to create account with incomplete input
@@ -24,7 +24,7 @@ Feature: Registration
     When I go to the registration form
     And I fill in "nombre" with "<name>"
     And I fill in "email" with "<email>"
-    And I press "Entrar"
+    And I press "Enviar"
     Then I should have an unsuccessful registration
     And I should have <count> errors
     And I should see "<error_message>"
@@ -65,7 +65,7 @@ Feature: Registration
     And I fill in "usuario" with "bob"
     And I fill in "escriba su contraseña" with "secret"
     And I fill in "confirmación contraseña" with "secret"
-    And I press "Activar"
+    And I press "Enviar"
     Then I should have a successful activation
     And I should be logged in
     When I follow "Cerrar Sesión"
@@ -78,7 +78,7 @@ Feature: Registration
     And I fill in "usuario" with "<login>"
     And I fill in "escriba su contraseña" with "<password>"
     And I fill in "confirmación contraseña" with "<confirmation>"
-    And I press "Activar"
+    And I press "Enviar"
     Then I should have an unsuccessful activation
     And I should have <count> errors
     And I should see "<error_message>"

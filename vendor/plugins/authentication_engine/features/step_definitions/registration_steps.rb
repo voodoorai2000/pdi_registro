@@ -7,7 +7,7 @@ Given /^I have registered successfully$/ do
   When "I go to the registration form"
   And "I fill in \"nombre\" with \"bob\""
   And "I fill in \"email\" with \"bob@example.com\""
-  And "I press \"Entrar\""
+  And "I press \"Enviar\""
   Then "I should have a successful registration"
 end
 
@@ -25,7 +25,7 @@ Given /^I have successfully activated my account$/ do
   And "I fill in \"usuario\" with \"bob\""
   And "I fill in \"escriba su contraseña\" with \"secret\""
   And "I fill in \"confirmación contraseña\" with \"secret\""
-  And "I press \"Activar\""
+  And "I press \"Enviar\""
   Then "I should have a successful activation"
   And "I should be logged in"
 end
@@ -80,7 +80,7 @@ Then /^I should be logged out$/ do
 end
 
 Then /^I should see the home page$/ do
-  Then 'I should see "Bienvenido"'
+  Then 'I should see "Regístrate en el Partido de Internet"'
 end
 
 Then /^I should see my account page$/ do

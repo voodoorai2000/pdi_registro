@@ -23,8 +23,7 @@ Then /^admin should see "([^\"]*)" in the email$/ do |text|
 end
 
 Then /^I should see the admin root page$/ do
-  response.should contain('Bienvenido')
-  response.should contain('Usuario')
-  response.should contain('Invitación')
-  #response.should contain('Listing users')
+  response.should contain('Usuarios')
+  response.should contain('Invitaciónes')
+  response.should contain('Areas')
 end

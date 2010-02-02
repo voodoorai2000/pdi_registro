@@ -24,7 +24,7 @@ Given /^I am logged in as "([^\"]*)" with password "([^\"]*)"$/ do |login, passw
     visit login_path
     fill_in "Usuario", :with => login
     fill_in "Contraseña", :with => password
-    click_button "Identifíquese"
+    click_button "Entrar"
     # save_and_open_page 
   end
 end
