@@ -9,11 +9,10 @@ Característica: Borrar usuarios
        Dado "Hector" un usuario administrador
           Y un usuario "Juan"
 
-  @current
   Escenario: Borrar usuarios
           Y que estoy logado como "Hector"
      Cuando hago click en el link "Panel De Administración"   
           Y hago click en el link "Usuarios"
-          Y hago click en el link "borrar" al lado de "Juan"
-   Entonces vere "usuario borrado"
+          Y al lado del usuario "Juan" hago click en el link "borrar" 
+   Entonces vere "Usuario borrado"
           Y el usuario "Juan" no estará en la base de datos

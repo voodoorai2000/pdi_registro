@@ -26,7 +26,7 @@ ActionController::Routing::Routes.draw do |map|
   # special section used for authorizated users to manage things including other uses
   map.namespace :admin do |admin|
     if REGISTRATION[:limited]
-      admin.resources :users, :only => [:index, :show, :new, :create]
+      admin.resources :users, :only => [:index, :show, :new, :create, :destroy]
     else
       admin.resources :users, :only => [:index, :show]
     end

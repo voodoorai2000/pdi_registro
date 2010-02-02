@@ -12,6 +12,13 @@ Cuando /^hago click en "(.+)"$/ do |nombre|
   click_button(nombre)
 end
 
+Cuando /^al lado del usuario "([^\"]*)" hago click en el link "([^\"]*)"$/ do |nombre, link|
+  user = User.find_by_name(nombre)
+  click_link_within("#user_#{user.id}", link)
+end
+
+
+
 Entonces /^el usuario "([^\"]*)" estará asociado a la región "([^\"]*)"$/ do |nombre_usuario, nombre_region|
   User.find_by_name(nombre_usuario).region.should == Region.find_by_name(nombre_region)
 end
@@ -44,5 +51,9 @@ end
 Entonces /^no vere la region "([^\"]*)"$/ do |name|
   region = Region.find_by_name(name)
   response.should_not have_tag("#region_#{region.id}")
+end
+
+Entonces /^el usuario "([^\"]*)" no estará en la base de datos$/ do |nombre|
+  User.find_by_name(nombre).should be_nil
 end
 

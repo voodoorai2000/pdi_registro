@@ -6,12 +6,14 @@
     <th>Nombre</th>
     <th>Email</th>
     <th>Ultimo Login</th>
+    <th></th>
   </tr>
 <%- for user in @users -%>
-  <tr>
+  <tr id="user_<%= user.id %>">
     <td class="user_icon"><%= link_to user.name, admin_user_path(user) %></td>
     <td><%=h user.email %></td>
     <td><%=h user.last_login_at %></td>
+    <td><%= link_to "borrar", admin_user_path(user), :method => :delete, :confirm => "¿Seguro que quieres borrar a este usuario?" %></td>
   </tr>
 <%- end -%>
 </table>
