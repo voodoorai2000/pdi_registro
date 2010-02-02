@@ -19,6 +19,7 @@ es:
       not_confirmed: "Su cuenta no esta confirmada."
       not_approved: "Su cuenta no esta aprobada"
       no_authentication_details: "No rellenó los datos de autentificación."
+      taken: "ya está en uso."
     models:
       user_session: "Session de Usuario"
     attributes:
@@ -55,8 +56,6 @@ es:
               too_short: "es demasiado corta ({{count}} caracteres mínimo)."
             password_confirmation:
               too_short: "es demasiado corta ({{count}} caracteres mínimo)."
-            email:
-              taken: "ya está en uso."
     models:
       role: "Rol"
       user: "Usuario"
