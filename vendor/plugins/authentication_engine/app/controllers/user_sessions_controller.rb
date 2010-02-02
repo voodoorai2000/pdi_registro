@@ -16,7 +16,7 @@ class UserSessionsController < ApplicationController
         flash[:success] = "¡Identificación correcta!"
         session[:language] = nil
         session[:return_to] = nil if session[:return_to] == "/logout"
-        redirect_back_or_default account_url
+        redirect_back_or_default dashboard_url
       else
         render :action => :new
       end

@@ -13,6 +13,12 @@ module NavigationHelpers
     when /registration form/
       signup_path
       
+    when /login page/
+      login_path
+    
+    when /the dashboard page/
+      dashboard_path
+        
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
