@@ -5,7 +5,6 @@ require 'mundo_pepino/es_ES/mappings'
 MundoPepino.configure do |config|
   config.models_to_clean = [
     # ENTRADA AUTO-GENERADA PARA Orchard
-    Orchard, # (TODO: quitar la coma final si es el primer modelo)
 
     # MODELOS PARA LIMPIAR antes de cada escenario,
     # por ejemplo:
@@ -13,37 +12,17 @@ MundoPepino.configure do |config|
   ]
 
   config.model_mappings = {
-  # MAPEO DE MODELO AUTO-GENERADO (Orchard)
-  /^huertos?$/i              => Orchard, # (TODO: validar RegExp para forma plural y coma final)
   /^region(es)?$/            => Region,
   /^usuarios?$/              => User,
   /^areas de colaboracion?$/ => Area,
-
-  # TRADUCCIÓN DE MODELOS AQUÍ, por ejemplo:
-  # /^huert[oa]s?/i            => Orchard,
-  # /^bancal(es)?$/i           => Terrace,
-  # /^cultivos?$/i             => Crop...
   }
 
   config.field_mappings = {
-  # MAPEO DE CAMPO AUTO-GENERADO (used)
-  /^usados?$/i => :used, # (TODO: validar RegExp para forma plural y coma final)
-
-  # MAPEO DE CAMPO AUTO-GENERADO (latitude)
-  /^latitud(es)?$/i => :latitude, # (TODO: validar RegExp para forma plural y coma final)
-
-  # MAPEO DE CAMPO AUTO-GENERADO (longitude)
-  /^longitud(es)?$/i => :longitude, # (TODO: validar RegExp para forma plural y coma final)
-
-  # MAPEO DE CAMPO AUTO-GENERADO (area)
-  /^áreas?$/i => :area, # (TODO: validar RegExp para forma plural y coma final)
-
-  # MAPEO DE CAMPO AUTO-GENERADO (name)
-  /^nombres?$/i => :name, # (TODO: validar RegExp para forma plural y coma final)
-  /^apellidos?$/i => :last_name, # (TODO: validar RegExp para forma plural y coma final)
-  /^edad$/i => :age, # (TODO: validar RegExp para forma plural y coma final)
-  /^sexo$/i => :gender, # (TODO: validar RegExp para forma plural y coma final)
-  /^region$/i => :region, # (TODO: validar RegExp para forma plural y coma final)
+  /^nombres?$/i => :name, 
+  /^apellidos?$/i => :last_name,
+  /^edad$/i => :age, 
+  /^sexo$/i => :gender,
+  /^region$/i => :region, 
   /^areas de colaboración$/ => :areas_of_colaboration
     # TRADUCCIÓN DE CAMPOS AQUÍ:
     # /^[Ááa]reas?$/i    => 'area',
