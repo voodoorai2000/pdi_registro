@@ -5,6 +5,7 @@
     <%= link_to "Panel De Administración", admin_root_path %> |
     <%- end -%>
     <%= link_to "Mi Cuenta", account_path %> |
+    <%= link_to "Dashboard", dashboard_path %> |
     <%= link_to "Cerrar Sesión", logout_path, :method => :delete, :confirm => "¿Seguro que quiere cerrar la sesión?" %>
   </p>
   <%- if REGISTRATION[:private] and current_user.invitation_limit > 0 -%>
