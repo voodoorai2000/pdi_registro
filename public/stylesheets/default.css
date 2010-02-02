@@ -184,6 +184,8 @@ select {
   margin-bottom: 30px;
 }
 
+#dasboard #redes-sociales { margin-left: 50px;}
+
 #dasboard h2 {
   border-bottom-width: 3px;
   font-size: 1.4em;
@@ -234,3 +236,20 @@ select {
   font-weight: bold;
   color: #666666;
 }
+
+.edit_user fieldset {
+  border-top: solid 1px black;
+  margin-top: 15px;
+}
+.edit_user legend { 
+  font-size: 1.6em;
+  font-weight: bold;
+  padding-top: 15px;
+  padding-left: 5px;
+}
+
+#show_user p { margin-bottom: 15px; }
+
+ul.social-links li { height: 40px;}
+ul.social-links li a { padding: 6px;}
+ul.social-links li * { float: left;}

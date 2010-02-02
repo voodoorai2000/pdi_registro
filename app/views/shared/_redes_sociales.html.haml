@@ -1,0 +1,14 @@
+:ruby
+  links = [['Facebook','http://www.facebook.com/group.php?gid=36330539414','facebook_32.png'],
+    ['Twitter','http://www.twitter.com/pdi','twitter_32.png'],
+    ['Youtube','http://www.youtube.com/user/partidodeinternet','youtube_32.png'],
+    ['Vimeo','http://vimeo.com/user2727244','vimeo_32.png'],
+    ['Flickr','http://www.flickr.com/photos/partidodeinternet','flickr_32.png']
+  ]
+
+%ul.social-links
+  -links.each do |name, url, icon|
+    -content_tag_for :li, name, :class => 'grid_5' do
+      =image_tag "icons/#{icon}"
+      =link_to name, url, :target => '_blank'
+  
