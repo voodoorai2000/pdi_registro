@@ -1,0 +1,16 @@
+#dasboard
+  .grid_22.content
+    %h2 Necesitamos colaboradores
+    %p.grid_13
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus lacinia,
+      mauris nec ultricies interdum, orci nisl placerat est, sit amet scelerisque
+      velit magna aliquet turpis. Nullam convallis congue aliquet. Nunc eget eros
+      euismod urna gravida tincidunt et mattis purus.
+
+  .grid_22.content-divider
+
+  .grid_9.content
+    %h2 Top 5 del Ranking
+    %p.important= "Ya somos #{User.active.count}"
+    =render :partial => "shared/ranking"
+    = link_to "Ver todo el ranking", ranking_path

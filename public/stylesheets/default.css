@@ -21,6 +21,7 @@ h2 {
 
 a {
   color: #e38226;
+  text-decoration: none;
 }
 
 .none {
@@ -43,7 +44,7 @@ a {
 }
 
 #top, h2, .info-block, info-block-bottom,
-legend {
+legend, #ranking  {
   margin-bottom: 20px;
 }
 
@@ -55,6 +56,30 @@ legend {
   margin-left: 40px;
 }
 
+/****** MENU *****/
+#user_status {
+  margin-bottom: 5px;
+  font-weight: bold;
+  padding-left: 40px;
+  background: url(/images/divider_950x57.png) no-repeat bottom;
+  height: 185px;
+}
+
+#user_status a {
+   text-decoration: none;
+}
+
+#user_status a:hover  {
+   text-decoration: underline;
+}
+
+.close-session a {
+  display:block;
+  margin-top: 10px;
+  color: white;
+  background-color: #e38226;
+  text-align: center;
+}
 
 /**** Formularios ****/
 label {
@@ -149,6 +174,52 @@ select {
 #flash_success {
   color: green;
 }
+
+/*** dasboard ***/
+#dasboard .content { margin-bottom: 30px;}
+
+.content-divider {
+  height: 1px;
+  background: url(/images/divider_950x1.png) no-repeat bottom;
+  margin-bottom: 30px;
+}
+
+#dasboard h2 {
+  border-bottom-width: 3px;
+  font-size: 1.4em;
+}
+
+#dasboard {
+  margin-left: -22px;
+}
+
+/******* RANKING *****/
+.important {
+  color: #d60f71;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8em;
+}
+
+#ranking td {
+  padding: 5px;
+}
+
+#ranking .region_users {
+  text-align: right;
+}
+
+#ranking .odd {
+  background-color: #e4e4e4;
+}
+
+#ranking th {
+  padding: 5px;
+  font-weight: bold;
+  border-bottom: solid 1px;
+}
+
+#ranking th.right { text-align: right}
 
 /******* FOOT *****/
 #foot {

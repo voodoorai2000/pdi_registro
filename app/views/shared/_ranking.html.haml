@@ -1,0 +1,11 @@
+#ranking
+  %table
+    %tr
+      %th Provincias
+      %th.right Simpatizantes
+    -@user_regions.each do |region, users|
+      -content_tag_for :tr, region, :class =>cycle('even', 'odd') do
+        %td.region_name{:id => "region_#{region.id}_name" }
+          =region.name
+        %td.region_users{:id => "region_#{region.id}_users" }
+          =users.size
