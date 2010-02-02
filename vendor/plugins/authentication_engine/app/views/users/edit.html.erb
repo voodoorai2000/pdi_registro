@@ -2,7 +2,7 @@
 
 <%= error_messages_for :user %>
 
-<% form_for @user, :url => account_path, :class => 'edit-user' do |f| %>
+<% form_for @user, :url => account_path, :class => 'edit_user' do |f| %>
 <fieldset>
   <legend>Actualizar Información</legend>
   <p>
@@ -59,10 +59,8 @@
   </p>
 </fieldset>
 
-<fieldset>
-  <%= render :partial => "areas", 
+<%= render :partial => "areas", 
   				   :locals => { :f => f, :object => @user } %>
-</fieldset>
 
 
 <p>
