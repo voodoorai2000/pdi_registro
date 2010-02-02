@@ -5,7 +5,7 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :areas
   end
   map.with_options :controller => 'info' do |info|
-    info.about 'terms_of_service', :action => 'terms_of_service'
+    info.about 'legal_conditions', :action => 'legal_conditions'
   end
   
   map.ranking "/ranking", :controller => "ranking"

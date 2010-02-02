@@ -1,5 +1,5 @@
 class InfoController < ApplicationController
-  def terms_of_service
+  def legal_conditions
   end
 
 end
