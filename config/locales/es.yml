@@ -55,6 +55,8 @@ es:
               too_short: "es demasiado corta ({{count}} caracteres mínimo)."
             password_confirmation:
               too_short: "es demasiado corta ({{count}} caracteres mínimo)."
+            email:
+              taken: "ya está en uso."
     models:
       role: "Rol"
       user: "Usuario"
