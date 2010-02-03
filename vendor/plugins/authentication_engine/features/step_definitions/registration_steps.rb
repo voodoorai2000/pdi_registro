@@ -58,7 +58,7 @@ Then /^I should have an unsuccessful registration$/ do
 end
 
 Then /^I should have a successful activation$/ do
-  Then "I should see my account editing page"
+  Then "I should see my dashboard page"
   And 'I should see "Su cuenta ha sido activada"'
 end
 
@@ -67,11 +67,11 @@ Then /^I should have an unsuccessful activation$/ do
 end
 
 Then /^I should be logged in$/ do
-  Then 'I should see "Mi Cuenta"'
+  Then 'I should see "Tu Cuenta"'
 end
 
 Then /^I should not be logged in$/ do
-  Then 'I should not see "Mi Cuenta"'
+  Then 'I should not see "Tu Cuenta"'
 end
 
 Then /^I should be logged out$/ do
@@ -85,7 +85,7 @@ end
 
 Then /^I should see my account page$/ do
   Then 'I should be on "the account page"'
-  And 'I should see "Mi Cuenta"'
+  And 'I should see "Tu Cuenta"'
 end
 
 Then /^I should see my account editing page$/ do
