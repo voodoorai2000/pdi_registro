@@ -24,14 +24,6 @@
 </fieldset>
 
 <fieldset>
-  <legend>Registrar OpenID</legend>
-  <p>
-    <%= f.label :openid_identifier, openid_link %>
-    <%= f.text_field :openid_identifier %>
-  </p>
-</fieldset>
-
-<fieldset>
   <legend>Cambiar Contraseña</legend>
   <p>
     <%= f.label :password, "Nueva contraseña" %>
@@ -46,7 +38,7 @@
 <fieldset>
  <legend><%= "Informacion Importante" %></legend>
   <p>
-    <%= f.label :age, "Edad" %>
+    <%= f.label :age, "Fecha de Nacimiento" %>
     <%= f.text_field :age %>
   </p>
   <p>
@@ -56,6 +48,14 @@
   <p>
   	<%= f.label :region_id, "Región" %>
   	<%= f.select :region_id, Region.all.sort_by(&:name).collect {|region| [region.name, region.id]} %>
+  </p>
+</fieldset>
+
+<fieldset>
+  <legend>Registrar OpenID</legend>
+  <p>
+    <%= f.label :openid_identifier, openid_link %>
+    <%= f.text_field :openid_identifier %>
   </p>
 </fieldset>
 

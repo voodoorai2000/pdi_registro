@@ -2,7 +2,7 @@
   %table
     %tr
       %th Provincias
-      %th.right Afiliados
+      %th.right Simpatizantes
     -@user_regions.each do |region, users|
       -content_tag_for :tr, region, :class =>cycle('even', 'odd') do
         %td.region_name{:id => "region_#{region.id}_name" }
