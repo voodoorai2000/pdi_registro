@@ -44,7 +44,7 @@ a {
 }
 
 #top, h2, .info-block, info-block-bottom,
-legend, #ranking  {
+legend, #ranking, #colaborar div  {
   margin-bottom: 20px;
 }
 
@@ -232,6 +232,8 @@ select {
 }
 
 #ranking th.right { text-align: right}
+
+#areas li { margin-bottom: 8px;}
 
 /******* FOOT *****/
 #foot {
