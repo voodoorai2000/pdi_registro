@@ -6,7 +6,7 @@
     <%- end -%>
     <%= link_to "Inicio", dashboard_path %> ·
     <%= link_to "Ranking", ranking_path %> ·
-    <%= link_to "Colaborar", '#' %> ·
+    <%= link_to "Colaborar", {:action => 'index' , :controller => 'colaborate' } %> ·
     <%= link_to "Wiki", 'http://www.partidodeinternet.es/wiki/', :target => '_blank' %> ·
     <%= link_to "Foro", 'http://www.partidodeinternet.es/foro/', :target => '_blank' %> ·
     <%= link_to "Tu Cuenta", account_path %>
