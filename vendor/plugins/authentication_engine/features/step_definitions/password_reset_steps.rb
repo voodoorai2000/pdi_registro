@@ -5,7 +5,7 @@ Given /^I am a user who opened my reset password email$/ do
   And "I press \"Resetear mi contraseña\""
   Then "\"bob@example.com\" should receive an email"
   When "I open the email"
-  Then "I should see \"resetear su contraseña\" in the email body"
+  Then "I should see \"resetear su contrase&ntilde;a\" in the email body"
 end
 
 
