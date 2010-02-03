@@ -58,6 +58,8 @@ es:
               too_short: "es demasiado corta ({{count}} caracteres mínimo)."
             email:
               taken: "ya está en uso"
+            login:
+              taken: "ya está en uso"
     models:
       role: "Rol"
       user: "Usuario"

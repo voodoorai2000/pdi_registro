@@ -46,7 +46,7 @@ class ActivationsController < ApplicationController
           redirect_to login_url
         else
           flash[:success] = "Su cuenta ha sido activada."
-          redirect_to edit_account_url
+          redirect_to dashboard_url
         end
       else
         render :action => :new
