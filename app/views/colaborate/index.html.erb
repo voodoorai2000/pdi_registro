@@ -2,6 +2,9 @@
 
 <% form_for @user, :url => account_path do |f| -%>
   <%= render :partial => "shared/areas", :locals => { :f => f, :object => @user } %>
+  <%= f.label :more_info, "Más Información" %>
+  <%= f.text_area :more_info %>
+  
   <%= hidden_field :colaborar, :true %>
   
   <p class="submit">
