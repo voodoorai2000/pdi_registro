@@ -1,5 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   # paths used for running user's authentication procedure
+  map.colaborate '/colaborate', :controller => 'colaborate'
   map.resource :user_session, :only => [:create]
   map.login '/login', :controller => 'user_sessions', :action => 'new', :conditions => { :method => :get }
   map.logout '/logout', :controller => 'user_sessions', :action => 'destroy', :conditions => { :method => [:get, :delete] }
