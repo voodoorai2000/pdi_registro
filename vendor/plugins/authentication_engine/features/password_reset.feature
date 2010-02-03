@@ -17,7 +17,7 @@ Feature: Password Reset
     And I press "Resetear mi contraseña"
     Then "bob@example.com" should receive an email
     When I open the email
-    And I should see "resetear mi contraseña" in the email body
+    And I should see "resetear mi contrase&ntilde;a" in the email body
   
   Scenario: Do not send a reset instructions email if given an invalid email
     Given I am a confirmed user with email "bob@example.com"
@@ -30,7 +30,7 @@ Feature: Password Reset
   
   Scenario: Display change password form with valid token
     Given I am a user who opened my reset password email
-    When I follow "resetear mi contraseña" in the email
+    When I follow "resetear mi contrase&ntilde;a" in the email
     Then I should see a password modification form
   
   Scenario: Not display change password form with invalid token
@@ -40,7 +40,7 @@ Feature: Password Reset
   
   Scenario: Update password and log in user with valid input
     Given I am a user who opened my reset password email
-    When I follow "resetear mi contraseña" in the email
+    When I follow "resetear mi contrase&ntilde;a" in the email
     Then I should see a password modification form
     When I fill in "Nueva contraseña" with "new secret"
     And I fill in "Confirmacíon nueva contraseña" with "new secret"
@@ -52,7 +52,7 @@ Feature: Password Reset
   
   Scenario Outline: Don't update password and log in user with invalid input
     Given I am a user who opened my reset password email
-    When I follow "resetear mi contraseña" in the email
+    When I follow "resetear mi contrase&ntilde;a" in the email
     Then I should see a password modification form
     When I fill in "Nueva contraseña" with "<password>"
     And I fill in "Confirmacíon nueva contraseña" with "<confirmation>"

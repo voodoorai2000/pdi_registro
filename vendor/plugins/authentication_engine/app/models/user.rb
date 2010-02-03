@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
 
   accepts_nested_attributes_for :areas
   
-  attr_accessible :region_id, :last_name, :age, :gender, :area_ids
+  attr_accessible :region_id, :last_name, :age, :gender, :area_ids, :more_info
   
   named_scope :with_region, :conditions => :region_id
   named_scope :limit, lambda { |num| { :limit => num } }

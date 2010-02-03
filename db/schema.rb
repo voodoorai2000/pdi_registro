@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100201222319) do
+ActiveRecord::Schema.define(:version => 20100203131707) do
 
   create_table "areas", :force => true do |t|
     t.string   "name"
@@ -114,6 +114,7 @@ ActiveRecord::Schema.define(:version => 20100201222319) do
     t.string   "age"
     t.string   "gender"
     t.boolean  "active"
+    t.text     "more_info"
   end
 
   add_index "users", ["last_request_at"], :name => "index_users_on_last_request_at"

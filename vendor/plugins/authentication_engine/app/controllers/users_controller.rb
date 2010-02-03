@@ -41,8 +41,13 @@ class UsersController < ApplicationController
     @user.save do |result|
       if result
         set_language(@user.preference.language) if language_changed
-        flash[:success] = "¡Cuenta actualizada!"
-        redirect_to account_url
+        if params[:colaborar]
+          flash[:success] = "¡Gracias por colaborar nos pondremos en contacto contigo!"
+          redirect_to dashboard_url
+        else
+          redirect_to account_url
+          flash[:success] = "¡Cuenta actualizada!"
+        end
       else
         render :action => :edit
       end
