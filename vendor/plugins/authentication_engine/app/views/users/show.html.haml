@@ -4,6 +4,9 @@
     %b Nombre:
     =h @user.name 
   %p
+    %b Apellidos
+    %span#user_last_name=h @user.last_name
+  %p
     %b Usuario:
     =h @user.login 
   %p
@@ -13,9 +16,6 @@
     %b=openid_link
     =h @user.openid_identifier
   %p
-    %b Apellidos
-    %span#user_last_name=h @user.last_name
-  %p
     %b Edad:
     %span#user_age=h @user.age
   %p
@@ -24,8 +24,5 @@
   %p
     %b Region:
     %span#user_region=h @user.region.try(:name)
-  %p
-    %b Areas de Colaboración:
-    %span#user_areas_of_colaboration=h @user.areas_of_colaboration
   %p
     =link_to "Editar", edit_account_path

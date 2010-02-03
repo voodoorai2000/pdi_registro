@@ -10,6 +10,10 @@
     <%= f.text_field :name %>
   </p>
   <p>
+    <%= f.label :last_name, "Apellidos" %>
+    <%= f.text_field :last_name %>
+  </p>
+  <p>
     <%= f.label :login, "Usuario" %>
     <%= f.text_field :login %>
   </p>
@@ -42,10 +46,6 @@
 <fieldset>
  <legend><%= "Informacion Importante" %></legend>
   <p>
-    <%= f.label :last_name, "Apellidos" %>
-    <%= f.text_field :last_name %>
-  </p> 
-  <p>
     <%= f.label :age, "Edad" %>
     <%= f.text_field :age %>
   </p>
@@ -58,7 +58,6 @@
   	<%= f.select :region_id, Region.all.sort_by(&:name).collect {|region| [region.name, region.id]} %>
   </p>
 </fieldset>
-
 
 <p class="submit">
   <%= f.submit "Actualizar Cuenta" %>
