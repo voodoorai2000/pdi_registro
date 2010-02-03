@@ -1,0 +1,14 @@
+-title('¿Dónde quieres Colaborar?')
+=error_messages_for :user
+#colaborar.grid_13
+  -form_for @user, :url => account_path do |f|
+    %div
+      =render :partial => "shared/areas", :locals => { :f => f, :object => @user }
+    %div
+      =f.label :more_info, "Más Información"
+      =f.text_area :more_info, {:rows => 15, :cols => 60}
+
+    =hidden_field :colaborar, :true
+
+    %p.submit.grid_2.alpha
+      =f.submit "Enviar"
