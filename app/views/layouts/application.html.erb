@@ -6,6 +6,9 @@
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title><%=h yield(:title) || "Sin título" %></title>
   <%= stylesheet_link_merged :base %>
+  <!--[if lt IE 8]>
+     <%= stylesheet_link_tag 'ie-hacks.css' %>
+  <![endif]-->
   <%= javascript_include_merged :base %>
   <%= yield(:head) %>
 </head>
