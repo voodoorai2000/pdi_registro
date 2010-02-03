@@ -27,6 +27,7 @@
             =f.text_field :email
             =obligatorio
       %fieldset
+        %legend Datos Acceso
         %p
           =f.label :login, "Usuario"
           =f.text_field :login
@@ -41,11 +42,13 @@
           =obligatorio
 
       %fieldset
+        %legend OpenID
         %p
           =f.label :openid_identifier, openid_link
           =f.text_field :openid_identifier
 
       %fieldset
+        %legend Datos personales
         %p
           =f.label :last_name, "Apellidos"
           =f.text_field :last_name
