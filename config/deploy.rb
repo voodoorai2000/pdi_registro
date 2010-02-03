@@ -25,6 +25,7 @@ task :create_symbolic_links, :roles => :app do
   run "ln -nfs #{deploy_to}/#{shared_dir}/config/database.yml #{release_path}/config/database.yml"
   run "ln -nfs #{deploy_to}/#{shared_dir}/config/authentication_engine.yml #{release_path}/config/authentication_engine.yml"
   run "ln -nfs #{deploy_to}/#{shared_dir}/db/schema.rb #{release_path}/db/schema.rb"
+  run "ln -nfs #{deploy_to}/#{shared_dir}/images/bnn_home.jpg #{release_path}/public/images/bnn_home.jpg"
 end
 
 desc "Restart Application"
