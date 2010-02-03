@@ -42,12 +42,6 @@
           =obligatorio
 
       %fieldset
-        %legend OpenID
-        %p
-          =f.label :openid_identifier, openid_link
-          =f.text_field :openid_identifier
-
-      %fieldset
         %legend Datos personales
         %p
           =f.label :last_name, "Apellidos"
@@ -62,4 +56,10 @@
           =f.label :region_id, "Región"
           =f.select :region_id, Region.all.sort_by(&:name).collect {|region| [region.name, region.id]}
 
+      %fieldset
+        %legend OpenID
+        %p
+          =f.label :openid_identifier, openid_link
+          =f.text_field :openid_identifier
+              
       %p.submit.grid_13=f.submit "Enviar"
