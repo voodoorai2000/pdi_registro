@@ -1,13 +1,15 @@
-<div id="user_status">
+<div id="user_status" class="grid_22">
 <%- if current_user -%>
   <p>
     <%- if current_user.admin? -%>
-    <%= link_to "Panel De Administración", admin_root_path %> |
+    <%= link_to "Panel De Administración", admin_root_path %> ·
     <%- end -%>
-    <%= link_to "Dashboard", dashboard_path %> |
-    <%= link_to "Mi Cuenta", account_path %> |
-    <%= link_to "Wikipedia", 'http://es.wikipedia.org/wiki/Partido_de_Internet', :target => '_blank' %> |
-    <%= link_to "Foro", 'http://www.partidodeinternet.es/foro/', :target => '_blank' %>
+    <%= link_to "Inicio", dashboard_path %> ·
+    <%= link_to "Ranking", ranking_path %> ·
+    <%= link_to "Colaborar", '#' %> ·
+    <%= link_to "Wiki", 'http://www.partidodeinternet.es/wiki/', :target => '_blank' %> ·
+    <%= link_to "Foro", 'http://www.partidodeinternet.es/foro/', :target => '_blank' %> ·
+    <%= link_to "Tu Cuenta", account_path %>
     
     <%#= link_to "Cerrar Sesión", logout_path, :method => :delete, :confirm => "¿Seguro que quiere cerrar la sesión?" %>
   </p>

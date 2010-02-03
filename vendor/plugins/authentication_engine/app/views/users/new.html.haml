@@ -24,22 +24,22 @@
       =f.error_messages
 
     %fieldset.grid_13.alpha
-      %p
+      %div
         =f.label :name, "Nombre"
         =f.text_field :name
-      %p
+      %div
         =f.label :email, "Email" 
         =f.text_field :email
-      %p Al pulsar el botón, usted:
-      %p
-        Acepta y autoriza los términos de las
+      %div
+        Al pulsar el botón, usted:
+        %br Acepta y autoriza los términos de las
         =link_to "Condiciones legales", :controller => "info", :action => "legal_conditions"
       
-      %p.submit.grid_12
+      .submit.grid_12
         = f.submit "ENVIAR"
    
     %fieldset.grid_8.omega
-      %p
+      %div
         =f.label :openid_identifier, openid_link
         =f.text_field :openid_identifier, :class => 'openid'
     .clear

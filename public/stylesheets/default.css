@@ -62,7 +62,7 @@ legend, #ranking  {
   font-weight: bold;
   padding-left: 40px;
   background: url(/images/divider_950x57.png) no-repeat bottom;
-  height: 185px;
+  height: 80px;
 }
 
 #user_status a {
@@ -97,7 +97,7 @@ input[type="password"] {
   width: 430px;
 }
 
-fieldset p {
+fieldset p, fieldset div {
   margin-bottom: 20px;
 }
 
@@ -112,7 +112,7 @@ input[type="submit"] {
   cursor: pointer;
 }
 
-p.submit {
+.submit {
   text-align: center;
   padding: 10px;
 }
@@ -184,8 +184,6 @@ select {
   margin-bottom: 30px;
 }
 
-#dasboard #redes-sociales { margin-left: 50px;}
-
 #dasboard h2 {
   border-bottom-width: 3px;
   font-size: 1.4em;
@@ -193,6 +191,18 @@ select {
 
 #dasboard {
   margin-left: -22px;
+}
+
+#dasboard .big-link {
+  display: block;
+  padding: 10px;
+  color: white;
+  background: #e38226;
+  width: 230px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+  margin-left: 20px;
 }
 
 /******* RANKING *****/
@@ -241,11 +251,14 @@ select {
   border-top: solid 1px black;
   margin-top: 15px;
 }
+
 .edit_user legend { 
   font-size: 1.6em;
   font-weight: bold;
-  padding-top: 15px;
   padding-left: 5px;
+  padding-right: 5px;
+  text-align: left;
+  color: #666666;
 }
 
 #show_user p { margin-bottom: 15px; }
