@@ -27,7 +27,7 @@ begin
     end
 
     desc 'Run all features'
-    task :all => [:ok, :wip]
+    task :all => [:ok, :wip, 'authentication_engine:features']
   end
   desc 'Alias for cucumber:ok'
   task :cucumber => 'cucumber:ok'
