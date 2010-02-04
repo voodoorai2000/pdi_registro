@@ -12,14 +12,14 @@ Característica: Editar Perfil
    Entonces vere el formulario de activacion
    
     Cuando relleno "Apellidos" con 'Perez Duarte'
-         Y relleno "Edad" con '28'
+         Y relleno "Fecha de nacimiento" con '24/04/1982'
          Y selecciono 'Masculino' como Sexo
          Y relleno el resto de campos del formulario de activacion
          Y hago click en "Enviar"    
          
     Cuando voy a la pagina de mi perfil
   Entonces veré que mis apellidos son "Perez Duarte"
-         Y veré que mi edad es "28"
+         Y veré que mi fecha de nacimiento es "24/04/1982"
          Y veré que mi sexo es "Masculino"
     
     
@@ -29,12 +29,12 @@ Característica: Editar Perfil
   
   	 Cuando visito la pagina de editar mi perfil
   	      Y relleno "Apellidos" con 'Perez Duarte'
-          Y relleno "Edad" con '28'
+          Y relleno "Fecha de nacimiento" con '24/04/1982'
           Y selecciono 'Masculino' como Sexo
   	      Y hago click en "Actualizar Cuenta"  	  
       
      Cuando voy a la pagina de mi perfil
    Entonces veré que mis apellidos son "Perez Duarte"
-          Y veré que mi edad es "28"
+          Y veré que mi fecha de nacimiento es "24/04/1982"
           Y veré que mi sexo es "Masculino"
           

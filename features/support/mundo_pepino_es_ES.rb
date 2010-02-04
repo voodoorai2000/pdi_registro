@@ -20,7 +20,7 @@ MundoPepino.configure do |config|
   config.field_mappings = {
   /^nombres?$/i => :name, 
   /^apellidos?$/i => :last_name,
-  /^edad$/i => :age, 
+  /^fecha de nacimiento$/i => :age, 
   /^sexo$/i => :gender,
   /^region$/i => :region, 
   /^areas de colaboración$/ => :areas_of_colaboration

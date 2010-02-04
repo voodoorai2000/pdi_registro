@@ -9,5 +9,5 @@ Característica: Condiciones legales
        Dado que voy a la pagina principal
           Y hago click en el link "Registrarse"
           Y hago click en el link "Condiciones legales"
-   Entonces vere "Condiciones legales del Partido de Internet"
+   Entonces vere "En cumplimiento de la Ley"
   

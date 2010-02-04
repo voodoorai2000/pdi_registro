@@ -8,16 +8,17 @@ Característica: Colaboracion
   Escenario: Areas de Colaboración
         Dado 2 areas de colaboracion "Software y Marketing"
         Dado que estoy logado
-      Cuando visito la pagina de editar mi perfil
+      Cuando visito "/colaborate"
            Y marco "Software"
   		     Y marco "Marketing"
-  		     Y hago click en "Actualizar Cuenta" 
+  		     Y hago click en "Enviar" 
   		     
   	Entonces estaré asociado a las siguientes areas de colaboracion:
             	 | nombre    |
             	 | Software  |
             	 | Marketing |	  
             	 
-      Cuando voy a la pagina de mi perfil
-    Entonces veré que mis areas de colaboración son "Software, Marketing"
+      Cuando visito "/colaborate"
+    Entonces el checkbox "Software" estará marcado
+           Y el checkbox "Marketing" estará marcado
  

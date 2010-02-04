@@ -17,8 +17,6 @@ Cuando /^al lado del usuario "([^\"]*)" hago click en el link "([^\"]*)"$/ do |n
   click_link_within("#user_#{user.id}", link)
 end
 
-
-
 Entonces /^el usuario "([^\"]*)" estará asociado a la región "([^\"]*)"$/ do |nombre_usuario, nombre_region|
   User.find_by_name(nombre_usuario).region.should == Region.find_by_name(nombre_region)
 end
@@ -31,15 +29,15 @@ Entonces /^ver[eé] "([^\"]*)"$/ do |texto|
   response.should contain(texto)
 end
 
-Entonces /^veré que mis? (.+) (?:es|son) "([^\"]*)"$/ do |campo, valor|
-  response.should have_tag("#user_#{campo.to_field}", valor)
+Entonces /el checkbox "([^\"]*)" estará marcado$/ do |label|
+  field_labeled(label).should be_checked
 end
 
 Then /^vere las ([^\"]+) "([^\"]*)" en ese orden$/ do |modelo, nombres|
   model_name = modelo.to_model.name.underscore
   split_and_strip(nombres).each_with_index do |nombre, index|
     resource = modelo.to_model.find_by_name(nombre)
-    response.body.should have_tag("##{model_name}_#{resource.id}:nth-child(#{index+1})")
+    response.body.should have_tag("##{model_name}_#{resource.id}:nth-child(#{index+2})")
   end
 end
 
@@ -56,4 +54,9 @@ end
 Entonces /^el usuario "([^\"]*)" no estará en la base de datos$/ do |nombre|
   User.find_by_name(nombre).should be_nil
 end
+
+Entonces /^veré que (?:mi|mis) (.*) (?:es|son) "([^\"]*)"$/ do |attribute, value|
+  response.should have_tag("#user_#{attribute.to_field}", value)
+end
+
 
