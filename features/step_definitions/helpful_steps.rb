@@ -4,6 +4,10 @@ Dado /^las regiones "([^\"]*)"$/ do |nombres|
   end
 end
 
+Dado /^no hago nada mas$/ do
+  puts "nothing for nothing gives nothing"
+end
+
 Entonces /^debug$/ do
   debugger
 end
