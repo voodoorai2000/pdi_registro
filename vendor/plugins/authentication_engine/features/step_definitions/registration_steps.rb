@@ -58,7 +58,7 @@ Then /^I should have an unsuccessful registration$/ do
 end
 
 Then /^I should have a successful activation$/ do
-  Then "I should see my dashboard page"
+  Then 'I should see "Top 5 del Ranking"'
   And 'I should see "Su cuenta ha sido activada"'
 end
 
