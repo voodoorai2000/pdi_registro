@@ -1,15 +1,14 @@
 development:
-  adapter: sqlite3
-  database: db/development.sqlite3
-  pool: 5
-  timeout: 5000
-
+  adapter: mysql
+  database: pdi_registro_development
+  username: Iamnotyou
+  password: hello1234
 
 test: &TEST
-  adapter: sqlite3
-  database: db/test.sqlite3
-  pool: 5
-  timeout: 5000
+  adapter: mysql
+  database: pdi_registro_test
+  username: Iamnotyou
+  password: hello1234
 
 cucumber:
   <<: *TEST

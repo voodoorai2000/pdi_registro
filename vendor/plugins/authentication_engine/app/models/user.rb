@@ -26,6 +26,7 @@ class User < ActiveRecord::Base
   named_scope :with_region, :conditions => :region_id
   named_scope :limit, lambda { |num| { :limit => num } }
   named_scope :active, :conditions => {:active => true}
+  named_scope :not_active, :conditions => {:active => nil}
   
   def self.ranking
     with_region.group_by(&:region).sort_by{|region, users| users.size}.reverse
@@ -41,6 +42,13 @@ class User < ActiveRecord::Base
   
   def areas_of_colaboration
     areas.map(&:name).join(", ")
+  end
+  
+  #this should be a rake tasks but I'm having trouble testing the emails being send from the rake task.
+  def self.resend_activation_email
+    User.not_active.each do |user|
+      user.deliver_activation_instructions! if 1.week.ago > user.created_at
+    end
   end
   
 end

@@ -1,3 +1,13 @@
+Entonces /^se enviara el email de activacion a "([^\"]*)"$/ do |email|
+  Then "\"#{email}\" should receive an email"
+  When "I open the email"
+  Then "I should see \"Instrucciones De Activación Partido de Internet\" in the email subject"
+end
+
+Entonces /^no se enviara ningun email a "([^\"]*)"$/ do |email|
+  Then "\"#{email}\" should receive no emails"
+end
+
 #duplicate
 # # Commonly used email steps
 # #

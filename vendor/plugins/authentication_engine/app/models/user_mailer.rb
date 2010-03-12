@@ -2,7 +2,7 @@ class UserMailer < ActionMailer::Base
   default_url_options[:host] = NOTIFIER[:host]
 
   def activation_instructions(user)
-    subject       "Instrucciones De Activación"
+    subject       "Instrucciones De Activación Partido de Internet"
     from          "#{NOTIFIER[:name]} <#{NOTIFIER[:email]}>"
     recipients    "#{user.name} <#{user.email}>"
     sent_on       Time.now
@@ -17,7 +17,7 @@ class UserMailer < ActionMailer::Base
     body          :root_url => root_url
   end
 
-  def password_reset_instructions(user)
+  def password_reset_instructions(user) 
     subject       "Instrucciones Para Resetear Su Contraseña"
     from          "#{NOTIFIER[:name]} <#{NOTIFIER[:email]}>"
     recipients    "#{user.name} <#{user.email}>"

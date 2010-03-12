@@ -5,7 +5,6 @@ Característica: Dashboard al identificarse
 	Como un usuario
 	Quiero ser enviado al dashboard cuando me identifico
   
-  @current
   Escenario: Enviar al Dashboard al identificarse
        Dado I am a confirmed user "bob" with password "secret"
      Cuando I go to the login page

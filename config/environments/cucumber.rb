@@ -31,4 +31,7 @@ config.gem 'rspec-rails',      :lib => false, :version => '>=1.3.2' unless File.
 config.gem 'autotest-rails',   :lib => false, :version => '>=4.1.0'
 config.gem 'autotest-growl',   :lib => false, :version => '>=0.1.7'
 config.gem 'ZenTest',          :lib => false, :version => '>=4.2.1'
+config.gem 'mundo-pepino',     :lib => false, :version => '0.1.9'
+config.gem 'delorean'
+config.gem "adzap-ar_mailer", :lib => 'action_mailer/ar_mailer', :source => 'http://gems.github.com'
 
