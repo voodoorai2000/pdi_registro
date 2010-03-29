@@ -1,18 +1,7 @@
 -title 'Inicio', false
 #dasboard
   .grid_22.content
-    %h2 Necesitamos colaboradores
-    %div.grid_13
-      %p
-        En este momento el Partido De Internet está creciendo a un ritmo cada vez mayor, y
-        cada vez son más las necesidades que tenemos que atender. Por eso, si crees que puedes
-        colaborar en algún ámbito, no dudes en comunicarlo.
-      %br
-      %p
-        Si quieres ver en las áreas que estamos trabajando ahora, 
-        = link_to('visita la wiki','http://www.partidodeinternet.es/wiki/Áreas_de_trabajo')
-    %div.grid_8
-      =link_to '¡QUIERO COLABORAR!',{:action => 'index', :controller => 'colaborate'}, :class => 'big-link'
+    =render :partial => "colaborate"
 
   .grid_22.content-divider
 
