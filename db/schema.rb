@@ -108,12 +108,12 @@ ActiveRecord::Schema.define(:version => 20100203131707) do
     t.boolean  "admin"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "active"
     t.string   "state"
     t.integer  "region_id"
     t.string   "last_name"
     t.string   "age"
     t.string   "gender"
-    t.boolean  "active"
     t.text     "more_info"
   end
 
