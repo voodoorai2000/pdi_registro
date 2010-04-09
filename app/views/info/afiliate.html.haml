@@ -1,74 +1,70 @@
-%h2 Afíliate al Partido de Internet
-%p
-  Para afiliarte al Partido de Internet, debes completar los siguientes pasos:
+.afiliate
+  %h2 Afíliate al Partido de Internet
+  %h3 PASO 1
 
-%br 
-%p  
-  1) Debes descargarte la siguiente plantilla y rellenarla por completo.
-  Una vez cumplimentada, nos la puedes enviar por email o por correo postal, junto con una fotocopia de tu DNI / NIE.
-%br
-%p  
-  Email: afiliacion@partidodeinternet.es
-%br
-%p  
-  Dirección: Partido de Internet, av. Francia, 1, T3-14D, 46023, Valencia
+  %p
+    Debes
+    %strong=link_to "descargarte la siguiente plantilla", "/hoja_afiliacion.pdf"
+    y rellenarla por completo. Una vez cumplimentada, nos la puedes enviar por email o por correo postal,
+    junto con una
+    %strong fotocopia de tu DNI / NIE.
 
-%br 
-%p             
-  =link_to "Hoja de afiliación", "/hoja_afiliacion.pdf"
-  
-%br 
-%p 
-  2) Elije tu modelo de pago.  La cuota mínima para afiliarse es de 1 euro al año.
-  En el Partido de Internet, el grueso de nuestra afiliación proviene de las cuotas de 
-  nuestros miembros, porque es nuestro interés que sean los ciudadanos los que
-  sustenten el Partido para seguir siendo independientes.  Por eso, ponemos a tu
-  disposición distintas opciones:
+  %ul.tab
+    %li
+      %strong Email:
+      afiliacion@partidodeinternet.es
+    %li
+      %strong Dirección:
+      Dirección: Partido de Internet, av. Francia, 1, T3-14D, 46023, Valencia
+    %li
+      =link_to "Descargar hoja de afiliación", "/hoja_afiliacion.pdf"
 
-%br 
-%p    
-  Opción Básica:
-%p  Sólamente es necesario 1 euro al año para afiliarte.
-  
-%br 
-%p  
-  Opción Carnet:
-%p  10 euros el primer año. 1 euro a partir del segundo.
-%p  Con esta opción, recibirás tu carnet oficial de miembro del Partido.
-  
-%br 
-%p  
-  Opción Premium:
-%p  60 euros el primer año. 1 euro a partir del segundo.
-%p  Con esta opción, recibirás tu carnet oficial de miembro del Partido,
-%p  tu camiseta, y otra serie de regalos y artículos.
-  
-%br 
-%p  
-  Opción Libre:
-%p  Tú decides tu cuota anual.  Con esta opción además, todo el dinero recaudado
-%p  irá destinado integramente a la financiación del Partido, evitando destinar
-%p  parte de la cuota a la fabricación de material como el carnet o camisetas.
-    
-%br 
-%p  
-  3) Una vez que ya tienes la documentación lista y enviada, y has pensado tu
-  modelo de pago, ya solamente falta por realizar el ingreso.  Para ello, debes
-  hacernos llegar el importe de tu opción seleccionada mediante transferencia
-  o ingreso en cuenta a:
+  %h3 PASO 2
+  %p
+    Elije tu modelo de pago. La cuota mínima para afiliarse es de 1 euro al año.
+    En el Partido de Internet, el grueso de nuestra afiliación proviene de las
+    cuotas de nuestros miembros, porque es nuestro interés que sean los ciudadanos
+    los que sustenten el Partido para
+    %strong seguir siendo independientes.
+    Por eso, ponemos a tu disposición distintas opciones:
 
-%br 
-%p
-  Partido de Internet
-%p  Num. de cuenta 2077-0040-74-3102085084
-%p  Num. IBAN de la cuenta (para transferencias internacionales): 
-%p  IBAN ES38 2077 0040 7431 0208 5084
+  %ul.multiline.tab
+    %li
+      %strong Básica:
+      Sólamente es necesario 1 euro al año para afiliarte.
+    %li
+      %strong Carnet:
+      10 euros el primer año. 1 euro a partir del segundo.
+      Con esta opción, recibirás tu carnet oficial de miembro del Partido.
+    %li
+      %strong Premium:
+      60 euros el primer año. 1 euro a partir del segundo.
+      Con esta opción, recibirás tu carnet oficial de miembro del Partido,
+      tu camiseta, y otra serie de regalos y artículos.
+    %li
+      %strong Libre:
+      Tú decides tu cuota anual. Con esta opción además, todo el dinero recaudado
+      irá destinado integramente a la financiación del Partido, evitando destinar
+      parte de la cuota a la fabricación de material como el carnet o camisetas.
 
-%br 
-%p
-  En los comentarios de la transferencia, debes indicar tu NIF, el código de registro
-  =current_user.id 
-  y la opción que has elegido.
-%p  
-  Por ejemplo: "43679812A, 122, Opción Premium"
+  %h3 PASO 3
+  %p
+    Una vez que ya tienes la documentación lista y enviada, y
+    has pensado tu modelo de pago, ya solamente falta por realizar el ingreso.
+    Para ello, debes hacernos llegar el importe de tu opción seleccionada mediante
+    transferencia o ingreso en cuenta a:
+
+  %p.multiline.tab
+    %strong Partido de Internet
+    %strong Num. de cuenta: 2077-0040-74-3102085084
+    %strong Num. IBAN de la cuenta (para transferencias internacionales):
+    %strong IBAN ES38 2077 0040 7431 0208 5084
+
+  %p
+    En los comentarios de la transferencia, debes indicar tu NIF, el código de
+    registro 14 y la opción que has elegido.
+
+  %p.tab
+    Por ejemplo:
+    %span.cursive "43679812A, 122, Opción Premium"
              

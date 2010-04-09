@@ -268,3 +268,13 @@ select {
 ul.social-links li { height: 40px;}
 ul.social-links li a { padding: 6px;}
 ul.social-links li * { float: left;}
+
+.afiliate h3, .afiliate p,
+.afiliate ul, .afiliate ul li { margin-bottom: 20px;}
+
+.afiliate h3 { margin-top: 30px; font-weight: bold; }
+.afiliate .tab { margin-left: 30px;}
+
+.afiliate .multiline strong { display: block;}
+
+.cursive {font-style: italic;}
