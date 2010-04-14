@@ -278,3 +278,5 @@ ul.social-links li * { float: left;}
 .afiliate .multiline strong { display: block;}
 
 .cursive {font-style: italic;}
+
+.afiliate .registration_code { color :red; font-weight: bold;}

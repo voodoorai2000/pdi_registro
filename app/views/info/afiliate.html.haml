@@ -59,10 +59,11 @@
     %strong IBAN ES38 2077 0040 7431 0208 5084
 
   %p
-    En los comentarios de la transferencia, debes indicar tu NIF, el código de
-    registro 14 y la opción que has elegido.
+    En los comentarios de la transferencia, debes indicar tu NIF, 
+    la opción que has elegido (1, 2, 3 ó 4) y el siguiente código de registro: 
+    %span.registration_code="#{current_user.id}"
 
   %p.tab
     Por ejemplo:
-    %span.cursive "43679812A, 122, Opción Premium"
+    %span.cursive "43679812A, Opción 2, 297"
              
