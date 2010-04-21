@@ -49,26 +49,40 @@
   %p
     Una vez que ya tienes la documentación lista y enviada, y
     has pensado tu modelo de pago, ya solamente falta por realizar el ingreso.
-    Para ello, debes hacernos llegar el importe de tu opción seleccionada mediante
-    transferencia o ingreso en cuenta a:
+    Para ello, debes hacernos llegar el importe de tu opción seleccionada 
+    mediante una de estas dos opciones:
 
-  %p.multiline.tab
-    %strong Partido de Internet
-    %strong Num. de cuenta: 2077-0040-74-3102085084
-    %strong Num. IBAN de la cuenta (para transferencias internacionales):
-    %strong IBAN ES38 2077 0040 7431 0208 5084
-
-  %p
-    En los comentarios de la transferencia, debes indicar tu NIF, 
-    la opción que has elegido (1, 2, 3 ó 4) y el siguiente código de registro: 
-    %span.registration_code="#{current_user.id}"
-
-  %p.tab
-    Por ejemplo:
-    %span.cursive "43679812A, Opción 2, 297"
+  %ul.multiline.tab
+    %li
+      %strong 1) Transferencia o ingreso en cuenta a:
     
-  %p
-    También puedes pagar por Paypal. Para eso, dirígete a la página:
-    =link_to "http://www.partidodeinternet.es/afiliacion-pago-paypal","http://www.partidodeinternet.es/afiliacion-pago-paypal"
-    y sigue las instrucciones que están indicadas allí.
-             
+      %p.tab
+        %br Partido de Internet
+        %br Num. de cuenta: 2077-0040-74-3102085084
+        %br Num. IBAN de la cuenta (para transferencias internacionales):
+        %br IBAN ES38 2077 0040 7431 0208 5084
+      
+      %p
+        En los comentarios de la transferencia, debes indicar tu NIF, 
+        y la opción que has elegido (1, 2, 3 ó 4).
+      
+      %p.tab
+        Por ejemplo:
+        %span.cursive "43679812A, Opción 2"
+        
+      %p 
+        Si haces el ingreso en ventanilla, el banco nos cobrará 0'15 euros de comisión, 
+        por lo que preferimos que sea mediante transferencia o mediante ingreso en cajero automático.
+    
+    %li
+      %strong 2) Pagando por paypal:
+    
+      %p
+        %br Para eso, dirígete a la página: 
+        =link_to "http://www.partidodeinternet.es/afiliacion-pago-paypal","http://www.partidodeinternet.es/afiliacion-pago-paypal"
+        y sigue las instrucciones que están indicadas allí. 
+    
+      %p
+        Con esta opción, Paypal nos cobra alrededor de un 3% de comisión con un mínimo de 0'35 euros, 
+        por lo que preferimos que utilices la primera opción.
+    
