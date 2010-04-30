@@ -12,3 +12,4 @@ config/authentication_engine.yml
 config/deploy/staging.rb
 db/test.sqlite3
 config/database.yml
+.DS_Store
