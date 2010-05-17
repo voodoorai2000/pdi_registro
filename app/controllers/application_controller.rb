@@ -9,4 +9,15 @@ class ApplicationController < ActionController::Base
 
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
+  
+  
+  protected
+  
+  def require_admin
+    return if admin?
+    store_location
+    flash[:error] = "Lo sentimos, solo los administradores pueden hacer eso."
+    redirect_to root_url
+    return false
+  end
 end

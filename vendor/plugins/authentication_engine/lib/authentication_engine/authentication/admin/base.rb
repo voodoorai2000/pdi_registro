@@ -10,6 +10,7 @@ module AuthenticationEngine
           protected
 
           # Before filter to limit certain actions to administrators
+          #TODO: copied in application controller, DRY-up
           def require_admin
             return if admin?
             store_location
