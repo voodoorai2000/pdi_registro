@@ -44,7 +44,7 @@ namespace :mod_rails do
   Restart the application altering tmp/restart.txt for mod_rails.
   DESC
   task :restart, :roles => :app do
-    run "touch  #{release_path}/tmp/restart.txt"
+    run "touch  #{current_path}/tmp/restart.txt"
   end
 end
 
