@@ -74,11 +74,3 @@ Given /^the following user records$/ do |table|
     u.activate!({:login => hash['login'], :password => hash['password'], :password_confirmation => hash['password']}, false) {}
   end
 end
-
-Factory.define :user do |f|
-  f.sequence(:name) { |n| "name#{n}" }
-  f.sequence(:login) { |n| "foo#{n}" }
-  f.password "foobar"
-  f.password_confirmation { |u| u.password }
-  f.sequence(:email) { |n| "foo#{n}@example.com" }
-end

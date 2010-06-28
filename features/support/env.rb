@@ -53,6 +53,7 @@ Cucumber::Rails::World.use_transactional_fixtures = true
 # http://github.com/bmabey/database_cleaner for more info.
 require 'database_cleaner'
 DatabaseCleaner.strategy = :truncation
+DatabaseCleaner.clean_with :truncation
 
 require 'factory_girl'
 

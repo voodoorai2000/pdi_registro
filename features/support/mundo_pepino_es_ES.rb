@@ -8,7 +8,7 @@ MundoPepino.configure do |config|
 
     # MODELOS PARA LIMPIAR antes de cada escenario,
     # por ejemplo:
-    # Orchard, Terrace, Crop...
+    #User
   ]
 
   config.model_mappings = {
@@ -56,8 +56,11 @@ MundoPepino.configure do |config|
 end
 
 
-Before do
-  MundoPepino.clean_models
+DatabaseCleaner.strategy = :truncation
+DatabaseCleaner.clean_with :truncation
+
+After do
+  DatabaseCleaner.clean
 end
 
 #module MundoPepino
