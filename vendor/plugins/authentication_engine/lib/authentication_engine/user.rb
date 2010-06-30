@@ -82,6 +82,9 @@ module AuthenticationEngine
 
           merge_validates_length_of_login_field_options :if => :validate_login_with_openid?
           merge_validates_format_of_login_field_options :if => :validate_login_with_openid?
+          
+          merge_validates_length_of_email_field_options :if => :validate_login_with_openid?
+          merge_validates_format_of_email_field_options :if => :validate_login_with_openid?
 
           openid_required_fields [:nickname, :email]
           openid_optional_fields [:fullname, :dob, :gender, :postcode, :country, :language, :timezone]
@@ -341,7 +344,7 @@ module AuthenticationEngine
             end
 
             event :activate do
-              transition [:invited, :registered, :disabled, :archived] => :active
+              transition [:invited, :registered, :disabled, :archived, :created] => :active
             end
 
             event :disable do
@@ -434,18 +437,17 @@ module AuthenticationEngine
       receiver.send :include, InvitationMethods
       receiver.send :include, PreferenceMethods
       receiver.class_eval do
-        validates_presence_of :name
-
+ #       validates_presence_of :name
         attr_accessible :name, :email, :login, :password, :password_confirmation
 
-        merge_validates_length_of_login_field_options :on => :update
-        merge_validates_format_of_login_field_options :on => :update, :message => "por favor utilizar solo letras, números, espacios y .-_@."
-        merge_validates_uniqueness_of_login_field_options :on => :update
+        merge_validates_length_of_login_field_options :on => :save
+        merge_validates_format_of_login_field_options :on => :save, :message => "por favor utilizar solo letras, números, espacios y .-_@."
+        merge_validates_uniqueness_of_login_field_options :on => :save
 
-        merge_validates_length_of_password_field_options :on => :update
-        merge_validates_confirmation_of_password_field_options :on => :update, :if => :password_salt_is_changed?
+        merge_validates_length_of_password_field_options :on => :save
+        merge_validates_confirmation_of_password_field_options :on => :save, :if => :password_salt_is_changed?
         merge_validates_length_of_password_confirmation_field_options :on => :update
-
+        
         before_destroy :deny_admin_suicide
       end
     end

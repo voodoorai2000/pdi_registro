@@ -22,7 +22,7 @@ ActionController::Routing::Routes.draw do |map|
   # paths used for verify modification of user's identities and status
   map.accept '/accept/:invitation_token', :controller => 'activations', :action => 'new', :conditions => { :method => :get }, :invitation_token => nil if REGISTRATION[:private] or REGISTRATION[:requested]
   map.register '/register/:activation_code', :controller => 'activations', :action => 'new', :conditions => { :method => :get }, :activation_code => nil if REGISTRATION[:limited] or REGISTRATION[:public]
-  map.activate '/activate/:id', :controller => 'activations', :action => 'create', :conditions => { :method => :post }
+  map.activate '/activate/:activation_code', :controller => 'activations', :action => 'create'
 
   # special section used for authorizated users to manage things including other uses
   map.namespace :admin do |admin|

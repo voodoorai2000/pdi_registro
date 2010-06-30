@@ -3,43 +3,75 @@
 
   -form_for @user, :url => account_path do |f|
     .info-block.grid_21.alpha
-      .grid_13.alpha
+      .grid_10.alpha
         %p ¿Quiéres recibir noticias e información sobre el partido?
-        %p ¿Quiéres colaborar? ¿Tienes alguna propuesta interesante que hacernos?
-
-    .grid_21.alpha
-      .grid_13.alpha
+        %p ¿Quiéres colaborar en algún área? 
+        %p ¿Tienes alguna propuesta interesante que hacernos?
+        %p &nbsp;
         %p
-          Sólamente tienes que <strong>rellenar tus datos para ser un usuario
-          simpatizante del partido de Internet</strong>
+          Sólo tienes que rellenar tus datos para registrarte
+          como ciudadano simpatizante del Partido de Internet
 
-      .grid_7
-        %p Registrate automáticamente con estos sistemas
+      .grid_10
+        %p
+          Si lo que deseas es <strong>Afiliarte</strong> al Partido de Internet, 
+          solamente completando este mismo formulario tendrás acceso 
+          a la ficha de registro y más información para que puedas hacerlo desde <strong>¡Un euro al año!</strong>
 
       .grid_21.alpha
-        .divider-long.grid_13.alpha
-        .divider-short.grid_8.alpha
 
     .grid_21
       =f.error_messages
 
-    %fieldset.grid_13.alpha
+      %div.grid_10.alpha
+        %fieldset
+          %p
+            =f.label :login, "Usuario"
+            =f.text_field :login
+            =obligatorio
+          %p
+            =f.label :email, "Email" 
+            =f.text_field :email
+            =obligatorio
+          %p
+            =f.label :password, "Escriba su contraseña"
+            =f.password_field :password
+            =obligatorio
+          %p
+            =f.label :password_confirmation, "Confirmación contraseña"
+            =f.password_field :password_confirmation
+            =obligatorio
+          
+      %div.grid_10
+        %fieldset
+          %p
+            =f.label :name, "Nombre"
+            =f.text_field :name
+          %p
+            =f.label :last_name, "Apellidos"
+            =f.text_field :last_name
+          %p
+            =f.label :age, "Fecha de nacimiento (dd/mm/aaaa)"
+            =f.text_field :age
+          %p
+            =f.label :gender, "Sexo"
+            =f.select :gender, [ "Masculino", "Femenino" ]
+          %p
+            =f.label :region_id, "Región"
+            =f.select :region_id, Region.all.sort_by(&:name).collect {|region| [region.name, region.id]}
+        %hr
+      %fieldset
+        %legend 
+          Si tienes una cuenta de 
+          =openid_link 
+          puedes registrarte tan sólo introduciendo tu url:
+        %p
+          =f.text_field :openid_identifier
       %div
-        =f.label :name, "Nombre"
-        =f.text_field :name
-      %div
-        =f.label :email, "Email" 
-        =f.text_field :email
-      %div
-        Al pulsar el botón, usted:
-        %br Acepta y autoriza los términos de las
+        Al pulsar el botón, aceptas y autorizas los términos de las
         =link_to "Condiciones legales", :controller => "info", :action => "legal_conditions"
       
-      .submit.grid_12
-        = f.submit "ENVIAR"
-   
-    %fieldset.grid_8.omega
-      %div
-        =f.label :openid_identifier, openid_link
-        =f.text_field :openid_identifier, :class => 'openid'
+      %p.submit.grid_13
+        = f.submit "Enviar"
+        
     .clear

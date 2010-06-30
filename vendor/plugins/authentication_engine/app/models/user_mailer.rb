@@ -6,7 +6,7 @@ class UserMailer < ActionMailer::Base
     from          "#{NOTIFIER[:name]} <#{NOTIFIER[:email]}>"
     recipients    "#{user.name} <#{user.email}>"
     sent_on       Time.now
-    body          :account_activation_url => register_url(user.perishable_token)
+    body          :account_activation_url => activate_url(:activation_code => user.perishable_token)
   end
 
   def activation_confirmation(user)

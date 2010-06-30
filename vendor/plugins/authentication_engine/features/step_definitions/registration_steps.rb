@@ -5,8 +5,11 @@ end
 Given /^I have registered successfully$/ do
   Given "I am an anonymous user"
   When "I go to the registration form"
-  And "I fill in \"nombre\" with \"bob\""
+  And "I fill in \"usuario\" with \"bob\""
   And "I fill in \"email\" with \"bob@example.com\""
+  And "I fill in \"escriba su contraseña\" with \"secret\""
+  And "I fill in \"confirmación contraseña\" with \"secret\""
+
   And "I press \"Enviar\""
   Then "I should have a successful registration"
 end
@@ -21,12 +24,10 @@ Given /^I have successfully activated my account$/ do
   Given "I have registered successfully"
     And "I have received an activation email"
     And "I follow \"activa tu cuenta\" in the email"
-  Then "I should see the activation form"
-  And "I fill in \"usuario\" with \"bob\""
-  And "I fill in \"escriba su contraseña\" with \"secret\""
-  And "I fill in \"confirmación contraseña\" with \"secret\""
-  And "I press \"Enviar\""
   Then "I should have a successful activation"
+  When "I fill in \"usuario\" with \"bob\""
+  When "I fill in \"contraseña\" with \"secret\""
+   And "I press \"Entrar\""
   And "I should be logged in"
 end
 
@@ -58,7 +59,6 @@ Then /^I should have an unsuccessful registration$/ do
 end
 
 Then /^I should have a successful activation$/ do
-  Then 'I should see "Top 5 del Ranking"'
   And 'I should see "Su cuenta ha sido activada"'
 end
 

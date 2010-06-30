@@ -12,7 +12,7 @@ h1.logo {
 }
 
 h2 {
-  font-size: 1.8em;
+  font-size: 1.4em;
   border-bottom: 5px solid black;
   font-weight: bold;
   padding-bottom: 4px;
@@ -62,7 +62,7 @@ legend, #ranking, #colaborar div  {
   font-weight: bold;
   padding-left: 40px;
   background: url(/images/divider_950x57.png) no-repeat bottom;
-  height: 80px;
+  height: 30px;
 }
 
 #user_status a {
@@ -84,24 +84,24 @@ legend, #ranking, #colaborar div  {
 /**** Formularios ****/
 label {
   font-weight: bold;
-  font-size: 1.4em;
+  font-size: 1.0em;
   display:block;
 }
 
 input[type="text"],
 input[type="password"] {
-  border: 3px solid #a2a2a2;
+  border: 1px solid #a2a2a2;
   color:black;
-  font-size: 1.4em;
+  font-size: 1.0em;
   padding: 5px;
-  width: 430px;
+  width: 230px;
 }
 
 fieldset p, fieldset div {
   margin-bottom: 20px;
 }
 
-input.openid { width: 290px; }
+input.openid { width: 200px; }
 
 input[type="submit"] {
   padding: 10px;
@@ -119,8 +119,8 @@ input[type="submit"] {
 
 select {
   margin-bottom: 20px;
-  width: 300px;
-  font-size: 1.4em;
+  width: 200px;
+  font-size: 1.0em;
 }
 
 .obligatorio {
@@ -280,3 +280,5 @@ ul.social-links li * { float: left;}
 .cursive {font-style: italic;}
 
 .afiliate .registration_code { color :red; font-weight: bold;}
+
+.no_link { color :blue; font-weight: bold; text-decoration: none;}

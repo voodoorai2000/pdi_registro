@@ -18,44 +18,23 @@ class ActivationsController < ApplicationController
     redirect_to root_url
   end
 
-  # POST /activate/:id
+  
   def create
-    if @invitation
-      @user = @invitation.recipient
-    elsif User.respond_to? :with_state
-      @user = User.with_state(:registered).find(params[:id])
-    else
-      @user = User.find(params[:id])
-    end
-    #raise Exception if @user.active?
-
-    @user.activate!(params[:user], ACTIVATION[:prompt]) do |result|
+    @user = User.find_using_perishable_token(params[:activation_code])
+    
+    raise Exception if @user.active?
+    
+    @user.activate!(@user, ACTIVATION[:prompt]) do |result|
       if result
-        if @user.invitation
-          @user.deliver_activation_confirmation!
-          #TODO: fix failing mailer template
-          # @user.deliver_invitation_activation_notice!
-        else
-          @user.deliver_activation_confirmation!
-        end
-      
-        @user.update_attributes!(params[:user])
-        
-        if ACTIVATION[:prompt]
-          flash[:success] = "Su cuenta ha sido activada. Por favor proporcione su credenciales (usuario/contraseña, u Open ID) al sistema."
-          redirect_to login_url
-        else
-          flash[:success] = "Su cuenta ha sido activada."
-          redirect_to dashboard_url
-        end
+        @user.deliver_activation_confirmation!
+        flash[:success] = "Su cuenta ha sido activada."
+        redirect_to login_url
       else
         render :action => :new
       end
     end
-  rescue Exception => e
-    redirect_to root_url
   end
-
+  
   protected
 
   def find_invitation

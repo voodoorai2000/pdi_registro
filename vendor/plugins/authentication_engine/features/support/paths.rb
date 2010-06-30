@@ -44,6 +44,9 @@ module NavigationHelpers
       admin_root_path
     when /the invitations list page/
       admin_invitations_path
+    
+    when /the activation page with activation code (.*)/
+      activate_path(:id => $1)
 
     # Add more mappings here.
     # Here is a more fancy example:

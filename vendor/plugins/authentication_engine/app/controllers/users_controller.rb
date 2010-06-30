@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   unloadable
   include AuthenticationEngine::Authentication::User
   before_filter :find_user, :only => [:show, :edit, :update]
-  before_filter :new_user, :only => [:new, :create]
+  before_filter :new_user, :only => [:new]
   include AuthenticationEngine::Authorization::User
 
   # GET /account
@@ -21,7 +21,8 @@ class UsersController < ApplicationController
   # POST /account
   def create
     redirect_to root_url and return unless REGISTRATION[:public]
-
+    
+    @user = User.new(params[:user])
     @user.signup!(params[:user], SIGNUP[:prompt]) do |result|
       if result
         @user.deliver_activation_instructions!

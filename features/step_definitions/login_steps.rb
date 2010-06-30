@@ -24,8 +24,10 @@ end
 Dado /^que me he registrado con éxito$/ do
   Given "I am an anonymous user"
   When "I go to the registration form"
-  And "I fill in \"Nombre\" with \"bob\""
-  And "I fill in \"Email\" with \"bob@example.com\""
+  And "I fill in \"usuario\" with \"bob\""
+  And "I fill in \"email\" with \"bob@example.com\""
+  And "I fill in \"escriba su contraseña\" with \"secret\""
+  And "I fill in \"confirmación contraseña\" with \"secret\""
   And "I press \"Enviar\""
   Then 'I should see "¡Su cuenta ha sido creada"'
 end
@@ -44,6 +46,18 @@ Cuando /^relleno el resto de campos del formulario de activacion$/ do
   When "I fill in \"usuario\" with \"bob\""
   When "I fill in \"escriba su contraseña\" with \"secret\""
   When "I fill in \"confirmación contraseña\" with \"secret\""
+end
+
+Cuando /^activo mi cuenta$/ do
+  user = User.last
+  user.activate!({:login => user.login, :password => 'secret', :password_confirmation => 'secret'}, false) {}
+end
+
+Cuando /^me autentifico$/ do
+  When "I go to the login page"
+   And "I fill in \"usuario\" with \"bob\""
+   And "I fill in \"contraseña\" with \"secret\""
+   And "I press \"Entrar\""
 end
 
 
