@@ -14,7 +14,7 @@ class UserMailer < ActionMailer::Base
     from          "#{NOTIFIER[:name]} <#{NOTIFIER[:email]}>"
     recipients    "#{user.name} <#{user.email}>"
     sent_on       Time.now
-    body          :root_url => root_url
+    body          :afiliation_url => afiliate_url
   end
 
   def password_reset_instructions(user) 

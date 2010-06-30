@@ -6,6 +6,7 @@ ActionController::Routing::Routes.draw do |map|
   end
   map.with_options :controller => 'info' do |info|
     info.about 'legal_conditions', :action => 'legal_conditions'
+    info.afiliate 'info/afiliate', :action => 'afiliate'
   end
   
   map.ranking "/ranking", :controller => "ranking"
