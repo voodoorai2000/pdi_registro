@@ -7,10 +7,8 @@ Feature: Registration
   Scenario: Display registration form to anonymous user
     Given I am an anonymous user
     When I go to the homepage
-    Then I should see "Registrarse"
-    When I follow "Registrarse"
     Then I should see the registration form
-
+     
   Scenario: Allow an anonymous user to create account
     Given I am an anonymous user
      When I go to the home page

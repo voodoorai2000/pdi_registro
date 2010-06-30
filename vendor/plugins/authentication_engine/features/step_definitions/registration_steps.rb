@@ -32,8 +32,16 @@ Given /^I have successfully activated my account$/ do
 end
 
 Then /^I should see the registration form$/ do
-  response.should contain('Nombre')
+  response.should contain('Usuario')
   response.should contain('Email')
+  response.should contain('Escriba su contraseña')
+  response.should contain('Confirmación contraseña')
+end
+
+Then /^I should see the login form$/ do
+  response.should contain('Usuario')
+  response.should contain('Contraseña')
+  response.should contain('Entrar')
 end
 
 Then /^I should see the activation form$/ do

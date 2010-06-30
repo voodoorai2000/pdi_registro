@@ -16,4 +16,8 @@ module ApplicationHelper
   def obligatorio
     content_tag(:span,' *Obligatorio', :class => 'obligatorio')
   end
+  
+  def login_form
+    controller.controller_name == "user_sessions" and controller.action_name == "new"
+  end
 end

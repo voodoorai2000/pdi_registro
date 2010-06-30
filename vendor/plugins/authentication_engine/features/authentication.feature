@@ -7,8 +7,11 @@ Feature: Authentication
 
   Scenario: Display login form to anonymous users
     Given I am an anonymous user
-    When I go to the login page
-    Then I should see a login form
+     When I go to the homepage
+     Then I should see "Estoy registrado, quiero Entrar"
+     When I follow "Entrar"
+     Then I should see the login form
+      And I should not see "Estoy registrado, quiero Entrar"
 
   Scenario: Allow login of a user with valid credentials
     Given I am a confirmed user "bob" with password "secret"
