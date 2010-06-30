@@ -25,9 +25,8 @@
     <%# link_to "Solicitar Invitación", apply_invitations_path %>
     <%- end -%>
     <%- if REGISTRATION[:public] -%>
-    <%= link_to "Registrarse", signup_path %> |
+    Estoy registrado, quiero <%= link_to "Entrar", login_path %>
     <%- end -%>
-    <%= link_to "Entrar", login_path %>
   </p>
 <%- end -%>
 </div>
