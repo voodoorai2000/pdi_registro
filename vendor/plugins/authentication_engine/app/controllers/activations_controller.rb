@@ -20,7 +20,7 @@ class ActivationsController < ApplicationController
 
   
   def create
-    @user = User.find_using_perishable_token(params[:activation_code])
+    @user = User.find_using_perishable_token(params[:activation_code], 1.week) || (raise Exception)
     
     raise Exception if @user.active?
     
@@ -33,6 +33,8 @@ class ActivationsController < ApplicationController
         render :action => :new
       end
     end
+  rescue Exception => e
+    redirect_to root_url
   end
   
   protected
