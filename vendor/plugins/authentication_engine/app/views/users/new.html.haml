@@ -59,7 +59,6 @@
           %p
             =f.label :region_id, "Región"
             =f.select :region_id, Region.all.sort_by(&:name).collect {|region| [region.name, region.id]}
-        %hr
       %fieldset
         %legend 
           Si tienes una cuenta de 
