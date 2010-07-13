@@ -11,7 +11,7 @@ class UserMailer < ActionMailer::Base
 
   def activation_confirmation(user)
     subject       "Activación Completa"
-    from          "#{NOTIFIER[:email]}"
+    from          "afiliacion@partidodeinternet.es"
     recipients    "#{user.email}"
     sent_on       Time.now
     body          :afiliation_url => afiliate_url
