@@ -11,7 +11,7 @@ class UserMailer < ActionMailer::Base
 
   def activation_confirmation(user)
     subject       "Activación Completa"
-    from          "Partido de Internet <afiliacion@partidodeinternet.es>"
+    from          "#{NOTIFIER[:name]} <afiliacion@partidodeinternet.es>"
     recipients    "#{user.email}"
     sent_on       Time.now
     body          :afiliation_url => afiliate_url
@@ -19,7 +19,7 @@ class UserMailer < ActionMailer::Base
 
   def password_reset_instructions(user) 
     subject       "Instrucciones Para Resetear Su Contraseña"
-    from          "#{NOTIFIER[:email]}"
+    from          "#{NOTIFIER[:name]} <#{NOTIFIER[:email]}>"
     recipients    "#{user.email}"
     sent_on       Time.now
     body          :edit_password_reset_url => edit_password_reset_url(user.perishable_token)
@@ -27,7 +27,7 @@ class UserMailer < ActionMailer::Base
 
   def invitation(invitation, signup_url)
     subject       "Invitación De Usuario"
-    from          "#{NOTIFIER[:email]}"
+    from          "#{NOTIFIER[:name]} <#{NOTIFIER[:email]}>"
     recipients    "#{invitation.recipient_email}"
     sent_on       Time.now
     body          :invitation => invitation, :signup_url => signup_url
@@ -45,7 +45,7 @@ class UserMailer < ActionMailer::Base
 
   def invitation_activation_notice(user)
     subject       'Invitación Activada'
-    from          "#{NOTIFIER[:email]}"
+    from          "#{NOTIFIER[:name]} <#{NOTIFIER[:email]}>"
     recipients    "#{user.invitation.sender.email}"
     sent_on       Time.now
     body          :user => user
