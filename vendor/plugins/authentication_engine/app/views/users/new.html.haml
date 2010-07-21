@@ -59,14 +59,8 @@
           %p
             =f.label :region_id, "Región"
             =f.select :region_id, Region.all.sort_by(&:name).collect {|region| [region.name, region.id]}
-      %fieldset
-        %legend 
-          Si tienes una cuenta de 
-          =openid_link 
-          puedes registrarte tan sólo introduciendo tu url (opcional):
-        %p
-          =f.text_field :openid_identifier
-      %div
+    %div
+      %p 
         Al pulsar el botón, aceptas y autorizas los términos de las
         =link_to "Condiciones legales", :controller => "info", :action => "legal_conditions"
       
