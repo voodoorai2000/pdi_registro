@@ -43,11 +43,11 @@
   </p>
   <p>
     <%= f.label :gender, "Sexo" %>
-    <%= f.select :gender, [ "Masculino", "Femenino" ] %>
+    <%= f.select :gender, [ "Masculino", "Femenino" ], {:include_blank => true} %>
   </p>
   <p>
   	<%= f.label :region_id, "Región" %>
-  	<%= f.select :region_id, Region.all.sort_by(&:name).collect {|region| [region.name, region.id]} %>
+  	<%= f.select :region_id, Region.all.sort_by(&:name).collect {|region| [region.name, region.id]}, {:include_blank => true} %>
   </p>
 </fieldset>
 
