@@ -3,7 +3,7 @@ class UserMailer < ActionMailer::Base
 
   def activation_instructions(user)
     subject       "Instrucciones De Activación Partido de Internet"
-    from          "Partido de Internet <#{NOTIFIER[:email]}>"
+    from          "#{NOTIFIER[:name]} <#{NOTIFIER[:email]}>"
     recipients    "#{user.email}"
     sent_on       Time.now
     body          :account_activation_url => activate_url(:activation_code => user.perishable_token)
