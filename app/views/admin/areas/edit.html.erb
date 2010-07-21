@@ -1,10 +1,10 @@
-<h1>Editing area</h1>
+<h1>Edición de área</h1>
 
 <% form_for(@area, :url => admin_area_path) do |f| %>
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :name %><br />
+    <%= f.label :name, "Nombre" %><br />
     <%= f.text_field :name %>
   </p>
   <p>
@@ -12,5 +12,5 @@
   </p>
 <% end %>
 
-<%= link_to 'Mostar', admin_area_path(@area) %> |
-<%= link_to 'Atras', admin_areas_path %>
+<%= link_to 'Mostrar', admin_area_path(@area) %> |
+<%= link_to 'Atrás', admin_areas_path %>
