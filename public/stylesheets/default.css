@@ -2,13 +2,7 @@ body {
   height: 100%;
   font-size:1em;
   font-family: Time, Serif;
-  background: url('/images/bg_tile.jpg') repeat-x;
   color: #666666;
-}
-
-h1.logo {
-  height: 69px;
-  background: url('/images/logo_app.png') no-repeat;
 }
 
 h2 {
@@ -282,3 +276,20 @@ ul.social-links li * { float: left;}
 .afiliate .registration_code { color :red; font-weight: bold;}
 
 .no_link { color :blue; font-weight: bold; text-decoration: none;}
+
+/* new logo */
+div.pagewidth {
+	width:85%;
+	margin:0 auto;
+}
+
+/* header & nav */
+div.header-wrapper {
+	background:#f96500;
+	font-size:1.6em;
+}
+div.header {
+	border-top:0px solid #FFFFFF;
+	padding:10px 0 10px 180px;
+	margin:0 auto;
+}

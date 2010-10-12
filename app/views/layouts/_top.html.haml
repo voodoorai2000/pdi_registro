@@ -1,8 +1,4 @@
 #top.grid_24
-  .grid_19.alpha
-    %h1.logo
-      %span.none Partido de Internet
-    =image_tag 'top_multicolor.png', {:width => '950px', :height => '13px'}
   .grid_4.omega
     .close-session
       =link_to "Cerrar Sesión", logout_path, :method => :delete, :confirm => "¿Seguro que quiere cerrar la sesión?" if current_user

@@ -13,6 +13,12 @@
   <%= yield(:head) %>
 </head>
 <body>
+  <div class="header-wrapper"> 
+  	<div class="header pagewidth"> 
+  		<%= image_tag 'logo-mini-naranja.png' %>
+  	</div> 
+  </div>
+  
   <div id="container" class="container_24">
     <%= render :partial => 'layouts/top' %>
     <%= render :partial => 'shared/user_status' %>
